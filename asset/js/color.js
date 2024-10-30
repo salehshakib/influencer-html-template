@@ -1,7 +1,7 @@
 // document.documentElement.style.setProperty("--var-primary-color", "#22223b");
-document.documentElement.style.setProperty("--var-primary-color", "#b91c1c");
+document.documentElement.style.setProperty("--var-primary-color", "#dc2626");
 
-document.documentElement.style.setProperty("--var-secondary-color", "#fca5a5");
+document.documentElement.style.setProperty("--var-secondary-color", "#fecaca");
 
 const css = `
 .primary-text {
