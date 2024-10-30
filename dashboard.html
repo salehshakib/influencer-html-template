@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="asset/css/select2.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <link rel="stylesheet" href="asset/css/styles.css" />
+    <script src="asset/js/color.js"></script>
+
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="content">
+      <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center justify-start rtl:justify-end">
+              <button
+                data-drawer-target="logo-sidebar"
+                data-drawer-toggle="logo-sidebar"
+                aria-controls="logo-sidebar"
+                type="button"
+                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 primary-text"
+              >
+                <span class="sr-only">Open sidebar</span>
+                <svg
+                  class="w-6 h-6"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                  ></path>
+                </svg>
+              </button>
+              <a href="index.html" class="flex ms-2 md:me-24">
+                <!-- <img
+                  src="https://vitasoftsolutions.com/_next/static/media/logo.4101948a.png"
+                  alt=""
+                  class="h-8"
+                /> -->
+                <div class="primary-text font-extrabold text-base lg:text-2xl">
+                  VitaInfluence
+                </div>
+              </a>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center ms-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  class="size-8 mr-4 cursor-pointer stroke-svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+                  />
+                </svg>
+
+                <div>
+                  <button
+                    type="button"
+                    class="flex text-sm bg-gray-800 rounded-full"
+                    aria-expanded="false"
+                    data-dropdown-toggle="dropdown-user"
+                    data-dropdown-offset-skidding="-100"
+                  >
+                    <span class="sr-only">Open user menu</span>
+                    <img
+                      class="w-8 h-8 rounded-full"
+                      src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                      alt="user photo"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dropdown-menu"
+                  id="dropdown-user"
+                >
+                  <div class="px-5 py-3" role="none">
+                    <p class="text-lg text-gray-900" role="none">
+                      Vitasoft Solution Admin
+                    </p>
+                    <p
+                      class="text-sm font-medium text-gray-900 truncate"
+                      role="none"
+                    >
+                      vitasoftsolutions@gmail.com
+                    </p>
+                  </div>
+                  <ul class="py-1 px-4" role="none">
+                    <li
+                      class="flex items-center hover-text hover-bg rounded-md px-1 cursor-pointer"
+                    >
+                      <svg
+                        id="Dashboard_Layout_20"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          stroke="none"
+                          fill="#000000"
+                          opacity="0"
+                        />
+
+                        <g transform="matrix(0.8 0 0 0.8 10 10)">
+                          <path
+                            class="primary-fill"
+                            style="
+                              stroke: none;
+                              stroke-width: 1;
+                              stroke-dasharray: none;
+                              stroke-linecap: butt;
+                              stroke-dashoffset: 0;
+                              stroke-linejoin: miter;
+                              stroke-miterlimit: 4;
+                              fill-rule: nonzero;
+                              opacity: 1;
+                            "
+                            transform=" translate(-12, -12)"
+                            d="M 4 2 C 2.9069372 2 2 2.9069372 2 4 L 2 11 C 2 12.093063 2.9069372 13 4 13 L 9 13 C 10.093063 13 11 12.093063 11 11 L 11 4 C 11 2.9069372 10.093063 2 9 2 L 4 2 z M 15 2 C 13.906937 2 13 2.9069372 13 4 L 13 7 C 13 8.0930628 13.906937 9 15 9 L 20 9 C 21.093063 9 22 8.0930628 22 7 L 22 4 C 22 2.9069372 21.093063 2 20 2 L 15 2 z M 4 4 L 9 4 L 9 11 L 4 11 L 4 4 z M 15 4 L 20 4 L 20 7 L 15 7 L 15 4 z M 15 11 C 13.906937 11 13 11.906937 13 13 L 13 20 C 13 21.093063 13.906937 22 15 22 L 20 22 C 21.093063 22 22 21.093063 22 20 L 22 13 C 22 11.906937 21.093063 11 20 11 L 15 11 z M 15 13 L 20 13 L 20 20 L 15 20 L 15 13 z M 4 15 C 2.9069372 15 2 15.906937 2 17 L 2 20 C 2 21.093063 2.9069372 22 4 22 L 9 22 C 10.093063 22 11 21.093063 11 20 L 11 17 C 11 15.906937 10.093063 15 9 15 L 4 15 z M 4 17 L 9 17 L 9 20 L 4 20 L 4 17 z"
+                            stroke-linecap="round"
+                          />
+                        </g>
+                      </svg>
+                      <a href="#" class="block p-2 text-sm" role="menuitem"
+                        >Dashboard</a
+                      >
+                    </li>
+
+                    <li
+                      class="flex items-center text-gray-700 hover-text hover-bg rounded-md px-1 cursor-pointer"
+                    >
+                      <svg
+                        id="User_20"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          stroke="none"
+                          fill="#000000"
+                          opacity="0"
+                        />
+
+                        <g transform="matrix(0.89 0 0 0.89 10 10)">
+                          <path
+                            class="primary-fill"
+                            style="
+                              stroke: none;
+                              stroke-width: 1;
+                              stroke-dasharray: none;
+                              stroke-linecap: butt;
+                              stroke-dashoffset: 0;
+                              stroke-linejoin: miter;
+                              stroke-miterlimit: 4;
+                              fill-rule: nonzero;
+                              opacity: 1;
+                            "
+                            transform=" translate(-12, -12)"
+                            d="M 12 3 C 9.790861000676827 3 8 4.790861000676826 8 7 C 8 9.209138999323173 9.790861000676827 11 12 11 C 14.209138999323173 11 16 9.209138999323173 16 7 C 16 4.790861000676826 14.209138999323173 3 12 3 z M 12 14 C 8.996 14 3 15.508 3 18.5 L 3 20 C 3 20.552 3.448 21 4 21 L 20 21 C 20.552 21 21 20.552 21 20 L 21 18.5 C 21 15.508 15.004 14 12 14 z"
+                            stroke-linecap="round"
+                          />
+                        </g>
+                      </svg>
+                      <a
+                        href="admin/profile.html"
+                        class="block p-2 text-sm"
+                        role="menuitem"
+                        >Admin Profile</a
+                      >
+                    </li>
+                    <li
+                      class="flex items-center text-gray-700 hover-text hover-bg rounded-md px-1 cursor-pointer"
+                    >
+                      <svg
+                        id="Password_20"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          stroke="none"
+                          fill="#000000"
+                          opacity="0"
+                        />
+
+                        <g transform="matrix(0.76 0 0 0.76 10 10)">
+                          <path
+                            class="primary-fill"
+                            style="
+                              stroke: none;
+                              stroke-width: 1;
+                              stroke-dasharray: none;
+                              stroke-linecap: butt;
+                              stroke-dashoffset: 0;
+                              stroke-linejoin: miter;
+                              stroke-miterlimit: 4;
+                              fill-rule: nonzero;
+                              opacity: 1;
+                            "
+                            transform=" translate(-12, -11.5)"
+                            d="M 12 1 C 8.6761905 1 6 3.6761905 6 7 L 6 8 L 4 8 L 4 22 L 20 22 L 20 8 L 18 8 L 18 7 C 18 3.6761905 15.32381 1 12 1 z M 12 3 C 14.27619 3 16 4.7238095 16 7 L 16 8 L 8 8 L 8 7 C 8 4.7238095 9.7238095 3 12 3 z M 8 14 C 8.55 14 9 14.45 9 15 C 9 15.55 8.55 16 8 16 C 7.45 16 7 15.55 7 15 C 7 14.45 7.45 14 8 14 z M 12 14 C 12.55 14 13 14.45 13 15 C 13 15.55 12.55 16 12 16 C 11.45 16 11 15.55 11 15 C 11 14.45 11.45 14 12 14 z M 16 14 C 16.55 14 17 14.45 17 15 C 17 15.55 16.55 16 16 16 C 15.45 16 15 15.55 15 15 C 15 14.45 15.45 14 16 14 z"
+                            stroke-linecap="round"
+                          />
+                        </g>
+                      </svg>
+                      <a
+                        href="admin/password-update.html"
+                        class="block p-2 text-sm"
+                        role="menuitem"
+                        >Password Update</a
+                      >
+                    </li>
+
+                    <li
+                      class="flex items-center text-gray-700 hover-text hover-bg rounded-md px-1 cursor-pointer"
+                    >
+                      <svg
+                        id="Door_Sensor_Checked_20"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          stroke="none"
+                          fill="#000000"
+                          opacity="0"
+                        />
+
+                        <g transform="matrix(0.32 0 0 0.32 10 10)">
+                          <path
+                            class="primary-fill"
+                            style="
+                              stroke: none;
+                              stroke-width: 1;
+                              stroke-dasharray: none;
+                              stroke-linecap: butt;
+                              stroke-dashoffset: 0;
+                              stroke-linejoin: miter;
+                              stroke-miterlimit: 4;
+                              fill-rule: nonzero;
+                              opacity: 1;
+                            "
+                            transform=" translate(-29, -25)"
+                            d="M 24.933594 0.001953125 C 24.855891 0.007359375 24.777172 0.022375 24.701172 0.046875 L 8.7011719 5.046875 C 8.2831719 5.176875 8 5.563 8 6 L 8 45 C 8 45.459 8.3128125 45.858703 8.7578125 45.970703 L 24.757812 49.970703 C 24.837813 49.990703 24.919 50 25 50 C 25.221 50 25.438234 49.926109 25.615234 49.787109 C 25.858234 49.598109 26 49.308 26 49 L 26 1 C 26 0.682 25.84975 0.38235938 25.59375 0.19335938 C 25.401 0.052359375 25.166703 -0.014265625 24.933594 0.001953125 z M 28 4 L 28 6 L 36 6 L 36 28.697266 C 36.644 28.469266 37.311 28.295687 38 28.179688 L 38 5 C 38 4.447 37.552 4 37 4 L 28 4 z M 22 23 C 22.552 23 23 23.672 23 24.5 C 23 25.328 22.552 26 22 26 C 21.448 26 21 25.328 21 24.5 C 21 23.672 21.448 23 22 23 z M 40 30 C 34.5 30 30 34.5 30 40 C 30 45.5 34.5 50 40 50 C 45.5 50 50 45.5 50 40 C 50 34.5 45.5 30 40 30 z M 44.300781 35.400391 L 45.800781 36.699219 L 39.099609 44.400391 L 34.400391 40.800781 L 35.599609 39.199219 L 38.900391 41.699219 L 44.300781 35.400391 z"
+                            stroke-linecap="round"
+                          />
+                        </g>
+                      </svg>
+                      <a
+                        href="login.html"
+                        class="block p-2 text-sm"
+                        role="menuitem"
+                        >Sign out</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <aside
+        id="logo-sidebar"
+        class="fixed top-0 -translate-x-full lg:translate-x-0 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-white border-r border-gray-200"
+        aria-label="Sidebar"
+      >
+        <div class="h-full px-3 pb-4 overflow-y-auto bg-white">
+          <ul class="space-y-2 font-medium" id="sidebar-menu">
+            <li class="">
+              <a
+                href="dashboard.html"
+                class="flex items-center gap-2 p-2 text-gray-900 rounded-lg secondary-bg"
+              >
+                <svg
+                  id="Dashboard_Layout_24"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(1 0 0 1 12 12)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-12, -12)"
+                      d="M 4 2 C 2.9069372 2 2 2.9069372 2 4 L 2 11 C 2 12.093063 2.9069372 13 4 13 L 9 13 C 10.093063 13 11 12.093063 11 11 L 11 4 C 11 2.9069372 10.093063 2 9 2 L 4 2 z M 15 2 C 13.906937 2 13 2.9069372 13 4 L 13 7 C 13 8.0930628 13.906937 9 15 9 L 20 9 C 21.093063 9 22 8.0930628 22 7 L 22 4 C 22 2.9069372 21.093063 2 20 2 L 15 2 z M 4 4 L 9 4 L 9 11 L 4 11 L 4 4 z M 15 4 L 20 4 L 20 7 L 15 7 L 15 4 z M 15 11 C 13.906937 11 13 11.906937 13 13 L 13 20 C 13 21.093063 13.906937 22 15 22 L 20 22 C 21.093063 22 22 21.093063 22 20 L 22 13 C 22 11.906937 21.093063 11 20 11 L 15 11 z M 15 13 L 20 13 L 20 20 L 15 20 L 15 13 z M 4 15 C 2.9069372 15 2 15.906937 2 17 L 2 20 C 2 21.093063 2.9069372 22 4 22 L 9 22 C 10.093063 22 11 21.093063 11 20 L 11 17 C 11 15.906937 10.093063 15 9 15 L 4 15 z M 4 17 L 9 17 L 9 20 L 4 20 L 4 17 z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+                <span class="text-sm xl:text-base hover-text">Dashboard</span>
+              </a>
+            </li>
+
+            <!-- Hiring -->
+            <li>
+              <button
+                id="sidebar-dropdown-button"
+                class="flex items-center justify-between w-full p-2 text-sm text-gray-900 transition duration-75 rounded-lg group secondary-bg lg:text-base"
+              >
+                <div class="flex items-center justify-center gap-2">
+                  <svg
+                    id="User_Account_24"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="24"
+                      height="24"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(0.91 0 0 0.91 12 12)">
+                      <path
+                        class="primary-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12, -12)"
+                        d="M 8 5 C 6.343145750507619 5 5 6.343145750507619 5 8 C 5 9.65685424949238 6.343145750507619 11 8 11 C 9.65685424949238 11 11 9.65685424949238 11 8 C 11 6.343145750507619 9.65685424949238 5 8 5 z M 16 5 C 14.34314575050762 5 13 6.343145750507619 13 8 C 13 9.65685424949238 14.34314575050762 11 16 11 C 17.65685424949238 11 19 9.65685424949238 19 8 C 19 6.343145750507619 17.65685424949238 5 16 5 z M 8 13 C 5 13 1 14.464 1 16.5 L 1 18 C 1 18.552 1.448 19 2 19 L 14 19 C 14.552 19 15 18.552 15 18 L 15 16.5 C 15 14.464 11 13 8 13 z M 16 13 C 15.683 13 15.353484 13.019781 15.021484 13.050781 C 16.203484 13.915781 17 15.059 17 16.5 L 17 19 L 22 19 C 22.552 19 23 18.552 23 18 L 23 16.5 C 23 14.464 19 13 16 13 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                  <span class="text-sm xl:text-base hover-text">Hirings</span>
+                </div>
+                <svg
+                  id="Chevron_Down_16"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="16"
+                    height="16"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.27 0 0 0.27 8 8)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-25, -25.5)"
+                      d="M 9.984375 11 C 9.722656 11.003906 9.476563 11.109375 9.292969 11.292969 L 3.292969 17.292969 C 2.902344 17.683594 2.902344 18.316406 3.292969 18.707031 L 24.292969 39.707031 C 24.683594 40.097656 25.316406 40.097656 25.707031 39.707031 L 46.707031 18.707031 C 47.097656 18.316406 47.097656 17.683594 46.707031 17.292969 L 40.707031 11.292969 C 40.316406 10.902344 39.683594 10.902344 39.292969 11.292969 L 25 25.585938 L 10.707031 11.292969 C 10.515625 11.101563 10.253906 10.996094 9.984375 11 Z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+              <ul class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="hirings/all-hirings.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group secondary-bg text-sm xl:text-base hover-text"
+                    >All Hirings</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="hirings/all-hirings.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Pending Hirings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="hirings/all-hirings.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Processing Hirings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="hirings/completed-hirings.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Completed Hirings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="hirings/all-hirings.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Reported Hirings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="hirings/all-hirings.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Cancelled Hirings</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Orders -->
+            <li>
+              <button
+                id="sidebar-dropdown-button"
+                class="flex items-center justify-between w-full p-2 text-sm text-gray-900 transition duration-75 rounded-lg group secondary-bg lg:text-base"
+              >
+                <div class="flex items-center justify-center gap-2">
+                  <svg
+                    id="Purchase_Order_24"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="24"
+                      height="24"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(1.05 0 0 1.05 12 12)">
+                      <path
+                        class="primary-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill: rgb(0, 0, 0);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-11.5, -12)"
+                        d="M 5 3 C 4.447738123791541 3.0000552179053495 4.000055217905349 3.4477381237915417 4 4.000000000000001 L 4 13 C 3.994899710454515 13.36063591657757 4.184375296169332 13.696081364571606 4.495872849714331 13.877887721486518 C 4.80737040325933 14.059694078401428 5.192629596740671 14.059694078401428 5.50412715028567 13.877887721486516 C 5.815624703830668 13.696081364571606 6.005100289545485 13.360635916577568 6 13 L 6 5 L 19 5 L 19 18 C 19 18.56503 18.56503 19 18 19 C 17.448 19 17 18.551 17 18 L 17 17 C 17 16.448 16.552 16 16 16 L 3 16 C 2.448 16 2 16.448 2 17 L 2 18 C 2 19.657 3.343 21 5 21 L 18 21 C 19.64497 21 21 19.64497 21 18 L 21 4 C 20.99994478209465 3.4477381237915408 20.55226187620846 3.0000552179053495 20 3 L 5 3 z M 8.5 8 C 8.224 8 8 8.224 8 8.5 L 8 9.5 C 8 9.776 8.224 10 8.5 10 L 9.5 10 C 9.776 10 10 9.776 10 9.5 L 10 8.5 C 10 8.224 9.776 8 9.5 8 L 8.5 8 z M 13 8 C 12.448 8 12 8.448 12 9 C 12 9.552 12.448 10 13 10 L 16 10 C 16.552 10 17 9.552 17 9 C 17 8.448 16.552 8 16 8 L 13 8 z M 8.5 12 C 8.224 12 8 12.224 8 12.5 L 8 13.5 C 8 13.776 8.224 14 8.5 14 L 9.5 14 C 9.776 14 10 13.776 10 13.5 L 10 12.5 C 10 12.224 9.776 12 9.5 12 L 8.5 12 z M 13 12 C 12.448 12 12 12.448 12 13 C 12 13.552 12.448 14 13 14 L 16 14 C 16.552 14 17 13.552 17 13 C 17 12.448 16.552 12 16 12 L 13 12 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                  <span class="text-sm xl:text-base hover-text">Orders</span>
+                </div>
+                <svg
+                  id="Chevron_Down_16"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="16"
+                    height="16"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.27 0 0 0.27 8 8)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-25, -25.5)"
+                      d="M 9.984375 11 C 9.722656 11.003906 9.476563 11.109375 9.292969 11.292969 L 3.292969 17.292969 C 2.902344 17.683594 2.902344 18.316406 3.292969 18.707031 L 24.292969 39.707031 C 24.683594 40.097656 25.316406 40.097656 25.707031 39.707031 L 46.707031 18.707031 C 47.097656 18.316406 47.097656 17.683594 46.707031 17.292969 L 40.707031 11.292969 C 40.316406 10.902344 39.683594 10.902344 39.292969 11.292969 L 25 25.585938 L 10.707031 11.292969 C 10.515625 11.101563 10.253906 10.996094 9.984375 11 Z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+              <ul class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="orders/all-orders.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group secondary-bg text-sm xl:text-base hover-text"
+                    >All Orders</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="orders/all-orders.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Pending Orders</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="orders/all-orders.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Inprogress Orders</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="orders/all-orders.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Job Done Orders</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="orders/all-orders.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Completed Orders</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="orders/all-orders.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Reported Orders</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="orders/all-orders.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Cancelled Orders</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <button
+                class="flex items-center justify-between w-full p-2 text-sm text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 lg:text-base secondary-bg"
+              >
+                <div class="flex items-center justify-center gap-2">
+                  <svg
+                    id="Deposit_24"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="24"
+                      height="24"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(1 0 0 1 12 12)">
+                      <path
+                        class="primary-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill: rgb(0, 0, 0);
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12, -11.5)"
+                        d="M 12 2 C 9.239 2 7 4.239 7 7 C 7 9.761 9.239 12 12 12 C 14.761 12 17 9.761 17 7 C 17 4.239 14.761 2 12 2 z M 12.677734 4.3046875 L 12.953125 4.3046875 L 12.951172 9.6855469 L 11.482422 9.6855469 L 11.482422 5.9316406 L 10.179688 6.4355469 L 10.179688 5.3242188 L 12.677734 4.3046875 z M 2 8 L 2 19 C 2 20.103 2.897 21 4 21 L 20 21 C 21.103 21 22 20.103 22 19 L 22 8 L 20 8 L 20 19 L 4 19 L 4 8 L 2 8 z M 8 14 L 12 18 L 16 14 L 8 14 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                  <span class="text-sm xl:text-base hover-text">Deposit</span>
+                </div>
+                <svg
+                  id="Chevron_Down_16"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="16"
+                    height="16"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.27 0 0 0.27 8 8)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-25, -25.5)"
+                      d="M 9.984375 11 C 9.722656 11.003906 9.476563 11.109375 9.292969 11.292969 L 3.292969 17.292969 C 2.902344 17.683594 2.902344 18.316406 3.292969 18.707031 L 24.292969 39.707031 C 24.683594 40.097656 25.316406 40.097656 25.707031 39.707031 L 46.707031 18.707031 C 47.097656 18.316406 47.097656 17.683594 46.707031 17.292969 L 40.707031 11.292969 C 40.316406 10.902344 39.683594 10.902344 39.292969 11.292969 L 25 25.585938 L 10.707031 11.292969 C 10.515625 11.101563 10.253906 10.996094 9.984375 11 Z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+              <ul class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="deposit/add-deposit.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Deposit Now</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="deposit/all-deposits.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >All Deposit</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a
+                href="transaction/all-transactions.html"
+                class="flex items-center gap-2 p-2 text-gray-900 rounded-lg secondary-bg"
+              >
+                <svg
+                  id="Split_Transaction_24"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.45 0 0 0.45 12 12)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-25, -25)"
+                      d="M 12 3 C 11.996 3 11.992281 3.0019531 11.988281 3.0019531 L 4.0019531 3.0019531 L 4.0019531 11.976562 C 4.0019531 11.980562 4 11.982328 4 11.986328 L 4.0019531 11.986328 L 4.0019531 38.011719 L 4 38.011719 C 4 38.015719 4.0019531 38.017484 4.0019531 38.021484 L 4.0019531 46.996094 L 11.988281 46.996094 C 11.992281 46.998094 11.996 47 12 47 L 12 46.998047 L 22 46.998047 L 22 47 C 22.004 47 22.007719 46.998047 22.011719 46.998047 L 29.998047 46.998047 L 29.998047 38.023438 C 29.998047 38.019437 29.999047 38.015719 29.998047 38.011719 L 29.998047 11.988281 L 30 11.988281 C 30 11.984281 29.998047 11.982516 29.998047 11.978516 L 29.998047 3.0019531 L 22.011719 3.0019531 C 22.007719 3.0019531 22.004 3 22 3 L 22 3.0019531 L 12 3.0019531 L 12 3 z M 12 4.9980469 L 22 4.9980469 L 22 5 C 22.586 5 22.939 5.8025 23.375 6.9375 C 23.64 7.6265 23.890359 8.2780313 24.318359 8.7070312 C 24.690359 9.0790312 25.215438 9.3049687 25.773438 9.5429688 C 27.158437 10.135969 28 10.596281 28 11.988281 L 28.001953 11.988281 L 28.001953 38.011719 L 28 38.011719 C 28 39.403719 27.158437 39.864031 25.773438 40.457031 C 25.215438 40.695031 24.690359 40.920969 24.318359 41.292969 C 23.889359 41.721969 23.639 42.371547 23.375 43.060547 C 22.939 44.195547 22.586 45 22 45 L 22 45.001953 L 12 45.001953 L 12 45 C 11.414 45 11.061 44.1965 10.625 43.0625 C 10.36 42.3735 10.109641 41.722969 9.6816406 41.292969 C 9.3096406 40.920969 8.7845625 40.695031 8.2265625 40.457031 C 6.8415625 39.864031 6 39.403719 6 38.011719 L 5.9980469 38.011719 L 5.9980469 11.988281 L 6 11.988281 C 6 10.596281 6.8415625 10.135969 8.2265625 9.5429688 C 8.7835625 9.3039688 9.3096406 9.0790312 9.6816406 8.7070312 C 10.110641 8.2780312 10.361 7.6265 10.625 6.9375 C 11.061 5.8025 11.414 5 12 5 L 12 4.9980469 z M 17 9 C 15.897 9 15 9.897 15 11 C 15 12.103 15.897 13 17 13 C 18.103 13 19 12.103 19 11 C 19 9.897 18.103 9 17 9 z M 17 17 C 12.037 17 8 20.589 8 25 C 8 29.411 12.037 33 17 33 C 21.963 33 26 29.411 26 25 C 26 20.589 21.963 17 17 17 z M 32 22 L 32 28 L 44 28 L 44 32 L 32 32 L 32 47 L 42.535156 47 C 44.445156 47 46 45.445156 46 43.535156 L 46 25.464844 C 46 23.554844 44.445156 22 42.535156 22 L 32 22 z M 17 37 C 15.897 37 15 37.897 15 39 C 15 40.103 15.897 41 17 41 C 18.103 41 19 40.103 19 39 C 19 37.897 18.103 37 17 37 z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+                <span class="text-sm xl:text-base hover-text"
+                  >Transactions</span
+                >
+              </a>
+            </li>
+
+            <!-- Support Ticket -->
+            <li>
+              <button
+                class="flex items-center justify-between w-full p-2 text-sm text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 lg:text-base secondary-bg"
+              >
+                <div class="flex items-center justify-center gap-2">
+                  <svg
+                    id="Online_Support_24"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="24"
+                      height="24"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(1 0 0 1 12 12)">
+                      <path
+                        class="primary-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12.5, -12)"
+                        d="M 12 2 C 7.582 2 4 5.582 4 10 L 4 11 L 4 11.902344 C 3.426291 12.449411 3 13.153146 3 14 C 3 15.241968 3.8575508 16.162904 4.9433594 16.613281 C 6.2443933 19.723094 8.8502365 22 12 22 L 15 22 L 15 20 L 12 20 C 9.7415517 20 7.6909574 18.299502 6.6601562 15.613281 L 6.4472656 15.0625 L 5.8613281 14.980469 C 5.3688308 14.912712 5 14.515121 5 14 C 5 13.615008 5.1944088 13.312973 5.4980469 13.138672 L 6 12.851562 L 6 12 L 6 11 C 6 10.448 6.448 10 7 10 L 17 10 C 17.552 10 18 10.448 18 11 L 18 12 L 18 16 L 13.912109 16 C 13.700475434997228 15.40140789479718 13.134901945451302 15.000891015756025 12.5 15 C 11.67157287525381 15 11 15.67157287525381 11 16.5 C 11.00105197596295 17.285972337531422 11.60862299320339 17.93785450662403 12.392578 17.994141 C 12.428254280206279 17.998019894003967 12.46411348165846 17.999975722989728 12.5 18 L 19 18 L 20 18 C 21.1 18 22 17.1 22 16 L 22 14 C 22 12.9 21.1 12 20 12 L 20 10 C 20 5.582 16.418 2 12 2 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+
+                  <span class="text-sm xl:text-base hover-text"
+                    >Support Ticket</span
+                  >
+                </div>
+                <svg
+                  id="Chevron_Down_16"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="16"
+                    height="16"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.27 0 0 0.27 8 8)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-25, -25.5)"
+                      d="M 9.984375 11 C 9.722656 11.003906 9.476563 11.109375 9.292969 11.292969 L 3.292969 17.292969 C 2.902344 17.683594 2.902344 18.316406 3.292969 18.707031 L 24.292969 39.707031 C 24.683594 40.097656 25.316406 40.097656 25.707031 39.707031 L 46.707031 18.707031 C 47.097656 18.316406 47.097656 17.683594 46.707031 17.292969 L 40.707031 11.292969 C 40.316406 10.902344 39.683594 10.902344 39.292969 11.292969 L 25 25.585938 L 10.707031 11.292969 C 10.515625 11.101563 10.253906 10.996094 9.984375 11 Z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+              <ul class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="support/all-ticket.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >My Tickets</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="support/new-ticket.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >New Ticket</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a
+                href="wishlist.html"
+                class="flex items-center gap-2 p-2 text-gray-900 rounded-lg secondary-bg"
+              >
+                <svg
+                  id="Love_24"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(1 0 0 1 12 12)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill: rgb(0, 0, 0);
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-12, -11.88)"
+                      d="M 16.5 3 C 13.605 3 12 5.09 12 5.09 C 12 5.09 10.395 3 7.5 3 C 4.462 3 2 5.462 2 8.5 C 2 13.184999999999999 9.256 18.959 11.406 20.567 C 11.76 20.832 12.239 20.832 12.593 20.567 C 14.744 18.959 22 13.185 22 8.5 C 22 5.462 19.538 3 16.5 3 z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+                <span class="text-sm xl:text-base hover-text">Wishlists</span>
+              </a>
+            </li>
+          </ul>
+
+          <div
+            id="dropdown-cta"
+            class="p-4 mt-6 rounded-lg sec-bg"
+            role="alert"
+          >
+            <div class="flex items-center mb-3">
+              <span
+                class="bg-orange-100 text-orange-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded"
+                >Beta</span
+              >
+              <button
+                type="button"
+                class="ms-auto -mx-1.5 -my-1.5 primary-bg inline-flex justify-center items-center w-6 h-6 secondary-text border primary-border hover-text secondary-bg rounded-lg p-1"
+                data-dismiss-target="#dropdown-cta"
+                aria-label="Close"
+              >
+                <span class="sr-only">Close</span>
+                <svg
+                  class="w-2.5 h-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+              </button>
+            </div>
+            <p class="mb-3 text-sm primary-text">
+              Preview the new influencer dashboard navigation! You can now see /
+              add your comapany cta here
+            </p>
+            <a class="text-sm primary-text hover:underline font-medium" href="#"
+              >Add new cta</a
+            >
+          </div>
+        </div>
+      </aside>
+
+      <!-- dashboard -->
+      <div class="p-4 ml-0 lg:ml-64 bg-gray-50">
+        <div class="mt-14 text-2xl font-semibold">Dashboard</div>
+        <div class="mt-8">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 mb-4"
+          >
+            <a
+              class="flex items-center justify-between h-28 p-4 rounded-lg bg-white shadow-md cursor-pointe w-full"
+              href="manage-users/all-users.html"
+            >
+              <div class="flex items-center gap-4 w-full">
+                <div class="flex flex-col gap-1">
+                  <div class="text-gray-500 text-base">Balance</div>
+                  <div class="text-3xl font-semibold">$1,182.90</div>
+                </div>
+              </div>
+              <div class="p-3 rounded-full sec-bg">
+                <svg
+                  id="Money_24"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(1 0 0 1 12 12)">
+                    <path
+                      class="sec-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill: rgb(0, 0, 0);
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-12, -12)"
+                      d="M 3 3 C 2.448 3 2 3.448 2 4 L 2 14 C 2 14.552 2.448 15 3 15 L 21 15 C 21.552 15 22 14.552 22 14 L 22 4 C 22 3.448 21.552 3 21 3 L 3 3 z M 4.9121094 5 L 19.087891 5 C 19.239001275298207 5.4259146335802075 19.574085432688335 5.7609989379195055 20 5.9121094 L 20 12.087891 C 19.57408551877532 12.239001376466279 19.239001376466277 12.574085518775322 19.087891 13 L 4.9121094 13 C 4.7609989379195055 12.574085432688335 4.425914633580207 12.23900127529821 3.9999999999999987 12.087891 L 4 5.9121094 C 4.425914719667199 5.760999039087588 4.760999039087588 5.425914719667199 4.9121094 5 z M 12 6 C 10.34314575050762 6 9 7.343145750507619 9 9 C 9 10.65685424949238 10.34314575050762 12 12 12 C 13.65685424949238 12 15 10.65685424949238 15 9 C 15 7.343145750507619 13.65685424949238 6 12 6 z M 7 8 C 6.448 8 6 8.447 6 9 C 6 9.553 6.448 10 7 10 C 7.552 10 8 9.553 8 9 C 8 8.447 7.552 8 7 8 z M 17 8 C 16.448 8 16 8.447 16 9 C 16 9.553 16.448 10 17 10 C 17.552 10 18 9.553 18 9 C 18 8.447 17.552 8 17 8 z M 3.9902344 17 L 19.228516 20.96875 C 19.763516 21.10775 20.308266 20.785953 20.447266 20.251953 L 21.294922 17 L 19.228516 17 L 18.992188 17.900391 C 18.543187 17.939391 18.137766 18.178781 17.884766 18.550781 L 11.927734 17 L 3.9902344 17 z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </a>
+            <a
+              class="flex items-center justify-between h-28 p-4 rounded-lg bg-white shadow-md cursor-pointe w-full"
+              href="manage-users/all-users.html"
+            >
+              <div class="flex items-center gap-4 w-full">
+                <div class="flex flex-col gap-1">
+                  <div class="text-gray-500 text-base">Total Orders</div>
+                  <div class="text-3xl font-semibold">78</div>
+                </div>
+              </div>
+              <div class="p-3 rounded-full sec-bg">
+                <svg
+                  id="Delivery_24"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.87 0 0 0.87 12 12)">
+                    <path
+                      class="sec-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill: rgb(0, 0, 0);
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-11.5, -12)"
+                      d="M 5.5 3 C 2.462 3 0 5.462 0 8.5 C 0 9.6753966 0.37215298 10.762524 1 11.65625 L 1 18 L 3 18 C 3 19.657 4.343 21 6 21 C 7.657 21 9 19.657 9 18 L 15 18 C 15 19.657 16.343 21 18 21 C 19.657 21 21 19.657 21 18 L 23 18 L 23 13 L 20 7 L 16 7 L 16 5 L 9.7421875 5 C 8.7334647 3.7789071 7.2078831 3 5.5 3 z M 5.5 4.75 C 7.568 4.75 9.25 6.432 9.25 8.5 C 9.25 10.568 7.568 12.25 5.5 12.25 C 3.432 12.25 1.75 10.568 1.75 8.5 C 1.75 6.432 3.432 4.75 5.5 4.75 z M 5.5078125 6.0917969 L 4.6445312 8.6992188 L 6.4042969 10.486328 L 7.4726562 9.4355469 L 6.3554688 8.3007812 L 6.9316406 6.5625 L 5.5078125 6.0917969 z M 10.787109 7 L 14 7 L 14 16 L 8.2207031 16 C 7.6716274 15.390667 6.8849156 15 6 15 C 5.1150844 15 4.3283726 15.390667 3.7792969 16 L 3 16 L 3 13.394531 C 3.7507906 13.77885 4.5984821 14 5.5 14 C 8.538 14 11 11.538 11 8.5 C 11 7.9790867 10.92237 7.4775362 10.787109 7 z M 16 9 L 18.763672 9 L 21 13.472656 L 21 16 L 20.220703 16 C 19.671627 15.390667 18.884916 15 18 15 C 17.227916 15 16.53164 15.300231 16 15.779297 L 16 9 z M 6 16.75 C 6.689 16.75 7.25 17.311 7.25 18 C 7.25 18.689 6.689 19.25 6 19.25 C 5.311 19.25 4.75 18.689 4.75 18 C 4.75 17.311 5.311 16.75 6 16.75 z M 18 16.75 C 18.689 16.75 19.25 17.311 19.25 18 C 19.25 18.689 18.689 19.25 18 19.25 C 17.311 19.25 16.75 18.689 16.75 18 C 16.75 17.311 17.311 16.75 18 16.75 z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </a>
+            <a
+              class="flex items-center justify-between h-28 p-4 rounded-lg bg-white shadow-md cursor-pointe w-full"
+              href="manage-users/all-users.html"
+            >
+              <div class="flex items-center gap-4 w-full">
+                <div class="flex flex-col gap-1">
+                  <div class="text-gray-500 text-base">Completed Orders</div>
+                  <div class="text-3xl font-semibold">10</div>
+                </div>
+              </div>
+              <div class="p-3 rounded-full sec-bg">
+                <svg
+                  id="Purchase_Order_24"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(1.05 0 0 1.05 12 12)">
+                    <path
+                      class="sec-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill: rgb(0, 0, 0);
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-11.5, -12)"
+                      d="M 4 3 L 4 15 L 2 15 L 2 18 C 2 19.654 3.346 21 5 21 L 18 21 C 19.64497 21 21 19.64497 21 18 L 21 3 L 4 3 z M 6 5 L 19 5 L 19 18 C 19 18.56503 18.56503 19 18 19 C 17.448 19 17 18.551 17 18 L 17 15 L 6 15 L 6 5 z M 8 7 L 8 9 L 10 9 L 10 7 L 8 7 z M 12 7 L 12 9 L 17 9 L 17 7 L 12 7 z M 8 11 L 8 13 L 10 13 L 10 11 L 8 11 z M 12 11 L 12 13 L 17 13 L 17 11 L 12 11 z M 4 17 L 15 17 L 15 18 C 15 18.35 15.060875 18.687 15.171875 19 L 5 19 C 4.449 19 4 18.551 4 18 L 4 17 z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </a>
+            <a
+              class="flex items-center justify-between h-28 p-4 rounded-lg bg-white shadow-md cursor-pointe w-full"
+              href="manage-users/all-users.html"
+            >
+              <div class="flex items-center gap-4 w-full">
+                <div class="flex flex-col gap-1">
+                  <div class="text-gray-500 text-base">Total Hired</div>
+                  <div class="text-3xl font-semibold">15</div>
+                </div>
+              </div>
+              <div class="p-3 rounded-full sec-bg">
+                <svg
+                  id="Checked_User_Male_24"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.95 0 0 0.95 12 12)">
+                    <path
+                      class="sec-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill: rgb(0, 0, 0);
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-13.5, -13.5)"
+                      d="M 12 3 C 9.794 3 8 4.794 8 7 C 8 9.206 9.794 11 12 11 C 14.206 11 16 9.206 16 7 C 16 4.794 14.206 3 12 3 z M 18 12 C 16.186251 12 14.557338 12.816522 13.455078 14.097656 C 12.947202 14.039827 12.45461 14 12 14 C 8.859 14 3 15.546 3 18.5 L 3 21 L 12.814453 21 C 13.855633 22.789045 15.790313 24 18 24 C 21.301864 24 24 21.301864 24 18 C 24 14.698136 21.301864 12 18 12 z M 18 14 C 19.003867 14 19.905651 14.377038 20.605469 14.980469 L 18 17.585938 L 16.707031 16.292969 L 15.292969 17.707031 L 18 20.414062 L 21.755859 16.658203 C 21.904886 17.0789 22 17.52606 22 18 C 22 20.220984 20.220984 22 18 22 C 15.779016 22 14 20.220984 14 18 C 14 15.779016 15.779016 14 18 14 z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-8">
+            <div class="p-4 bg-white rounded-md shadow-sm">
+              <span class="text-lg font-semibold">Deposits</span>
+              <div class="grid grid-cols-1 md:grid-cols-2 mt-5">
+                <a
+                  class="flex items-center justify-between h-28 border-r-0 md:border-r border-b p-4 cursor-pointer hover:bg-gray-50"
+                  href="deposit/all-deposit.html"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#D4F4E2]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#28C76F"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>$23,233.00 USD</div>
+                      <div class="font-normal text-gray-500">
+                        Total Deposited
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a
+                  href="deposit/pending-deposit.html"
+                  class="flex items-center justify-between h-28 border-b p-4 cursor-pointer hover:bg-gray-50"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#F9E6D3]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#FF9F43"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>2</div>
+                      <div class="font-normal text-gray-500">
+                        Pending Deposited
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a
+                  href="deposit/rejected-deposit.html"
+                  class="flex items-center justify-between h-28 border-r-0 md:border-r border-b md:border-b-0 p-4 cursor-pointer hover:bg-gray-50"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#FBD3D3]">
+                      <svg
+                        id="Road_Sign_Banned_Alternate_24"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          stroke="none"
+                          fill="#EC2929"
+                          opacity="0"
+                        />
+
+                        <g transform="matrix(0.83 0 0 0.83 12 12)">
+                          <path
+                            style="
+                              stroke: none;
+                              stroke-width: 1;
+                              stroke-dasharray: none;
+                              stroke-linecap: butt;
+                              stroke-dashoffset: 0;
+                              stroke-linejoin: miter;
+                              stroke-miterlimit: 4;
+                              fill: #ec2929;
+                              fill-rule: nonzero;
+                              opacity: 1;
+                            "
+                            transform=" translate(-12, -12)"
+                            d="M 24 12 C 24 5.372583002030479 18.627416997969522 0 12 0 C 5.372583002030478 0 0 5.372583002030477 0 11.999999999999998 C 0 18.62741699796952 5.372583002030478 24 12 24 C 18.627416997969522 24 24 18.627416997969522 24 12 Z M 12 2 C 17.522847498307932 2 22 6.477152501692064 22 11.999999999999998 C 22.002820428323922 14.209465830954953 21.26719496520189 16.35650665633504 19.91 18.1 C 19.86715056719616 18.157642454272352 19.801579142655914 18.19407102346138 19.73 18.200000000000003 C 19.65980961362364 18.203300150560374 19.591272098781378 18.178049487197434 19.54 18.130000000000003 L 5.87 4.46 C 5.8219505128025695 4.4087279012186205 5.796699849439631 4.340190386376358 5.8 4.27 C 5.805928976538624 4.198420857344086 5.842357545727648 4.132849432803843 5.8999999999999995 4.09 C 7.643493343664962 2.7328050347981074 9.790534169045044 1.9971795716760798 11.999999999999998 2 Z M 12 22 C 6.477152501692066 22 2 17.522847498307932 2 12 C 1.9971795716760803 9.79053416904505 2.7328050347981083 7.643493343664963 4.089999999999997 5.900000000000002 C 4.132849432803843 5.842357545727649 4.198420857344086 5.805928976538625 4.27 5.800000000000001 C 4.340190386376358 5.796699849439632 4.4087279012186205 5.82195051280257 4.46 5.870000000000001 L 18.13 19.54 C 18.17804948719743 19.591272098781378 18.20330015056037 19.65980961362364 18.2 19.73 C 18.194071023461376 19.801579142655914 18.15764245427235 19.86715056719616 18.099999999999998 19.91 C 16.356506656335036 21.26719496520189 14.20946583095495 22.00282042832392 12 22 Z"
+                            stroke-linecap="round"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>0</div>
+                      <div class="font-normal text-gray-500">
+                        Rejected Deposited
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a
+                  href="deposit/all-deposit.html"
+                  class="flex items-center justify-between h-28 p-4 cursor-pointer hover:bg-gray-50"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#DAD6FF]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#5342FE"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>$23,233.00 USD</div>
+                      <div class="font-normal text-gray-500">
+                        Deposite Charge
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="p-4 bg-white rounded-md shadow-sm">
+              <span class="text-lg font-semibold">Transactions</span>
+              <div class="grid grid-cols-1 md:grid-cols-2 mt-5">
+                <a
+                  class="flex items-center justify-between h-28 border-r-0 md:border-r border-b p-4 cursor-pointer hover:bg-gray-50"
+                  href="withdraw/all-wtihdrawals.html"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#D4F4E2]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#28C76F"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>$23,233.00 USD</div>
+                      <div class="font-normal text-gray-500">
+                        Total Withdrawals
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a
+                  href="withdraw/pending-withdrawals.html"
+                  class="flex items-center justify-between h-28 border-b p-4 cursor-pointer hover:bg-gray-50"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#F9E6D3]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#FF9F43"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>2</div>
+                      <div class="font-normal text-gray-500">
+                        Pending Withdrawals
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a
+                  href="withdraw/rejected-withdrawals.html"
+                  class="flex items-center justify-between h-28 border-r-0 md:border-r border-b md:border-b-0 p-4 cursor-pointer hover:bg-gray-50"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#FBD3D3]">
+                      <svg
+                        id="Road_Sign_Banned_Alternate_24"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          stroke="none"
+                          fill="#EC2929"
+                          opacity="0"
+                        />
+
+                        <g transform="matrix(0.83 0 0 0.83 12 12)">
+                          <path
+                            style="
+                              stroke: none;
+                              stroke-width: 1;
+                              stroke-dasharray: none;
+                              stroke-linecap: butt;
+                              stroke-dashoffset: 0;
+                              stroke-linejoin: miter;
+                              stroke-miterlimit: 4;
+                              fill: #ec2929;
+                              fill-rule: nonzero;
+                              opacity: 1;
+                            "
+                            transform=" translate(-12, -12)"
+                            d="M 24 12 C 24 5.372583002030479 18.627416997969522 0 12 0 C 5.372583002030478 0 0 5.372583002030477 0 11.999999999999998 C 0 18.62741699796952 5.372583002030478 24 12 24 C 18.627416997969522 24 24 18.627416997969522 24 12 Z M 12 2 C 17.522847498307932 2 22 6.477152501692064 22 11.999999999999998 C 22.002820428323922 14.209465830954953 21.26719496520189 16.35650665633504 19.91 18.1 C 19.86715056719616 18.157642454272352 19.801579142655914 18.19407102346138 19.73 18.200000000000003 C 19.65980961362364 18.203300150560374 19.591272098781378 18.178049487197434 19.54 18.130000000000003 L 5.87 4.46 C 5.8219505128025695 4.4087279012186205 5.796699849439631 4.340190386376358 5.8 4.27 C 5.805928976538624 4.198420857344086 5.842357545727648 4.132849432803843 5.8999999999999995 4.09 C 7.643493343664962 2.7328050347981074 9.790534169045044 1.9971795716760798 11.999999999999998 2 Z M 12 22 C 6.477152501692066 22 2 17.522847498307932 2 12 C 1.9971795716760803 9.79053416904505 2.7328050347981083 7.643493343664963 4.089999999999997 5.900000000000002 C 4.132849432803843 5.842357545727649 4.198420857344086 5.805928976538625 4.27 5.800000000000001 C 4.340190386376358 5.796699849439632 4.4087279012186205 5.82195051280257 4.46 5.870000000000001 L 18.13 19.54 C 18.17804948719743 19.591272098781378 18.20330015056037 19.65980961362364 18.2 19.73 C 18.194071023461376 19.801579142655914 18.15764245427235 19.86715056719616 18.099999999999998 19.91 C 16.356506656335036 21.26719496520189 14.20946583095495 22.00282042832392 12 22 Z"
+                            stroke-linecap="round"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>0</div>
+                      <div class="font-normal text-gray-500">
+                        Rejected Withdrawals
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a
+                  href="withdraw/all-wtihdrawals.html"
+                  class="flex items-center justify-between h-28 p-4 cursor-pointer hover:bg-gray-50"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="p-4 rounded-md bg-[#DAD6FF]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#5342FE"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col gap-1 font-medium">
+                      <div>$23,233.00 USD</div>
+                      <div class="font-normal text-gray-500">
+                        Withdrawal Charge
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 mt-8">
+            <div class="p-4 bg-white rounded-md shadow-sm">
+              <div
+                class="flex items-center flex-col justify-center gap-2 xl:gap-0 xl:justify-between xl:flex-row"
+              >
+                <span class="text-lg font-semibold"
+                  >Monthly Deposit History</span
+                >
+
+                <div
+                  id="reportrange"
+                  class="flex items-center gap-2 justify-between bg-white cursor-pointer px-1 py-2 w-auto border"
+                >
+                  &nbsp; <span></span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                    />
+                  </svg>
+
+                  <i class="fa fa-caret-down"></i>
+                </div>
+              </div>
+
+              <div class="mt-14 h-80 w-full">
+                <canvas id="depositWithdrawChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const buttons = document.querySelectorAll("aside button");
+      buttons.forEach((button) => {
+        button.onclick = () => {
+          const dropdownMenu = button.nextElementSibling;
+          dropdownMenu.classList.toggle("hidden");
+        };
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="asset/js/loader.js"></script>
+    <script src="asset/js/doughnut-cahrt.js"></script>
+    <script src="asset/js/date-filter.js"></script>
+    <script src="asset/js/bar-chart.js"></script>
+  </body>
+</html>

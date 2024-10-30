@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="asset/css/color.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="asset/js/color.js"></script>
+
+    <!-- Add this to the head section -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Include Select2 CSS -->
+    <link href="asset/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Include Select2 JS -->
+    <script src="asset/js/select2.min.js"></script>
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="content">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 min-h-screen container mx-auto"
+      >
+        <div class="p-5 flex items-center justify-center flex-col">
+          <div class="text-3xl font-bold flex items-center">
+            <span class="text-white primary-bg px-2 -rotate-3">Vita</span
+            ><span class="primary-text rotate-1">Influencer </span>
+          </div>
+
+          <div
+            class="flex items-center justify-center w-full gap-4 mt-10 text-lg font-semibold"
+          >
+            <button
+              type="button"
+              class="hover-text primary-bg secondary-bg text-white px-6 py-2 rounded-md duration-300"
+            >
+              User
+            </button>
+            <a
+              href="influencer/login.html"
+              type="button"
+              class="border primary-text secondary-border text-white px-6 py-2 rounded-md secondary-bg duration-300"
+            >
+              Influencer
+            </a>
+          </div>
+          <div
+            class="text-4xl font-extrabold mt-10 w-full lg:w-[35rem] primary-text"
+          >
+            Sign Up
+          </div>
+          <div class="mt-8 w-full xl:w-[35rem]">
+            <form id="signupForm" class="pb-32 w-full">
+              <div class="w-full space-y-4">
+                <div
+                  class="flex flex-col lg:flex-row items-center justify-center gap-4 w-full"
+                >
+                  <div class="w-full">
+                    <label
+                      for="username"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Username</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="size-5 text-gray-500"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="text"
+                        id="input-group-1"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                        placeholder="Enter Your Username "
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full">
+                    <label
+                      for="email"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Email Address</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                      >
+                        <svg
+                          class="w-4 h-4 text-gray-500"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 20 16"
+                        >
+                          <path
+                            d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                          />
+                          <path
+                            d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="email"
+                        id="input-group-1"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                        placeholder="Enter Your Email Address"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full">
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Phone Number</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-5 text-gray-500"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="tel"
+                      id="input-group-1"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                      placeholder="Enter Your Phone Number"
+                      required
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col lg:flex-row items-center justify-center gap-4 w-full"
+                >
+                  <div class="w-full">
+                    <label
+                      for="city"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                    >
+                      Country
+                    </label>
+                    <div class="relative">
+                      <select
+                        id="country-select"
+                        class="text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required
+                      >
+                        <option value="" disabled selected>
+                          Select Your Country
+                        </option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                        <option value="in">India</option>
+                        <option value="de">Germany</option>
+                        <option value="fr">France</option>
+                        <option value="jp">Japan</option>
+                        <option value="cn">China</option>
+                        <option value="br">Brazil</option>
+                        <!-- Add more countries as needed -->
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="w-full">
+                    <label
+                      for="email"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >City</label
+                    >
+                    <div class="relative">
+                      <input
+                        type="text"
+                        id="input-group-1"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="Enter Your City"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full">
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Address</label
+                  >
+                  <div class="relative">
+                    <textarea
+                      name=""
+                      id=""
+                      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      placeholder="Enter Your Address"
+                      rows="2"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col lg:flex-row items-center justify-center gap-4"
+                >
+                  <div class="w-full">
+                    <label
+                      for="password"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Password</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                      >
+                        <img
+                          src="https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/lock-svgrepo-com (1).svg"
+                          class="w-5"
+                          alt=""
+                        />
+                      </div>
+                      <input
+                        type="password"
+                        id="password"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                        placeholder="Enter Your Password"
+                        required=""
+                      />
+                      <button
+                        type="button"
+                        id="toggle-password"
+                        class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700"
+                      >
+                        <img
+                          id="toggle-icon"
+                          src="https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/eye-svgrepo-com.svg"
+                          class="w-4"
+                          alt="Show Password"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="w-full">
+                    <label
+                      for="confirmPassword"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Confirm Password</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                      >
+                        <img
+                          src="https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/lock-svgrepo-com (1).svg"
+                          class="w-5"
+                          alt=""
+                        />
+                      </div>
+                      <input
+                        type="password"
+                        id="confirmPassword"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                        placeholder="Confirm Your Password"
+                        required=""
+                      />
+                      <button
+                        type="button"
+                        id="toggle-confirm-password"
+                        class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700"
+                      >
+                        <img
+                          id="toggle-confirm-icon"
+                          src="https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/eye-svgrepo-com.svg"
+                          class="w-4"
+                          alt="Show Password"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="text-xl mt-8 font-semibold border primary-bg secondary-bg hover-text text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full duration-500"
+                type="button"
+              >
+                Sign Up
+              </button>
+              <div class="flex items-center justify-center gap-4 w-full mt-6">
+                <hr class="w-full h-px my-8 bg-gray-200 border-0" />
+                <span class="mb-1 text-lg text-gray-600 font-bold">OR</span>
+                <hr class="w-full h-px my-8 bg-gray-200 border-0" />
+              </div>
+
+              <div class="flex items-center justify-center gap-2">
+                <div
+                  class="rounded-full p-3 sec-bg border hover-border duration-300 hover-text cursor-pointer"
+                >
+                  <svg
+                    id="Google_20"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="20"
+                      height="20"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(0.8 0 0 0.8 10 10)">
+                      <path
+                        class="main-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12.35, -12)"
+                        d="M 12.545 10.239 L 12.545 14.06 L 17.990000000000002 14.06 C 17.278000000000002 16.375 15.343000000000002 18.032 12.545000000000002 18.032 C 9.213000000000001 18.032 6.512000000000001 15.331 6.512000000000001 12 C 6.512000000000001 8.669 9.213000000000001 5.968 12.545000000000002 5.968 C 14.043000000000001 5.968 15.411000000000001 6.517 16.466 7.421 L 19.28 4.607 C 17.503 2.988 15.139 2 12.545 2 C 7.021 2 2.543 6.477 2.543 12 C 2.543 17.523 7.021 22 12.545000000000002 22 C 20.941000000000003 22 22.794000000000004 14.15 21.971000000000004 10.252 L 12.545 10.239 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  class="rounded-full p-3 sec-bg border hover-border duration-300 hover-text cursor-pointer"
+                >
+                  <svg
+                    id="Facebook_F_20"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="20"
+                      height="20"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(0.8 0 0 0.8 10 10)">
+                      <path
+                        class="main-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12.26, -12)"
+                        d="M 17.525 9 L 14 9 L 14 7 C 14 5.968 14.084 5.318 15.563 5.318 L 17.431 5.318 L 17.431 2.1379999999999995 C 16.522 2.044 15.608 1.998 14.693 2 C 11.98 2 10 3.657 10 6.699 L 10 9 L 7 9 L 7 13 L 10 12.999 L 10 22 L 14 22 L 14 12.997 L 17.066 12.996 L 17.525 9 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="text-xl text-gray-600 mt-6 w-full text-center w-full">
+                Already have an account?
+                <a
+                  href="login.html"
+                  class="primary-text hover:underline duration-300 cursor-pointer"
+                  >Login now?
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="w-full hidden lg:flex items-center justify-center">
+          <img
+            src="https://img.freepik.com/free-photo/gen-z-child-recommends-listening-devices-fans-recording-with-phone_482257-102489.jpg?t=st=1730260792~exp=1730264392~hmac=ea9757c05e97e28fbb7b01a84afe21afaa952da41f28464506ef4c9de1d1a922&w=740"
+            alt=""
+            class="object-contain h-screen"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="asset/js/loader.js"></script>
+    <script src="asset/js/toggle-password.js"></script>
+    <script src="asset/js/select2.js"></script>
+  </body>
+</html>

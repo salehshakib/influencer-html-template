@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="asset/css/color.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="asset/js/color.js"></script>
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="content">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 min-h-screen container mx-auto"
+      >
+        <div class="p-5 flex items-center justify-center flex-col">
+          <div class="text-3xl font-bold flex items-center">
+            <span class="text-white primary-bg px-2 -rotate-3">Vita</span
+            ><span class="primary-text rotate-1">Influencer </span>
+          </div>
+
+          <div
+            class="flex items-center justify-center w-full gap-4 mt-10 text-lg font-semibold"
+          >
+            <button
+              type="button"
+              class="hover-text primary-bg secondary-bg text-white px-6 py-2 rounded-md duration-300"
+            >
+              User
+            </button>
+            <a
+              href="influencer/login.html"
+              type="button"
+              class="border primary-text secondary-border text-white px-6 py-2 rounded-md secondary-bg duration-300"
+            >
+              Influencer
+            </a>
+          </div>
+          <div class="text-4xl font-extrabold mt-10 w-96 primary-text">
+            Sign In
+          </div>
+          <div class="mt-8 w-96">
+            <form id="loginForm" class="pb-32 w-full">
+              <div class="w-full space-y-4">
+                <div>
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Username or Email</label
+                  >
+                  <div class="relative mb-6">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <svg
+                        class="w-4 h-4 text-gray-500"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 16"
+                      >
+                        <path
+                          d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                        />
+                        <path
+                          d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="email"
+                      id="input-group-1"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                      placeholder="Enter Your Username or Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="password"
+                    class="block mb-2 text-sm font-medium text-gray-900"
+                    >Password</label
+                  >
+                  <div class="relative mb-6">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/lock-svgrepo-com (1).svg"
+                        class="w-5"
+                        alt=""
+                      />
+                    </div>
+                    <input
+                      type="password"
+                      id="password"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                      placeholder="Enter Your Password"
+                      required=""
+                    />
+                    <button
+                      type="button"
+                      id="toggle-password"
+                      class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700"
+                    >
+                      <img
+                        id="toggle-icon"
+                        src="https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/eye-svgrepo-com.svg"
+                        class="w-4"
+                        alt="Show Password"
+                      />
+                    </button>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <div class="flex items-start">
+                    <div class="flex items-center h-6">
+                      <input
+                        id="remember"
+                        aria-describedby="remember"
+                        type="checkbox"
+                        class="w-5 h-5 border border-gray-300 rounded-full bg-gray-50 focus:ring-3 focus:ring-primary-300"
+                        required
+                      />
+                    </div>
+                    <div class="ml-3">
+                      <label for="remember" class="text-gray-500"
+                        >Remember me</label
+                      >
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="font-medium text-gray-500 hover:underline hover:text-black duration-300"
+                    >Forgot password?</a
+                  >
+                </div>
+              </div>
+
+              <button
+                class="text-xl font-semibold mt-10 border primary-bg secondary-bg hover-text text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full duration-500"
+                type="button"
+              >
+                Sign In
+              </button>
+              <div class="flex items-center justify-center gap-4 w-full mt-6">
+                <hr class="w-full h-px my-8 bg-gray-200 border-0" />
+                <span class="mb-1 text-lg text-gray-600 font-bold">OR</span>
+                <hr class="w-full h-px my-8 bg-gray-200 border-0" />
+              </div>
+
+              <div class="flex items-center justify-center gap-2">
+                <div
+                  class="rounded-full p-3 sec-bg border hover-border duration-300 hover-text cursor-pointer"
+                >
+                  <svg
+                    id="Google_20"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="20"
+                      height="20"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(0.8 0 0 0.8 10 10)">
+                      <path
+                        class="main-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12.35, -12)"
+                        d="M 12.545 10.239 L 12.545 14.06 L 17.990000000000002 14.06 C 17.278000000000002 16.375 15.343000000000002 18.032 12.545000000000002 18.032 C 9.213000000000001 18.032 6.512000000000001 15.331 6.512000000000001 12 C 6.512000000000001 8.669 9.213000000000001 5.968 12.545000000000002 5.968 C 14.043000000000001 5.968 15.411000000000001 6.517 16.466 7.421 L 19.28 4.607 C 17.503 2.988 15.139 2 12.545 2 C 7.021 2 2.543 6.477 2.543 12 C 2.543 17.523 7.021 22 12.545000000000002 22 C 20.941000000000003 22 22.794000000000004 14.15 21.971000000000004 10.252 L 12.545 10.239 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  class="rounded-full p-3 sec-bg border hover-border duration-300 hover-text cursor-pointer"
+                >
+                  <svg
+                    id="Facebook_F_20"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="20"
+                      height="20"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(0.8 0 0 0.8 10 10)">
+                      <path
+                        class="main-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12.26, -12)"
+                        d="M 17.525 9 L 14 9 L 14 7 C 14 5.968 14.084 5.318 15.563 5.318 L 17.431 5.318 L 17.431 2.1379999999999995 C 16.522 2.044 15.608 1.998 14.693 2 C 11.98 2 10 3.657 10 6.699 L 10 9 L 7 9 L 7 13 L 10 12.999 L 10 22 L 14 22 L 14 12.997 L 17.066 12.996 L 17.525 9 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="text-xl text-gray-600 mt-6">
+                Don&apos;t have an account?
+                <a
+                  href="signup.html"
+                  class="primary-text hover:underline duration-300 cursor-pointer"
+                  >Create account?
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="w-full flex items-center justify-center">
+          <img
+            src="https://img.freepik.com/free-photo/gen-z-child-recommends-listening-devices-fans-recording-with-phone_482257-102489.jpg?t=st=1730260792~exp=1730264392~hmac=ea9757c05e97e28fbb7b01a84afe21afaa952da41f28464506ef4c9de1d1a922&w=740"
+            alt=""
+            class="object-contain h-screen"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="asset/js/loader.js"></script>
+    <script src="asset/js/toggle-password.js"></script>
+  </body>
+</html>
