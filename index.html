@@ -29,6 +29,13 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-zR2Th81p9D+pDvXz76/gI/oT9qMj/w5E1c0YMLr5E5vAkQvgSq6zBHCp0Qw71q9JmxhOFnT4oicm/oWKPTZ/8x/w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="asset/css/styles.css" />
     <script src="asset/js/color.js"></script>
 
@@ -39,18 +46,16 @@
       <div class="spinner"></div>
     </div>
 
-    <div id="content">
-      <div
-        class="relative min-h-screen bg-gradient-to-br from-pink-50 via-pink-100/30 to-white"
-      >
-        <!-- Background Pattern -->
-        <div
-          class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"
-        ></div>
+    <div id="content relative">
+      <!-- Navigation -->
 
-        <!-- Navigation -->
+      <div
+        id="navbar-wrapper"
+        class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-colors duration-300"
+      >
         <nav
-          class="container mx-auto flex items-center justify-between p-4 relative"
+          id="navbar"
+          class="container mx-auto flex items-center justify-between p-4"
         >
           <a href="index.html" class="text-xl font-extrabold primary-text">
             VitaInfluence
@@ -83,56 +88,71 @@
           <div class="lg:flex items-center space-x-4 hidden">
             <a
               href="login.html"
-              class="border primary-text secondary-border text-white px-6 py-1 rounded-full secondary-bg duration-300"
+              class="border primary-text secondary-border px-6 py-1 rounded-full primary-hover duration-300"
+              >Log In</a
             >
-              Log In
-            </a>
             <a
               href="signup.html"
-              class="hover-text primary-bg secondary-bg text-white px-6 py-1 rounded-full duration-300"
+              class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300"
+              >Sign Up</a
             >
-              Sign Up
-            </a>
             <a
               href="dashboard.html"
-              class="hover-text primary-bg secondary-bg text-white px-6 py-1 rounded-full duration-300"
+              class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300"
+              >Dashboard</a
             >
-              Dashboard
-            </a>
           </div>
         </nav>
+      </div>
+      <div
+        class="relative min-h-[60rem] bg-gradient-to-b from-[#fafafa] via-[#fef6fa] to-white pt-20"
+      >
+        <!-- Background Pattern -->
+        <div
+          class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"
+        ></div>
 
+        <script>
+          window.addEventListener("scroll", function () {
+            const navbarWrapper = document.getElementById("navbar-wrapper");
+            if (window.scrollY > 50) {
+              navbarWrapper.classList.add("bg-white", "shadow-md");
+            } else {
+              navbarWrapper.classList.remove("bg-white", "shadow-md");
+            }
+          });
+        </script>
         <!-- Hero Content -->
         <div class="container mx-auto px-4 pt-56 pb-32 relative">
           <div class="max-w-4xl mx-auto text-center relative z-10">
             <h1
-              class="text-4xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight px-10 lg:px-0 lg:pt-0 pt-20"
+              class="text-4xl lg:text-[5rem] md:text-6xl font-bold text-gray-900 mb-8 leading-tight px-5 md:px-10 lg:px-0 lg:pt-0 pt-20"
             >
-              Top Influencer Recruitment Platform Globally
+              Top <span class="primary-text"> Influencer </span> Recruitment
+              Platform <span class="primary-text"> Globally </span>
             </h1>
-            <span class="text-xl px-0 lg:px-20">
+            <span class="text-sm lg:text-base xl:text-xl px-0 lg:px-20">
               We're Influencer, the originators of influencer marketing. A
               global agency, founded by creators.
             </span>
             <div
-              class="flex flex-col lg:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-10"
+              class="flex flex-col lg:flex-row justify-center items-center mt-10 gap-2"
             >
               <button
-                class="hover-text primary-bg secondary-bg text-white px-6 py-2 rounded-full duration-300 w-40"
+                class="hover-text primary-bg text-md xl:text-lg secondary-bg text-white px-6 py-2 rounded-full duration-300 w-40"
               >
-                Hire
+                Book a demo
               </button>
               <button
-                class="border primary-text secondary-border text-white px-6 py-2 rounded-full secondary-bg duration-300 w-40"
+                class="border primary-text secondary-border text-md xl:text-lg text-white px-6 py-2 rounded-full secondary-bg duration-300 w-40"
               >
                 Discover more
               </button>
             </div>
           </div>
 
-          <!-- Floating Images -->
           <div
-            class="absolute top-10 left-10 transform hover:scale-105 transition-transform duration-200 float-animation-1"
+            class="absolute top-10 lg:left-0 xl:left-10 transform hover:scale-105 transition-transform duration-200 float-animation-1"
             style="animation-delay: 1s"
           >
             <img
@@ -151,7 +171,7 @@
             />
           </div>
           <div
-            class="hidden md:block absolute top-20 right-20 transform hover:scale-105 transition-transform duration-200 float-animation-3"
+            class="hidden md:block absolute top-20 right-0 xl:right-20 transform hover:scale-105 transition-transform duration-200 float-animation-3"
           >
             <img
               src="asset/image/Rectangle 359.png"
@@ -165,11 +185,11 @@
             <img
               src="asset/image/Rectangle 357.png"
               alt="Profile 3"
-              class="shadow-lg"
+              class="shadow-lg size-64 lg:size-auto"
             />
           </div>
           <div
-            class="absolute hidden lg:block right-1/4 transform hover:scale-105 transition-transform duration-200 float-animation-2"
+            class="absolute hidden lg:block right-[40%] top-[90%] transform hover:scale-105 transition-transform duration-200 float-animation-2"
           >
             <img
               src="asset/image/Rectangle 358.png"
@@ -188,8 +208,10 @@
             />
           </div>
 
-          <!-- Social Icons -->
-          <div class="absolute top-1/3 right-1/4 social-float">
+          <div
+            class="absolute top-1/3 right-1/4 social-float"
+            style="animation-delay: -1s"
+          >
             <div
               class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-105 transition-transform duration-200"
             >
@@ -207,6 +229,46 @@
                   d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
                 />
               </svg>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-0 left-1/4 social-float"
+            style="animation-delay: -2s"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-105 transition-transform duration-200"
+            >
+              <img src="asset/icon/discord-v2-svgrepo-com.svg" alt="" />
+            </div>
+          </div>
+          <div
+            class="absolute top-[75%] left-[10%] lg:left-[30%] social-float"
+            style="animation-delay: -2.5s"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-105 transition-transform duration-200"
+            >
+              <img src="asset/icon/whatsapp-svgrepo-com.svg" alt="" />
+            </div>
+          </div>
+          <div
+            class="absolute top-[98%] left-[40%] social-float"
+            style="animation-delay: -1.5s"
+          >
+            <div
+              class="w-10 h-10 hidden lg:block rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-105 transition-transform duration-200"
+            >
+              <img src="asset/icon/youtube-svgrepo-com.svg" alt="" />
+            </div>
+          </div>
+          <div
+            class="absolute bottom-[10%] right-[10%] lg:right-[40%] social-float"
+            style="animation-delay: -3s"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-105 transition-transform duration-200"
+            >
+              <img src="asset/icon/instagram-1-svgrepo-com.svg" alt="" />
             </div>
           </div>
           <div
@@ -256,10 +318,1008 @@
           </div>
         </div>
       </div>
+      <!-- <section
+        class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4"
+      >
+        <div class="text-sm primary-text">SERVICES</div>
+        <div
+          class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
+        >
+          Creators from various niches
+        </div>
+        <div class="-mt-4 xl:-mt-6 text-center">
+          If you are going to use a passage on the Internet tend to repeat
+        </div>
+        <div class="-mt-4 text-center">predefined chunks as necessary</div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-16 w-full mt-16"
+        >
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+          <div
+            class="h-36 border rounded-xl w-full cursor-pointer relative secondary-bg transition-all duration-300 hover-text secondary-border"
+          >
+            <div
+              class="absolute -top-1/4 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 secondary-border border"
+            >
+              <img
+                src="asset/icon/beauty-furniture-interior-makeup-mirror-svgrepo-com.svg"
+                alt=""
+                class="size-10"
+              />
+            </div>
+
+            <div
+              class="absolute w-full flex flex-col items-center justify-center gap-2 bottom-4"
+            >
+              <div class="font-semibold text-lg">Beauty</div>
+              <div class="text-gray-500">( 0 )</div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <section
+        class="container mx-auto lg:mt-0 mt-10 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4"
+      >
+        <div
+          class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
+        >
+          Seasoned Experts
+        </div>
+        <div class="-mt-4 text-center">
+          Connecting brands with a diverse range of influencers in the fashion
+        </div>
+        <div class="-mt-4 text-center">
+          technology, travel, and lifestyle sectors to amplify your message.
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 gap-y-16 w-full mt-16"
+        >
+          <div class="grid grid-cols-1 border rounded-md shadow-lg">
+            <div>
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
+                alt=""
+                class="w-full h-72 object-cover rounded-t-md"
+              />
+            </div>
+            <div class="p-4 flex flex-col gap-3">
+              <div class="flex items-center w-full gap-2">
+                <img
+                  src="asset/icon/entertainment-svgrepo-com.svg"
+                  alt=""
+                  class="size-6"
+                />
+                <span class="text-sm text-gray-500 font-semibold"
+                  >Entertainment</span
+                >
+              </div>
+              <div class="font-bold text-xl font-bold">Rakin Absar</div>
+              <div
+                class="text-sm text-gray-500 font-semibold flex items-center justify-between"
+              >
+                <span>3.4M Followers</span>
+
+                <div class="flex items-center gap-2">
+                  <img
+                    src="asset/icon/facebook-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/instagram-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/youtube-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 mt-2">
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Content Creator
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Influencer
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Entertainer
+                </div>
+              </div>
+              <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+              <div class="flex flex-wrap items-center gap-2">
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
+                  class="size-8"
+                  alt=""
+                />
+                <img src="asset/image/pngwing.com.png" class="w-10" alt="" />
+                <img
+                  src="https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/306562065_5635548939817386_2351400110696747841_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=C97sVkIp52IQ7kNvgHo3vFD&_nc_zt=23&_nc_ht=scontent.fdac27-1.fna&_nc_gid=AYw-tPLOqZvYXFWV7qYlhvg&oh=00_AYDxYWvFvMJ_VPYgrcDXNteKqcDBlJi4Mg6jbS92vf5D8w&oe=67290407"
+                  class="w-10"
+                  alt=""
+                />
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/448857127_794702216189994_222162788090685673_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=eFKu9IiG8WgQ7kNvgH71ZVW&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ammgm9Q6St-2WvBZy1NQU1x&oh=00_AYAwQxi_1HJYO0ruzyZCiBEJLaDvgVjSS6wqQgzibKtq3Q&oe=6728E1EC"
+                  class="w-10"
+                  alt=""
+                />
+                <div
+                  class="size-10 border border-dashed primary-border rounded-md flex items-center justify-center font-semibold primary-text text-xs"
+                >
+                  more...
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 border rounded-md shadow-lg">
+            <div>
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
+                alt=""
+                class="w-full h-72 object-cover rounded-t-md"
+              />
+            </div>
+            <div class="p-4 flex flex-col gap-3">
+              <div class="flex items-center w-full gap-2">
+                <img
+                  src="asset/icon/entertainment-svgrepo-com.svg"
+                  alt=""
+                  class="size-6"
+                />
+                <span class="text-sm text-gray-500 font-semibold"
+                  >Entertainment</span
+                >
+              </div>
+              <div class="font-bold text-xl font-bold">Rakin Absar</div>
+              <div
+                class="text-sm text-gray-500 font-semibold flex items-center justify-between"
+              >
+                <span>3.4M Followers</span>
+
+                <div class="flex items-center gap-2">
+                  <img
+                    src="asset/icon/facebook-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/instagram-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/youtube-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 mt-2">
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Content Creator
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Influencer
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Entertainer
+                </div>
+              </div>
+              <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+              <div class="flex flex-wrap items-center gap-2">
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
+                  class="size-8"
+                  alt=""
+                />
+                <img src="asset/image/pngwing.com.png" class="w-10" alt="" />
+                <img
+                  src="https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/306562065_5635548939817386_2351400110696747841_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=C97sVkIp52IQ7kNvgHo3vFD&_nc_zt=23&_nc_ht=scontent.fdac27-1.fna&_nc_gid=AYw-tPLOqZvYXFWV7qYlhvg&oh=00_AYDxYWvFvMJ_VPYgrcDXNteKqcDBlJi4Mg6jbS92vf5D8w&oe=67290407"
+                  class="w-10"
+                  alt=""
+                />
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/448857127_794702216189994_222162788090685673_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=eFKu9IiG8WgQ7kNvgH71ZVW&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ammgm9Q6St-2WvBZy1NQU1x&oh=00_AYAwQxi_1HJYO0ruzyZCiBEJLaDvgVjSS6wqQgzibKtq3Q&oe=6728E1EC"
+                  class="w-10"
+                  alt=""
+                />
+                <div
+                  class="size-10 border border-dashed primary-border rounded-md flex items-center justify-center font-semibold primary-text text-xs"
+                >
+                  more...
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 border rounded-md shadow-lg">
+            <div>
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
+                alt=""
+                class="w-full h-72 object-cover rounded-t-md"
+              />
+            </div>
+            <div class="p-4 flex flex-col gap-3">
+              <div class="flex items-center w-full gap-2">
+                <img
+                  src="asset/icon/entertainment-svgrepo-com.svg"
+                  alt=""
+                  class="size-6"
+                />
+                <span class="text-sm text-gray-500 font-semibold"
+                  >Entertainment</span
+                >
+              </div>
+              <div class="font-bold text-xl font-bold">Rakin Absar</div>
+              <div
+                class="text-sm text-gray-500 font-semibold flex items-center justify-between"
+              >
+                <span>3.4M Followers</span>
+
+                <div class="flex items-center gap-2">
+                  <img
+                    src="asset/icon/facebook-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/instagram-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/youtube-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 mt-2">
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Content Creator
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Influencer
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Entertainer
+                </div>
+              </div>
+              <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+              <div class="flex flex-wrap items-center gap-2">
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
+                  class="size-8"
+                  alt=""
+                />
+                <img src="asset/image/pngwing.com.png" class="w-10" alt="" />
+                <img
+                  src="https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/306562065_5635548939817386_2351400110696747841_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=C97sVkIp52IQ7kNvgHo3vFD&_nc_zt=23&_nc_ht=scontent.fdac27-1.fna&_nc_gid=AYw-tPLOqZvYXFWV7qYlhvg&oh=00_AYDxYWvFvMJ_VPYgrcDXNteKqcDBlJi4Mg6jbS92vf5D8w&oe=67290407"
+                  class="w-10"
+                  alt=""
+                />
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/448857127_794702216189994_222162788090685673_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=eFKu9IiG8WgQ7kNvgH71ZVW&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ammgm9Q6St-2WvBZy1NQU1x&oh=00_AYAwQxi_1HJYO0ruzyZCiBEJLaDvgVjSS6wqQgzibKtq3Q&oe=6728E1EC"
+                  class="w-10"
+                  alt=""
+                />
+                <div
+                  class="size-10 border border-dashed primary-border rounded-md flex items-center justify-center font-semibold primary-text text-xs"
+                >
+                  more...
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 border rounded-md shadow-lg">
+            <div>
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
+                alt=""
+                class="w-full h-72 object-cover rounded-t-md"
+              />
+            </div>
+            <div class="p-4 flex flex-col gap-3">
+              <div class="flex items-center w-full gap-2">
+                <img
+                  src="asset/icon/entertainment-svgrepo-com.svg"
+                  alt=""
+                  class="size-6"
+                />
+                <span class="text-sm text-gray-500 font-semibold"
+                  >Entertainment</span
+                >
+              </div>
+              <div class="font-bold text-xl font-bold">Rakin Absar</div>
+              <div
+                class="text-sm text-gray-500 font-semibold flex items-center justify-between"
+              >
+                <span>3.4M Followers</span>
+
+                <div class="flex items-center gap-2">
+                  <img
+                    src="asset/icon/facebook-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/instagram-1-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                  <img
+                    src="asset/icon/youtube-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 mt-2">
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Content Creator
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Influencer
+                </div>
+                <div
+                  class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                >
+                  Entertainer
+                </div>
+              </div>
+              <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+              <div class="flex flex-wrap items-center gap-2">
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
+                  class="size-8"
+                  alt=""
+                />
+                <img src="asset/image/pngwing.com.png" class="w-10" alt="" />
+                <img
+                  src="https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/306562065_5635548939817386_2351400110696747841_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=C97sVkIp52IQ7kNvgHo3vFD&_nc_zt=23&_nc_ht=scontent.fdac27-1.fna&_nc_gid=AYw-tPLOqZvYXFWV7qYlhvg&oh=00_AYDxYWvFvMJ_VPYgrcDXNteKqcDBlJi4Mg6jbS92vf5D8w&oe=67290407"
+                  class="w-10"
+                  alt=""
+                />
+                <img
+                  src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/448857127_794702216189994_222162788090685673_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=eFKu9IiG8WgQ7kNvgH71ZVW&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ammgm9Q6St-2WvBZy1NQU1x&oh=00_AYAwQxi_1HJYO0ruzyZCiBEJLaDvgVjSS6wqQgzibKtq3Q&oe=6728E1EC"
+                  class="w-10"
+                  alt=""
+                />
+                <div
+                  class="size-10 border border-dashed primary-border rounded-md flex items-center justify-center font-semibold primary-text text-xs"
+                >
+                  more...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex w-full items-center justify-center my-8">
+          <div
+            class="px-6 py-3 text-lg border primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
+          >
+            View more
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="bg-gradient-to-r"
+        style="
+          background-image: linear-gradient(
+            to right,
+            white,
+            rgba(254, 202, 202, 0.1),
+            white
+          );
+        "
+      >
+        <div class="container mx-auto p-5 md:p-10 lg:p-24">
+          <div
+            class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
+          >
+            How Does <span class="primary-text">VitaInfluence</span>
+            Work?
+          </div>
+
+          <div
+            class="grid grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-0 w-full mt-8"
+          >
+            <div
+              class="flex flex-col items-center justify-center w-full relative"
+            >
+              <div class="bg-[#F6EAED] p-5 rounded-xl relative">
+                <img
+                  src="asset/icon/user-add-svgrepo-com.svg"
+                  alt=""
+                  class="size-10"
+                />
+                <div
+                  class="absolute inset-0 border rounded-xl border-dashed border-[#F06D6D] rotate-12"
+                ></div>
+              </div>
+              <div
+                class="text-center w-full text-[1rem] xl:text-[1.4rem] font-semibold mt-12"
+              >
+                Create Account
+              </div>
+              <div
+                class="text-center text-sm xl:text-base mt-2 px-5 md:px-10 h-20"
+              >
+                Click on the
+                <span
+                  class="font-semibold cursor-pointer hover:underline primary-text"
+                  >Join Now</span
+                >
+                button and sign up as a brand or influencer
+              </div>
+
+              <div class="w-full absolute left-1/2 top-[3rem]">
+                <div
+                  class="border border-dashed w-24 xl:w-48 mx-auto h-px border-gray-400"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center w-full relative"
+            >
+              <div class="bg-[#F5E6F4] p-5 rounded-xl relative">
+                <img
+                  src="asset/icon/user-profile-svgrepo-com.svg"
+                  alt=""
+                  class="size-10"
+                />
+                <div
+                  class="absolute inset-0 border rounded-xl border-dashed border-[#E748B6] -rotate-12"
+                ></div>
+              </div>
+              <div
+                class="text-center w-full text-[1rem] xl:text-[1.4rem] font-semibold mt-12"
+              >
+                Complete Profile
+              </div>
+              <div
+                class="text-center text-sm xl:text-base mt-2 px-5 md:px-10 h-20"
+              >
+                Complete your profile by adding all the required details.
+              </div>
+              <div class="w-full absolute left-1/2 top-[3rem] hidden lg:block">
+                <div
+                  class="border border-dashed w-24 xl:w-48 mx-auto h-px border-gray-400"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center w-full relative"
+            >
+              <div class="bg-[#EFE5F7] p-5 rounded-xl relative">
+                <img
+                  src="asset/icon/user-search-alt-svgrepo-com.svg"
+                  alt=""
+                  class="size-10"
+                />
+
+                <div
+                  class="absolute inset-0 border rounded-xl border-dashed border-[#AB3DCE] rotate-12"
+                ></div>
+              </div>
+              <div
+                class="text-center w-full text-[1rem] xl:text-[1.4rem] font-semibold mt-12"
+              >
+                Find Each Other
+              </div>
+              <div
+                class="text-center text-sm xl:text-base mt-2 px-5 md:px-10 h-20"
+              >
+                Find influencers if you're a brand. Participate in campaigns if
+                you're an influencer.
+              </div>
+              <div class="w-full absolute left-1/2 top-[3rem]">
+                <div
+                  class="border border-dashed w-24 xl:w-48 mx-auto h-px border-gray-400"
+                ></div>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center w-full">
+              <div class="bg-[#F4EEE9] p-5 rounded-xl relative">
+                <img
+                  src="asset/icon/message-square-list-svgrepo-com.svg"
+                  alt=""
+                  class="size-10"
+                />
+                <div
+                  class="absolute inset-0 border rounded-xl border-dashed border-[#DB994A] -rotate-12"
+                ></div>
+              </div>
+              <div
+                class="text-center w-full text-[1rem] xl:text-[1.4rem] font-semibold mt-12"
+              >
+                Collaborate
+              </div>
+              <div
+                class="text-center text-sm xl:text-base mt-2 px-5 md:px-10 h-20"
+              >
+                Start messaging and collaborating with each other
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full flex items-center justify-center gap-6 mt-16 mb-6">
+            <a
+              href="login.html"
+              class="border primary-text secondary-border px-6 py-2 rounded-lg primary-hover duration-300 text-lg"
+              >Log In</a
+            >
+            <a
+              href="signup.html"
+              class="primary-bg-hover text-white px-6 py-2 rounded-lg duration-300 text-lg shadow-md"
+              >Join Now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="container mx-auto my-10 py-10 px-2">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="p-5 py-10 flex flex-col items-center justify-center gap-6 shadow-xl rounded-lg"
+          >
+            <div class="primary-text text-[3rem] font-bold">4.5k+</div>
+            <div class="text-xl font-semibold">Brands</div>
+          </div>
+
+          <div
+            class="p-5 py-10 flex flex-col items-center justify-center gap-6 shadow-xl rounded-lg"
+          >
+            <div class="primary-text text-[3rem] font-bold">32.4k+</div>
+            <div class="text-xl font-semibold">Influencers</div>
+          </div>
+
+          <div
+            class="p-5 py-10 flex flex-col items-center justify-center gap-6 shadow-xl rounded-lg"
+          >
+            <div class="primary-text text-[3rem] font-bold">2.5k+</div>
+            <div class="text-xl font-semibold">Campaigns</div>
+          </div>
+
+          <div
+            class="p-5 py-10 flex flex-col items-center justify-center gap-6 shadow-xl rounded-lg"
+          >
+            <div class="primary-text text-[3rem] font-bold">12.6k+</div>
+            <div class="text-xl font-semibold">Collaborations</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-20 my-10">
+          <div class="relative">
+            <img
+              src="asset/image/medium-shot-plus-sized-woman-influencer_23-2151414147 1.png"
+              class="w-full h-full"
+              alt=""
+            />
+            <div
+              class="absolute top-48 md:top-8 xl:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-white text-[2rem] lg:text-[4rem] font-bold w-full text-start px-5 lg:px-10"
+            >
+              <div>
+                <span class="text-sm bg-white text-black px-3 py-1 rounded-full"
+                  >Influence</span
+                >
+              </div>
+              Our <span class="text-black">Unique</span> Value
+            </div>
+          </div>
+          <div class="flex items-center justify-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div
+                class="rounded-lg shadow-xl w-full flex flex-col gap-4 p-4 lg:p-10"
+              >
+                <img
+                  src="asset/icon/quality-premium-certificate-svgrepo-com.svg"
+                  class="size-12"
+                  alt=""
+                />
+                <div class="font-semibold">High Quality</div>
+                <p class="text-xs">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                  cupiditate veniam dicta iusto, maiores dolores officiis ut ab
+                  beatae ad animi quo itaque amet fuga velit obcaecati pariatur
+                  incidunt earum?
+                </p>
+                <div class="flex items-center gap-2 text-sm">
+                  <span class="cursor-pointer hover-text"> Read more </span>
+                  <img
+                    src="asset/icon/right-md-svgrepo-com.svg"
+                    alt=""
+                    class="size-3"
+                  />
+                </div>
+              </div>
+              <div
+                class="rounded-lg shadow-xl w-full flex flex-col gap-4 p-4 lg:p-10"
+              >
+                <img
+                  src="asset/icon/quality-premium-certificate-svgrepo-com.svg"
+                  class="size-12"
+                  alt=""
+                />
+                <div class="font-semibold">High Quality</div>
+                <p class="text-xs">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                  cupiditate veniam dicta iusto, maiores dolores officiis ut ab
+                  beatae ad animi quo itaque amet fuga velit obcaecati pariatur
+                  incidunt earum?
+                </p>
+                <div class="flex items-center gap-2 text-sm">
+                  <span class="cursor-pointer hover-text"> Read more </span>
+                  <img
+                    src="asset/icon/right-md-svgrepo-com.svg"
+                    alt=""
+                    class="size-3"
+                  />
+                </div>
+              </div>
+              <div
+                class="rounded-lg shadow-xl w-full flex flex-col gap-4 p-4 lg:p-10"
+              >
+                <img
+                  src="asset/icon/quality-premium-certificate-svgrepo-com.svg"
+                  class="size-12"
+                  alt=""
+                />
+                <div class="font-semibold">High Quality</div>
+                <p class="text-xs">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                  cupiditate veniam dicta iusto, maiores dolores officiis ut ab
+                  beatae ad animi quo itaque amet fuga velit obcaecati pariatur
+                  incidunt earum?
+                </p>
+                <div class="flex items-center gap-2 text-sm">
+                  <span class="cursor-pointer hover-text"> Read more </span>
+                  <img
+                    src="asset/icon/right-md-svgrepo-com.svg"
+                    alt=""
+                    class="size-3"
+                  />
+                </div>
+              </div>
+              <div
+                class="rounded-lg shadow-xl w-full flex flex-col gap-4 p-4 lg:p-10"
+              >
+                <img
+                  src="asset/icon/quality-premium-certificate-svgrepo-com.svg"
+                  class="size-12"
+                  alt=""
+                />
+                <div class="font-semibold">High Quality</div>
+                <p class="text-xs">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                  cupiditate veniam dicta iusto, maiores dolores officiis ut ab
+                  beatae ad animi quo itaque amet fuga velit obcaecati pariatur
+                  incidunt earum?
+                </p>
+                <div class="flex items-center gap-2 text-sm">
+                  <span class="cursor-pointer hover-text"> Read more </span>
+                  <img
+                    src="asset/icon/right-md-svgrepo-com.svg"
+                    alt=""
+                    class="size-3"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+
+      <section class="bg-black py-20">
+        <div class="container mx-auto px-6">
+          <div
+            class="grid grid-cols-2 lg:grid-cols-6 text-white gap-4 gapy-y-6 xl:gap-y-0"
+          >
+            <div
+              class="text-2xl font-bold flex flex-col w-full gap-4 col-span-2 mb-10 lg:mb-0"
+            >
+              <div class="w-full">VitaInfluence</div>
+              <div class="text-[#7F7F7F] text-sm xl:text-base">
+                A data-driven influencer marketing platform.
+              </div>
+              <div class="flex items-center gap-2 mt-4">
+                <div class="bg-[#7F7F7F] p-1 rounded-full">
+                  <img
+                    src="asset/icon/facebook-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+                <div class="bg-[#7F7F7F] p-1 rounded-full">
+                  <img
+                    src="asset/icon/instagram-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+                <div class="bg-[#7F7F7F] p-1 rounded-full">
+                  <img
+                    src="asset/icon/youtube-svgrepo-com (1).svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Company</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                About Us
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Contact Us
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Sign Up
+              </div>
+            </div>
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Resources</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Career
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Blog
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Support
+              </div>
+            </div>
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Influencer</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Join as an influencer
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                How it works
+              </div>
+            </div>
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Brand</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Our Brands
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                How it works
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Find Influencers
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Hire Now
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full flex items-center justify-between flex-col lg:flex-row gap-y-4 pt-10"
+          >
+            <div class="text-white">© Vitasoft 2024. All rights reserved</div>
+            <div class="flex items-center gap-4 text-[#7F7F7F]">
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Terms and Conditions
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                FAQs
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Privacy Policy
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <button
         id="mobile-menu-button"
-        class="md:hidden fixed top-4 right-4 z-20 p-2"
+        class="md:hidden fixed top-4 right-4 z-50 p-2"
         aria-label="Toggle Menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -282,7 +1342,7 @@
       <!-- Add this drawer menu -->
       <div
         id="mobile-menu"
-        class="fixed inset-y-0 right-0 w-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-40"
+        class="fixed inset-y-0 right-0 w-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50"
       >
         <div class="p-6 space-y-6">
           <div class="flex items-center justify-between mb-6">
@@ -338,19 +1398,19 @@
             <div class="flex flex-col space-y-3">
               <a
                 href="login.html"
-                class="border primary-text secondary-border text-white px-6 py-1 rounded-full secondary-bg duration-300 text-center"
+                class="border primary-text secondary-border px-6 py-1 rounded-full primary-hover duration-300 text-center"
               >
                 Log In
               </a>
               <a
                 href="signup.html"
-                class="hover-text primary-bg secondary-bg text-white px-6 py-1 rounded-full duration-300 text-center"
+                class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300 text-center"
               >
                 Sign Up
               </a>
               <a
                 href="dashboard.html"
-                class="hover-text primary-bg secondary-bg text-white px-6 py-1 rounded-full duration-300 text-center"
+                class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300 text-center"
               >
                 Dashboard
               </a>

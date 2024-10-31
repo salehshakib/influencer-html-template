@@ -1,11 +1,29 @@
 // document.documentElement.style.setProperty("--var-primary-color", "#22223b");
 document.documentElement.style.setProperty("--var-primary-color", "#dc2626");
+document.documentElement.style.setProperty(
+  "--var-primary-hover-color",
+  "#C81E1E"
+);
 
 document.documentElement.style.setProperty("--var-secondary-color", "#fecaca");
 
 const css = `
 .primary-text {
   color: var(--var-primary-color) !important;
+}
+
+
+.primary-hover:hover{
+background-color: var(--var-primary-hover-color) !important; 
+    color: white !important;  
+}
+
+.primary-bg-hover{
+  background-color: var(--var-primary-color) !important;
+  &:hover {
+    background-color: var(--var-primary-hover-color) !important; 
+    color: white !important;   
+  }
 }
   
 .primary-bg {
