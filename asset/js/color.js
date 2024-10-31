@@ -47,6 +47,7 @@ li:hover .hover-bg {
 
 .hover-border:hover{
   border-color: var(--var-primary-color) !important;
+  
 }
 
 .secondary-text {
