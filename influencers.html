@@ -434,22 +434,374 @@
             </div>
           </div>
           <div class="w-full lg:w-[70%]">
-            <div class="w-full flex justify-between items-center my-5">
-              <span class="font-bold"> Showing 10 of 1000 Influencers </span>
+            <div
+              class="w-full flex flex-col lg:flex-row justify-between items-center my-5 gap-y-6"
+            >
+              <span class="font-bold order-3 lg:order-none">
+                Showing 10 of 1000 Services
+              </span>
 
-              <div class="flex flex-col gap-2 -mt-6">
+              <div
+                class="flex flex-col items-center lg:items-start gap-2 -mt-6 order-1 lg:order-none"
+              >
                 <span class="text-xs">Sort by</span>
                 <select
                   name=""
                   id=""
-                  class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-56 pe-10 p-2.5"
+                  class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-56 pe-10 p-2.5"
                 >
                   <option value="all">Top Trending</option>
                   <option value="plus">Price high to low</option>
                   <option value="minus">Price low to high</option>
                 </select>
               </div>
+
+              <button
+                type="button"
+                id="filter-menu-button"
+                class="block lg:hidden order-2 flex items-center justify-center gap-2 border rounded-lg p-2 px-4"
+                aria-label="Toggle Menu"
+                aria-expanded="false"
+                aria-controls="filter-menu"
+              >
+                <img
+                  src="asset/icon/filter-svgrepo-com.svg"
+                  alt=""
+                  class="size-6"
+                />
+                Filter
+              </button>
             </div>
+
+            <div
+              id="filter-menu"
+              class="fixed inset-y-0 right-0 w-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-[60]"
+            >
+              <div class="p-6 space-y-6">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-xl font-bold primary-text"
+                    >Filter Menu</span
+                  >
+                  <button
+                    id="close-filter-menu-button"
+                    class="p-1 rounded-full secondary-bg transition-all duration-300 primary-text"
+                    aria-label="Close Menu"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="h-[75vh] overflow-auto">
+                  <div class="flex items-center gap-2 pb-10 w-full">
+                    <div class="pt-8 w-full">
+                      <div class="relative">
+                        <div
+                          class="absolute inset-y-0 end-0 flex items-center ps-3.5 pointer-events-none w-full"
+                        >
+                          <img
+                            src="https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/search-5-svgrepo-com.svg"
+                            alt=""
+                            class="w-6"
+                          />
+                        </div>
+                        <input
+                          type="text"
+                          id="input-group-1"
+                          class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                          placeholder="Search"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4
+                      class="mb-4 text-xl font-semibold text-gray-900 dark:text-white"
+                    >
+                      Category
+                    </h4>
+                    <ul
+                      class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full"
+                    >
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="fashion-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="fashion-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Fashion</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="sports-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="sports-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Sports & Fitness</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="parenting-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="parenting-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Parenting</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="life-styles-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="life-styles-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Life Styles</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="vloggers-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="vloggers-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >vloggers</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="travel-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="travel-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Travel</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="food-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="food-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Food</label
+                          >
+                        </div>
+                      </li>
+
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="photography-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="photography-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Photography</label
+                          >
+                        </div>
+                      </li>
+
+                      <li class="w-full rounded-t-lg dark:border-gray-600">
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="games-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="games-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Games</label
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4
+                      class="mb-4 text-xl font-semibold text-gray-900 dark:text-white pt-10"
+                    >
+                      Ratings
+                    </h4>
+                    <ul
+                      class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full"
+                    >
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="fashion-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="fashion-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >5 Stars</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="sports-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="sports-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >4.5 Stars</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="parenting-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="parenting-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >4 Stars</label
+                          >
+                        </div>
+                      </li>
+                      <li
+                        class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+                      >
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="life-styles-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="life-styles-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >3 Stars</label
+                          >
+                        </div>
+                      </li>
+
+                      <li class="w-full rounded-t-lg dark:border-gray-600">
+                        <div class="flex items-center ps-3">
+                          <input
+                            id="games-checkbox"
+                            type="checkbox"
+                            value=""
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                          />
+                          <label
+                            for="games-checkbox"
+                            class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >1 and 2 Star</label
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="pt-6 border-t border-gray-200">
+                  <div class="flex flex-col space-y-3">
+                    <button
+                      class="border primary-text secondary-border px-6 py-1 rounded-full primary-hover duration-300 text-center"
+                    >
+                      Filter
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add this overlay -->
+            <div
+              id="filter-menu-overlay"
+              class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out lg:hidden"
+            ></div>
+
             <div
               class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 gap-y-16 w-full mt-16"
             >
@@ -548,7 +900,7 @@
 
                   <div class="flex items-center gap-4 mt-5">
                     <a
-                      href="login.html"
+                      href="influencer/details/1.html"
                       class="border primary-text secondary-border py-1 rounded-md primary-hover duration-300 text-center w-full"
                       >View Profile</a
                     >
@@ -655,7 +1007,7 @@
 
                   <div class="flex items-center gap-4 mt-5">
                     <a
-                      href="login.html"
+                      href="influencer/details/1.html"
                       class="border primary-text secondary-border py-1 rounded-md primary-hover duration-300 text-center w-full"
                       >View Profile</a
                     >
@@ -762,7 +1114,7 @@
 
                   <div class="flex items-center gap-4 mt-5">
                     <a
-                      href="login.html"
+                      href="influencer/details/1.html"
                       class="border primary-text secondary-border py-1 rounded-md primary-hover duration-300 text-center w-full"
                       >View Profile</a
                     >
@@ -869,7 +1221,7 @@
 
                   <div class="flex items-center gap-4 mt-5">
                     <a
-                      href="login.html"
+                      href="influencer/details/1.html"
                       class="border primary-text secondary-border py-1 rounded-md primary-hover duration-300 text-center w-full"
                       >View Profile</a
                     >
@@ -976,7 +1328,7 @@
 
                   <div class="flex items-center gap-4 mt-5">
                     <a
-                      href="login.html"
+                      href="influencer/details/1.html"
                       class="border primary-text secondary-border py-1 rounded-md primary-hover duration-300 text-center w-full"
                       >View Profile</a
                     >
@@ -1274,7 +1626,7 @@
                   </svg>
                   4.5 <span class="text-gray-400">(30)</span>
                 </div>
-                <!-- <div class="font-bold text-lg -mt-2 primary-text">$200</div> -->
+                <div class="font-bold text-lg -mt-2 primary-text">$200</div>
               </div>
 
               <div class="text-sm text-gray-500">
@@ -1285,10 +1637,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1365,7 +1721,7 @@
                   </svg>
                   4.5 <span class="text-gray-400">(30)</span>
                 </div>
-                <!-- <div class="font-bold text-lg -mt-2 primary-text">$200</div> -->
+                <div class="font-bold text-lg -mt-2 primary-text">$200</div>
               </div>
 
               <div class="text-sm text-gray-500">
@@ -1376,10 +1732,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1456,7 +1816,7 @@
                   </svg>
                   4.5 <span class="text-gray-400">(30)</span>
                 </div>
-                <!-- <div class="font-bold text-lg -mt-2 primary-text">$200</div> -->
+                <div class="font-bold text-lg -mt-2 primary-text">$200</div>
               </div>
 
               <div class="text-sm text-gray-500">
@@ -1467,10 +1827,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1547,7 +1911,7 @@
                   </svg>
                   4.5 <span class="text-gray-400">(30)</span>
                 </div>
-                <!-- <div class="font-bold text-lg -mt-2 primary-text">$200</div> -->
+                <div class="font-bold text-lg -mt-2 primary-text">$200</div>
               </div>
 
               <div class="text-sm text-gray-500">
@@ -1558,10 +1922,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1911,5 +2279,6 @@
     <script src="asset/js/date-filter.js"></script>
     <script src="asset/js/bar-chart.js"></script>
     <script src="asset/js/swiper.js"></script>
+    <script src="asset/js/filter-drawer.js"></script>
   </body>
 </html>
