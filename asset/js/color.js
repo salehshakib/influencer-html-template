@@ -69,6 +69,8 @@ li:hover .hover-bg {
 .sec-fill {
    fill: var(--var-primary-color) !important;
 }
+
+
 .primary-stroke {
   stroke: var(--var-primary-color) !important;
 }
