@@ -108,6 +108,22 @@ li button:hover .hover-text {
     }
 }
 
+.home-bg {
+  position: relative;
+  min-height: 20rem; /* Equivalent to min-h-[20rem] */
+  background: linear-gradient(to bottom, #fff5f5, #ffeaea, white); /* bg-gradient-to-b from-[#fff5f5] via-[#ffeaea] to-white */
+  padding-top: 5rem; /* Equivalent to pt-20 */
+}
+
+.diff-bg {
+  background-image: linear-gradient(
+    to right,
+    white,
+    rgba(254, 202, 202, 0.5),
+    white
+  ); /* Equivalent to bg-gradient-to-r */
+}
+
 `;
 
 // Create and append the <style> element to the <head>

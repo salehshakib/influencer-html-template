@@ -132,17 +132,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%; /* Ensure the loader takes full width */
+  height: 100%; /* Take full height on the screen */
 }
 
 .spinner {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
 }
 
 .ip {
+  max-width: 80%; /* Adjust the width to fit smaller screens */
+  max-height: 50vh; /* Prevents overflow on very small screens */
   width: 16em;
   height: 8em;
+}
+
+/* For very small screens, reduce the spinner size */
+@media (max-width: 480px) {
+  .spinner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ip {
+    width: 12em;
+    height: 6em;
+  }
 }
 .ip__track {
   stroke: hsl(var(--hue), 90%, 90%);

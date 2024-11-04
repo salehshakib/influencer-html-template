@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="asset/css/select2.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-zR2Th81p9D+pDvXz76/gI/oT9qMj/w5E1c0YMLr5E5vAkQvgSq6zBHCp0Qw71q9JmxhOFnT4oicm/oWKPTZ/8x/w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="asset/css/styles.css" />
+    <script src="asset/js/color.js"></script>
+
+    <title>Home</title>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="spinner">
+        <svg
+          class="ip"
+          viewBox="0 0 256 128"
+          width="256px"
+          height="128px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5ebd3e" />
+              <stop offset="33%" stop-color="#ffb900" />
+              <stop offset="67%" stop-color="#f78200" />
+              <stop offset="100%" stop-color="#e23838" />
+            </linearGradient>
+            <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+              <stop offset="0%" stop-color="#e23838" />
+              <stop offset="33%" stop-color="#973999" />
+              <stop offset="67%" stop-color="#009cdf" />
+              <stop offset="100%" stop-color="#5ebd3e" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke-linecap="round" stroke-width="16">
+            <g class="ip__track" stroke="#ddd">
+              <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+              <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+            </g>
+            <g stroke-dasharray="180 656">
+              <path
+                class="ip__worm1"
+                stroke="url(#grad1)"
+                stroke-dashoffset="0"
+                d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"
+              />
+              <path
+                class="ip__worm2"
+                stroke="url(#grad2)"
+                stroke-dashoffset="358"
+                d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div id="content" class="relative">
+      <!-- Navigation -->
+
+      <button
+        id="scrollToTopBtn"
+        class="hidden fixed bottom-5 right-5 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-opacity duration-300 ease-in-out z-[999]"
+      >
+        ↑
+      </button>
+
+      <div
+        id="navbar-wrapper"
+        class="fixed bg-transparent top-0 left-0 right-0 z-50 bg-transparent transition-colors duration-300"
+      >
+        <nav
+          id="navbar"
+          class="container mx-auto flex items-center justify-between p-4"
+        >
+          <a href="index.html" class="text-xl font-extrabold primary-text">
+            VitaInfluence
+          </a>
+
+          <div class="hidden lg:flex items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >Home</a
+            >
+            <a
+              href="influencers.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >Influencer</a
+            >
+            <a
+              href="services.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >Service</a
+            >
+            <a
+              href="about-us.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >About Us</a
+            >
+            <a
+              href="blogs.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >Blog</a
+            >
+            <a
+              href="contact-us.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >Contact</a
+            >
+          </div>
+
+          <div class="lg:flex items-center space-x-4 hidden">
+            <a
+              href="login.html"
+              class="border primary-text secondary-border px-6 py-1 rounded-full primary-hover duration-300"
+              >Log In</a
+            >
+            <a
+              href="signup.html"
+              class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300"
+              >Sign Up</a
+            >
+            <a
+              href="dashboard.html"
+              class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300"
+              >Dashboard</a
+            >
+          </div>
+        </nav>
+      </div>
+
+      <div class="home-bg">
+        <!-- Dot Pattern Background -->
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle,#f8a5a5_1px,transparent_1px)] [background-size:10px_10px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_75%,transparent_100%)] pointer-events-none opacity-75"
+        ></div>
+
+        <!-- Heading Section -->
+        <div
+          class="text-center w-full absolute top-36 text-[4rem] uppercase font-extrabold z-20 text-[#d32f2f] drop-shadow-md transition-transform duration-300 transform hover:scale-105"
+        >
+          FAQs
+          <div class="text-lg text-[#e57373] mt-3 font-semibold tracking-wide">
+            This Privacy Policy describes how Influencer collects, uses, shares,
+            and protects your personal information. By using our website and
+            services, you agree to the terms of this Privacy Policy.
+          </div>
+        </div>
+      </div>
+
+      <section
+        class="container mx-auto lg:mt-0 mt-24 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4 block"
+      >
+        <div class="p-10 h-[40rem] lg:h-[50rem] xl:h-[40rem] w-full">
+          <div class="text-start text-[2rem] font-semibold">General</div>
+          <div
+            id="accordion-flush"
+            class="pb-20 pt-10 px-2"
+            data-accordion="collapse"
+            data-active-classes="bg-white dark:bg-white text-gray-900 dark:text-gray-900"
+            data-inactive-classes="text-gray-500 dark:text-gray-500"
+          >
+            <h2 id="accordion-flush-heading-1">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-1"
+                aria-expanded="true"
+                aria-controls="accordion-flush-body-1"
+              >
+                <span class="font-bold text-base lg:text-lg xl:text-2xl"
+                  >What is Influencer Marketing?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-1"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-1"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Influencer marketing is a digital marketing strategy that
+                  involves collaborating with individuals, known as influencers,
+                  who have a dedicated and engaged following on social media
+                  platforms and other online channels. These influencers can
+                  impact their followers' purchasing decisions due to their
+                  credibility and authority in specific niches or industries.
+                  Brands partner with influencers to promote their products or
+                  services authentically, build social proof, and leverage their
+                  influence to reach a larger and more targeted audience.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-2">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-2"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-2"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  How Does Influencer Marketing Work?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-2"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-2"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Influencer marketing operates by identifying suitable
+                  influencers for your brand, establishing a partnership, and
+                  creating and distributing content through the influencer's
+                  channels. This content can take various forms, including
+                  sponsored posts, reviews, tutorials, or endorsements. The
+                  influencer shares this content with their audience,
+                  effectively introducing your brand or product to a potentially
+                  receptive and engaged audience. The key to successful
+                  influencer marketing lies in crafting authentic and relevant
+                  content that resonates with both the influencer's followers
+                  and your brand's message.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-3">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-3"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-3"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  Why is Influencer Marketing Important?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-3"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-3"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Influencer marketing is important because it enables brands to
+                  connect with their target audience in a more genuine and
+                  engaging manner. Unlike traditional advertising, influencer
+                  marketing feels less intrusive and more trustworthy, as
+                  recommendations come from a trusted source. It helps build
+                  brand awareness, improve credibility, drive traffic, boost
+                  sales, and foster lasting customer relationships.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-4">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-4"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-4"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  How Can I Find the Right Influencers for My Brand?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-4"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-4"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Start by identifying your target audience and the platforms
+                  they use. Then, use the Collabstr influencer marketing tool to
+                  search for influencers within your niche. Use the gender,
+                  price, location, age and other filters to narrow down relevant
+                  influencers as much as possible. Once you find an influencer
+                  that you’re interested in working with, you can simply
+                  purchase one of their pre-defined content packages, or send
+                  them a custom offer directly through their profile.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-5">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-5"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-5"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  How Much Does Influencer Marketing Cost?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-5"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-5"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  The cost of influencer marketing varies widely depending on
+                  factors such as the influencer's reach, niche, and engagement
+                  rates. Micro-influencers with smaller followings may charge
+                  less than macro-influencers or celebrities. Some influencers
+                  may work on a per-post basis, while others prefer ongoing
+                  partnerships. If you have a budget in mind, consider using the
+                  price filters found in Collabstr’s search tool to narrow down
+                  the influencers that fit within your budget, this will save
+                  you time during the influencer discovery process.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-6">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-6"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-6"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  What Are the Common Mistakes to Avoid in Influencer
+                  Marketing?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-6"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-6"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Common mistakes in influencer marketing include failing to
+                  define clear campaign objectives and expectations and
+                  neglecting to communicate changes in objectives, timelines,
+                  and other aspects that affect the outcome of the campaign.
+                  Another major downfall to many influencer marketing campaigns
+                  is the expectation that every campaign is going to hit your
+                  KPIs when in reality, brands should focus on collecting
+                  feedback and data so that they can constantly iterate on
+                  campaign objectives and angles until they hit their desired
+                  KPIs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-10 h-[40rem] mt-20 lg:h-[50rem] xl:h-[40rem] w-full">
+          <div class="text-start text-[2rem] font-semibold">More Faqs</div>
+          <div
+            id="accordion-flush"
+            class="pb-20 pt-10 px-2"
+            data-accordion="collapse"
+            data-active-classes="bg-white dark:bg-white text-gray-900 dark:text-gray-900"
+            data-inactive-classes="text-gray-500 dark:text-gray-500"
+          >
+            <h2 id="accordion-flush-heading-9">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-9"
+                aria-expanded="true"
+                aria-controls="accordion-flush-body-9"
+              >
+                <span class="font-bold text-base lg:text-lg xl:text-2xl"
+                  >What is Influencer Marketing?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-9"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-9"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Influencer marketing is a digital marketing strategy that
+                  involves collaborating with individuals, known as influencers,
+                  who have a dedicated and engaged following on social media
+                  platforms and other online channels. These influencers can
+                  impact their followers' purchasing decisions due to their
+                  credibility and authority in specific niches or industries.
+                  Brands partner with influencers to promote their products or
+                  services authentically, build social proof, and leverage their
+                  influence to reach a larger and more targeted audience.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-10">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-10"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-10"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  How Does Influencer Marketing Work?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-10"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-10"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Influencer marketing operates by identifying suitable
+                  influencers for your brand, establishing a partnership, and
+                  creating and distributing content through the influencer's
+                  channels. This content can take various forms, including
+                  sponsored posts, reviews, tutorials, or endorsements. The
+                  influencer shares this content with their audience,
+                  effectively introducing your brand or product to a potentially
+                  receptive and engaged audience. The key to successful
+                  influencer marketing lies in crafting authentic and relevant
+                  content that resonates with both the influencer's followers
+                  and your brand's message.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-11">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-11"
+                data-accordion-target="#accordion-flush-body-11"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-11"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  Why is Influencer Marketing Important?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-11"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-11"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Influencer marketing is important because it enables brands to
+                  connect with their target audience in a more genuine and
+                  engaging manner. Unlike traditional advertising, influencer
+                  marketing feels less intrusive and more trustworthy, as
+                  recommendations come from a trusted source. It helps build
+                  brand awareness, improve credibility, drive traffic, boost
+                  sales, and foster lasting customer relationships.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-12">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-12"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-12"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  How Can I Find the Right Influencers for My Brand?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-12"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-12"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  Start by identifying your target audience and the platforms
+                  they use. Then, use the Collabstr influencer marketing tool to
+                  search for influencers within your niche. Use the gender,
+                  price, location, age and other filters to narrow down relevant
+                  influencers as much as possible. Once you find an influencer
+                  that you’re interested in working with, you can simply
+                  purchase one of their pre-defined content packages, or send
+                  them a custom offer directly through their profile.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-flush-heading-13">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                data-accordion-target="#accordion-flush-body-13"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-13"
+              >
+                <span
+                  class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                >
+                  How Much Does Influencer Marketing Cost?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-13"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-13"
+            >
+              <div class="py-5 border-b border-gray-200">
+                <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                  The cost of influencer marketing varies widely depending on
+                  factors such as the influencer's reach, niche, and engagement
+                  rates. Micro-influencers with smaller followings may charge
+                  less than macro-influencers or celebrities. Some influencers
+                  may work on a per-post basis, while others prefer ongoing
+                  partnerships. If you have a budget in mind, consider using the
+                  price filters found in Collabstr’s search tool to narrow down
+                  the influencers that fit within your budget, this will save
+                  you time during the influencer discovery process.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+
+      <section
+        class="bg-black py-20"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+      >
+        <div class="container mx-auto px-6">
+          <div
+            class="grid grid-cols-2 lg:grid-cols-8 text-white gap-4 gapy-y-6 xl:gap-y-0"
+          >
+            <div
+              class="text-2xl font-bold flex flex-col w-full gap-4 col-span-2 mb-10 lg:mb-0"
+            >
+              <div class="w-full">VitaInfluence</div>
+              <div class="text-[#7F7F7F] text-sm xl:text-base">
+                A data-driven influencer marketing platform.
+              </div>
+              <div class="flex items-center gap-2 mt-4">
+                <div class="bg-[#7F7F7F] p-1 rounded-full">
+                  <img
+                    src="asset/icon/facebook-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+                <div class="bg-[#7F7F7F] p-1 rounded-full">
+                  <img
+                    src="asset/icon/instagram-svgrepo-com.svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+                <div class="bg-[#7F7F7F] p-1 rounded-full">
+                  <img
+                    src="asset/icon/youtube-svgrepo-com (1).svg"
+                    alt=""
+                    class="size-5"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Company</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                About Us
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Contact
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Sign Up
+              </div>
+            </div>
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Resources</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Career
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Blog
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Support
+              </div>
+            </div>
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Influencer</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Join as an influencer
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                How it works
+              </div>
+            </div>
+            <div class="flex flex-col font-semibold gap-4 text-[#7F7F7F]">
+              <div class="text-white font-bold">Brand</div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Our Brands
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                How it works
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Find Influencers
+              </div>
+              <div
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Hire Now
+              </div>
+            </div>
+
+            <div
+              class="text-2xl font-bold flex flex-col items-center justify-center lg:items-start lg:justify-start w-full gap-4 col-span-2 mb-10 lg:mb-0"
+            >
+              <div class="w-full text-center lg:text-left mt-10 lg:mt-0">
+                Join our Newsletter
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="">
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none"
+                    >
+                      <img
+                        src="asset/icon/mail-svgrepo-com.svg"
+                        alt=""
+                        class="w-6"
+                      />
+                    </div>
+                    <input
+                      type="text"
+                      id="input-group-10"
+                      class="border border-gray-300 text-sm rounded-lg bg-transparent w-64 pe-10 p-2.5 focus:ring-gray-500 focus:border-gray-500 text-white"
+                      placeholder="Enter Your Email"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full flex items-center justify-between flex-col lg:flex-row gap-y-4 pt-10"
+          >
+            <div class="text-white">© Vitasoft 2024. All rights reserved</div>
+            <div class="flex items-center gap-4 text-[#7F7F7F]">
+              <a
+                href="terms-conditions.html"
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Terms and Conditions
+              </a>
+              <a
+                href="faq.html"
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                FAQs
+              </a>
+              <a
+                href="privacy-policy.html"
+                class="hover:text-white duration-300 hover:underline cursor-pointer"
+              >
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden fixed top-[8px] right-4 z-50 p-2"
+        aria-label="Toggle Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Add this drawer menu -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50"
+      >
+        <div class="p-6 space-y-6">
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-xl font-bold primary-text">Menu</span>
+            <button
+              id="close-menu-button"
+              class="p-1 rounded-full secondary-bg transition-all duration-300 primary-text"
+              aria-label="Close Menu"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <nav class="space-y-4">
+            <a
+              href="index.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >Home</a
+            >
+            <a
+              href="influencers.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >Influencer</a
+            >
+            <a
+              href="services.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >Service</a
+            >
+            <a
+              href="about-us.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >About Us</a
+            >
+            <a
+              href="blogs.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >Blog</a
+            >
+            <a
+              href="contact-us.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >Contact</a
+            >
+          </nav>
+          <div class="pt-6 border-t border-gray-200">
+            <div class="flex flex-col space-y-3">
+              <a
+                href="login.html"
+                class="border primary-text secondary-border px-6 py-1 rounded-full primary-hover duration-300 text-center"
+              >
+                Log In
+              </a>
+              <a
+                href="signup.html"
+                class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300 text-center"
+              >
+                Sign Up
+              </a>
+              <a
+                href="dashboard.html"
+                class="primary-bg-hover text-white px-6 py-1 rounded-full duration-300 text-center"
+              >
+                Dashboard
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add this overlay -->
+      <div
+        id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out lg:hidden"
+      ></div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="asset/js/loader.js"></script>
+    <script src="asset/js/aos.js"></script>
+    <script src="asset/js/scroll-to-top.js"></script>
+    <script src="asset/js/homepage-sidebar.js"></script>
+    <script src="asset/js/homepage-navbar.js"></script>
+  </body>
+</html>
