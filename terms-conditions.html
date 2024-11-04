@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../../asset/css/select2.min.css" />
+    <link rel="stylesheet" href="asset/css/select2.min.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
       rel="stylesheet"
@@ -46,8 +46,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" href="../../asset/css/styles.css" />
-    <script src="../../asset/js/color.js"></script>
+    <link rel="stylesheet" href="asset/css/styles.css" />
+    <script src="asset/js/color.js"></script>
 
     <title>Home</title>
   </head>
@@ -110,16 +110,13 @@
           id="navbar"
           class="container mx-auto flex items-center justify-between p-4"
         >
-          <a
-            href="../../index.html"
-            class="text-xl font-extrabold primary-text"
-          >
+          <a href="index.html" class="text-xl font-extrabold primary-text">
             VitaInfluence
           </a>
 
           <div class="hidden lg:flex items-center space-x-8">
             <a
-              href="../../index.html"
+              href="index.html"
               class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >Home</a
             >
@@ -138,7 +135,9 @@
               class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >About Us</a
             >
-            <a href="blogs.html" class="primary-text border-b-2 primary-border"
+            <a
+              href="blogs.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >Blog</a
             >
             <a
@@ -167,6 +166,34 @@
           </div>
         </nav>
       </div>
+      <!-- <div
+        class="relative min-h-[20rem] bg-gradient-to-b from-[#fafafa] via-[#fef6fa] to-white pt-20"
+      >
+        <div
+          class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"
+        ></div>
+
+        <script>
+          window.addEventListener("scroll", function () {
+            const navbarWrapper = document.getElementById("navbar-wrapper");
+            if (window.scrollY > 50) {
+              navbarWrapper.classList.add("bg-white", "shadow-md");
+            } else {
+              navbarWrapper.classList.remove("bg-white", "shadow-md");
+            }
+          });
+        </script>
+
+        <div
+          class="text-center w-full absolute top-40 text-[4rem] uppercase font-extrabold z-20 text-black"
+        >
+          Services
+          <div class="text-sm text-gray-500">
+            Explore our range of services designed to bring your vision to life
+            with expertise and innovation.
+          </div>
+        </div>
+      </div> -->
       <div
         class="relative min-h-[20rem] bg-gradient-to-b from-[#fff5f5] via-[#ffeaea] to-white pt-20"
       >
@@ -200,10 +227,10 @@
         <div
           class="text-center w-full absolute top-36 text-[4rem] uppercase font-extrabold z-20 text-[#d32f2f] drop-shadow-md transition-transform duration-300 transform hover:scale-105"
         >
-          Blog Details
+          Terms &amp; Conditions
           <div class="text-lg text-[#e57373] mt-3 font-semibold tracking-wide">
-            Join our network of creators and influencers, and collaborate with
-            us to make an impact together.
+            Discover our terms and conditions that provide clarity on your
+            rights and responsibilities when using our services.
           </div>
         </div>
       </div>
@@ -211,352 +238,326 @@
       <section
         class="container mx-auto lg:mt-0 mt-24 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4 block"
       >
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full">
-          <div class="col-span-1 lg:col-span-3 flex flex-col gap-4">
-            <img
-              src="https://picsum.photos/1000/500"
-              alt=""
-              class="w-full h-[25rem] object-cover rounded-lg mt-6"
-            />
-            <div
-              class="text-[2rem] font-semibold mt-4 flex items-center justify-between"
-            >
-              Blog Title: Adventure is must
-              <span class="text-sm text-gray-600">3 min read</span>
-            </div>
-            <div
-              class="flex items-center gap-2 font-bold text-gray-500 text-xl"
-            >
-              <img
-                src="https://picsum.photos/200"
-                class="size-10 rounded-full"
-                alt=""
-              />
-              <span>Rakib Ansar</span>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 gap-y-16">
+          <div class="flex flex-col w-full gap-2">
+            <span class="text-lg font-semibold"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+            <div class="text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus architecto eius repudiandae, doloremque consectetur
+              nesciunt illo, cum et nulla vel in officia quam qui blanditiis
+              ducimus rerum. Repudiandae, dolor corrupti.
             </div>
 
-            <div class="text-lg text-gray-600">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
-              ad non impedit natus quidem, porro temporibus! Dolor minus
-              corporis facere suscipit itaque at. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit. Fugit voluptatem, officia aliquid
-              eius ut laudantium minus assumenda dolorum, voluptate, quos
-              facere! Inventore, est aliquid ad eius sapiente tempore doloremque
-              rerum?
-            </div>
-            <div class="text-lg text-gray-600">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
-              ad non impedit natus quidem, porro temporibus! Dolor minus
-              corporis facere suscipit itaque at.
-            </div>
-
-            <div
-              class="p-10 border-l-2 border-black bg-gray-100 rounded-lg text-lg mt-4 italic flex items-center gap-4"
-            >
-              <img
-                src="../../asset/icon/quotation-marks-svgrepo-com.svg"
-                class="size-16"
-                alt=""
-              />
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
-              quisquam placeat ducimus provident aperiam temporibus dolor itaque
-              sint voluptatibus vero alias dolores neque, vel mollitia id optio
-              recusandae omnis aliquam.
-            </div>
-
-            <div class="text-lg text-gray-600 mt-4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
-              ad non impedit natus quidem, porro temporibus! Dolor minus
-              corporis facere suscipit itaque at.
-            </div>
-
-            <div>
-              <img
-                src="https://picsum.photos/1000/500"
-                alt=""
-                class="w-full h-[25rem] object-cover rounded-lg mt-6"
-              />
-            </div>
-
-            <div class="text-lg text-gray-600 mt-4 flex gap-2 items-start">
-              <!-- Changed items-center to center the items -->
-              <span class="p-4 text-4xl font-bold bg-gray-600 text-white mt-2"
-                >L</span
-              >
-              <span class="text-black">
-                orem ipsum dolor sit amet consectetur adipisicing elit. Saepe ut
-                perferendis repudiandae omnis quos, dolore tenetur praesentium
-                quis veniam dignissimos accusamus vero at ab aliquid rerum.
-                Quaerat possimus maxime illum? Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Minus vitae ex totam debitis
-                commodi impedit placeat, vero quibusdam. Laudantium laborum iste
-                hic dolores veniam quo, illo sequi sed sit repudiandae.
-              </span>
-            </div>
-
-            <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <div>
-                <img
-                  src="https://picsum.photos/1000/500"
-                  alt=""
-                  class="w-full h-[15rem] object-cover rounded-lg"
-                />
-              </div>
-              <div>
-                <img
-                  src="https://picsum.photos/1000/500"
-                  alt=""
-                  class="w-full h-[15rem] object-cover rounded-lg"
-                />
-              </div>
-            </div>
-
-            <div class="text-lg text-gray-600 mt-4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
-              ad non impedit natus quidem, porro temporibus! Dolor minus
-              corporis facere suscipit itaque at. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Possimus velit iste dolor
-              perspiciatis maxime, beatae ex placeat, dolore vero eius enim non
-              quaerat totam dolores harum quia accusamus. Inventore,
-              voluptatibus!
-            </div>
+            <hr class="w-full border-gray-600 mt-8" />
           </div>
-          <div class="col-span-1 space-y-10">
-            <div class="grid grid-cols-1 border rounded-md shadow-lg">
-              <div class="pt-10 w-full text-center text-xl">About Me</div>
-              <div>
-                <img
-                  src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
-                  alt=""
-                  class="w-64 object-cover rounded-full p-10 mx-auto"
-                />
-              </div>
-              <div class="px-10 pb-10 flex flex-col gap-3">
-                <a
-                  href="../../index.html"
-                  class="text-lg font-semibold w-full text-center cursor-pointer hover:underline"
-                >
-                  Rakib Ansar
-                </a>
-
-                <div
-                  class="flex flex-wrap items-center justify-center gap-2 mb-2"
-                >
-                  <div
-                    class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
-                  >
-                    Content Creator
-                  </div>
-                  <div
-                    class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
-                  >
-                    Influencer
-                  </div>
-                  <div
-                    class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
-                  >
-                    Entertainer
-                  </div>
-                </div>
-                <div class="text-center w-full text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                  officiis aliquid, minima in doloremque sapiente aperiam? Animi
-                  ratione eaque ea dicta architecto, repudiandae maxime facere
-                  quis nihil iusto est laboriosam!
-                </div>
-              </div>
+          <div class="flex flex-col w-full gap-2">
+            <span class="text-lg font-semibold"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+            <div class="text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus architecto eius repudiandae, doloremque consectetur
+              nesciunt illo, cum et nulla vel in officia quam qui blanditiis
+              ducimus rerum. Repudiandae, dolor corrupti.
             </div>
 
-            <div
-              class="w-full flex flex-col items-center justify-center p-10 rounded-lg shadow-lg"
-            >
-              <div class="font-semibold mb-6">Related Tags</div>
-
-              <div class="flex items-center justify-center flex-wrap gap-2">
-                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
-                  >Tiktok</span
-                >
-                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
-                  >Facebook</span
-                >
-                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
-                  >Instagram</span
-                >
-                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
-                  >Youtube</span
-                >
-              </div>
-            </div>
+            <hr class="w-full border-gray-600 mt-8" />
           </div>
-        </div>
-      </section>
+          <div class="flex flex-col w-full gap-2">
+            <span class="text-lg font-semibold"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+            <div class="text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus architecto eius repudiandae, doloremque consectetur
+              nesciunt illo, cum et nulla vel in officia quam qui blanditiis
+              ducimus rerum. Repudiandae, dolor corrupti.
+            </div>
 
-      <section>
-        <div
-          class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
-        >
-          <div
-            class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
-          >
-            Explore More Blogs
+            <hr class="w-full border-gray-600 mt-8" />
           </div>
-          <div class="-mt-4 xl:-mt-6 text-center">
-            Checkout our most recent blogs
-          </div>
-
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-16 w-full mt-16"
-          >
-            <div
-              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
-            >
-              <img
-                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
-                alt=""
-                class="h-[15rem] rounded-lg"
-              />
-              <div class="text-2xl font-bold">
-                Highway Sound Barries and Potential Materials
-              </div>
-
-              <div
-                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
-              >
-                <div class="font-semibold">John Doe</div>
-                <div>10mins ago</div>
-              </div>
-              <div class="text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
-                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
-                deleniti quasi aspernatur magni perferendis non sint autem error
-                in. A velit quos eius!
-              </div>
-
-              <div class="flex items-center justify-between">
-                <button
-                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
-                  type="button"
-                >
-                  Read More
-                </button>
-              </div>
+          <div class="flex flex-col w-full gap-2">
+            <span class="text-lg font-semibold"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+            <div class="text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus architecto eius repudiandae, doloremque consectetur
+              nesciunt illo, cum et nulla vel in officia quam qui blanditiis
+              ducimus rerum. Repudiandae, dolor corrupti.
             </div>
-            <div
-              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
-            >
-              <img
-                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
-                alt=""
-                class="h-[15rem] rounded-lg"
-              />
-              <div class="text-2xl font-bold">
-                Highway Sound Barries and Potential Materials
-              </div>
 
-              <div
-                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
-              >
-                <div class="font-semibold">John Doe</div>
-                <div>10mins ago</div>
-              </div>
-              <div class="text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
-                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
-                deleniti quasi aspernatur magni perferendis non sint autem error
-                in. A velit quos eius!
-              </div>
-
-              <div class="flex items-center justify-between">
-                <button
-                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
-                  type="button"
-                >
-                  Read More
-                </button>
-              </div>
-            </div>
-            <div
-              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
-            >
-              <img
-                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
-                alt=""
-                class="h-[15rem] rounded-lg"
-              />
-              <div class="text-2xl font-bold">
-                Highway Sound Barries and Potential Materials
-              </div>
-
-              <div
-                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
-              >
-                <div class="font-semibold">John Doe</div>
-                <div>10mins ago</div>
-              </div>
-              <div class="text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
-                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
-                deleniti quasi aspernatur magni perferendis non sint autem error
-                in. A velit quos eius!
-              </div>
-
-              <div class="flex items-center justify-between">
-                <button
-                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
-                  type="button"
-                >
-                  Read More
-                </button>
-              </div>
-            </div>
-            <div
-              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
-            >
-              <img
-                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
-                alt=""
-                class="h-[15rem] rounded-lg"
-              />
-              <div class="text-2xl font-bold">
-                Highway Sound Barries and Potential Materials
-              </div>
-
-              <div
-                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
-              >
-                <div class="font-semibold">John Doe</div>
-                <div>10mins ago</div>
-              </div>
-              <div class="text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
-                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
-                deleniti quasi aspernatur magni perferendis non sint autem error
-                in. A velit quos eius!
-              </div>
-
-              <div class="flex items-center justify-between">
-                <button
-                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
-                  type="button"
-                >
-                  Read More
-                </button>
-              </div>
-            </div>
+            <hr class="w-full border-gray-600 mt-8" />
           </div>
         </div>
 
-        <div class="flex w-full items-center justify-center mb-16">
-          <a
-            href="influencers.html"
-            class="px-6 py-3 text-lg primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
-          >
-            View more
-          </a>
+        <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 w-full">
+          <img
+            src="https://picsum.photos/800/800"
+            class="w-full h-[30rem]"
+            alt=""
+          />
+          <div class="bg-black text-white p-10">
+            <div
+              id="accordion-flush"
+              class="pb-20 pt-10 lg:pt-20 px-2"
+              data-accordion="collapse"
+              data-active-classes="bg-white  text-gray-900 "
+              data-inactive-classes="text-gray-500 "
+            >
+              <h2 id="accordion-flush-heading-1">
+                <button
+                  type="button"
+                  class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                  data-accordion-target="#accordion-flush-body-1"
+                  aria-expanded="true"
+                  aria-controls="accordion-flush-body-1"
+                >
+                  <span class="font-bold text-base lg:text-lg xl:text-2xl"
+                    >What is Influencer Marketing?</span
+                  >
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <div
+                id="accordion-flush-body-1"
+                class="hidden"
+                aria-labelledby="accordion-flush-heading-1"
+              >
+                <div class="py-5 border-b border-gray-200">
+                  <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                    Influencer marketing is a digital marketing strategy that
+                    involves collaborating with individuals, known as
+                    influencers, who have a dedicated and engaged following on
+                    social media platforms and other online channels. These
+                    influencers can impact their followers' purchasing decisions
+                    due to their credibility and authority in specific niches or
+                    industries. Brands partner with influencers to promote their
+                    products or services authentically, build social proof, and
+                    leverage their influence to reach a larger and more targeted
+                    audience.
+                  </p>
+                </div>
+              </div>
+              <h2 id="accordion-flush-heading-2">
+                <button
+                  type="button"
+                  class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                  data-accordion-target="#accordion-flush-body-2"
+                  aria-expanded="false"
+                  aria-controls="accordion-flush-body-2"
+                >
+                  <span
+                    class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                  >
+                    How Does Influencer Marketing Work?</span
+                  >
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <div
+                id="accordion-flush-body-2"
+                class="hidden"
+                aria-labelledby="accordion-flush-heading-2"
+              >
+                <div class="py-5 border-b border-gray-200">
+                  <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                    Influencer marketing operates by identifying suitable
+                    influencers for your brand, establishing a partnership, and
+                    creating and distributing content through the influencer's
+                    channels. This content can take various forms, including
+                    sponsored posts, reviews, tutorials, or endorsements. The
+                    influencer shares this content with their audience,
+                    effectively introducing your brand or product to a
+                    potentially receptive and engaged audience. The key to
+                    successful influencer marketing lies in crafting authentic
+                    and relevant content that resonates with both the
+                    influencer's followers and your brand's message.
+                  </p>
+                </div>
+              </div>
+              <h2 id="accordion-flush-heading-3">
+                <button
+                  type="button"
+                  class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                  data-accordion-target="#accordion-flush-body-3"
+                  aria-expanded="false"
+                  aria-controls="accordion-flush-body-3"
+                >
+                  <span
+                    class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                  >
+                    Why is Influencer Marketing Important?</span
+                  >
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <div
+                id="accordion-flush-body-3"
+                class="hidden"
+                aria-labelledby="accordion-flush-heading-3"
+              >
+                <div class="py-5 border-b border-gray-200">
+                  <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                    Influencer marketing is important because it enables brands
+                    to connect with their target audience in a more genuine and
+                    engaging manner. Unlike traditional advertising, influencer
+                    marketing feels less intrusive and more trustworthy, as
+                    recommendations come from a trusted source. It helps build
+                    brand awareness, improve credibility, drive traffic, boost
+                    sales, and foster lasting customer relationships.
+                  </p>
+                </div>
+              </div>
+              <h2 id="accordion-flush-heading-4">
+                <button
+                  type="button"
+                  class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                  data-accordion-target="#accordion-flush-body-4"
+                  aria-expanded="false"
+                  aria-controls="accordion-flush-body-4"
+                >
+                  <span
+                    class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                  >
+                    How Can I Find the Right Influencers for My Brand?</span
+                  >
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <div
+                id="accordion-flush-body-4"
+                class="hidden"
+                aria-labelledby="accordion-flush-heading-4"
+              >
+                <div class="py-5 border-b border-gray-200">
+                  <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                    Start by identifying your target audience and the platforms
+                    they use. Then, use the Collabstr influencer marketing tool
+                    to search for influencers within your niche. Use the gender,
+                    price, location, age and other filters to narrow down
+                    relevant influencers as much as possible. Once you find an
+                    influencer that you’re interested in working with, you can
+                    simply purchase one of their pre-defined content packages,
+                    or send them a custom offer directly through their profile.
+                  </p>
+                </div>
+              </div>
+              <h2 id="accordion-flush-heading-5">
+                <button
+                  type="button"
+                  class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                  data-accordion-target="#accordion-flush-body-5"
+                  aria-expanded="false"
+                  aria-controls="accordion-flush-body-5"
+                >
+                  <span
+                    class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+                  >
+                    How Much Does Influencer Marketing Cost?</span
+                  >
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <div
+                id="accordion-flush-body-5"
+                class="hidden"
+                aria-labelledby="accordion-flush-heading-5"
+              >
+                <div class="py-5 border-b border-gray-200">
+                  <p class="mb-2 text-gray-500 lg:text-base text-xs">
+                    The cost of influencer marketing varies widely depending on
+                    factors such as the influencer's reach, niche, and
+                    engagement rates. Micro-influencers with smaller followings
+                    may charge less than macro-influencers or celebrities. Some
+                    influencers may work on a per-post basis, while others
+                    prefer ongoing partnerships. If you have a budget in mind,
+                    consider using the price filters found in Collabstr’s search
+                    tool to narrow down the influencers that fit within your
+                    budget, this will save you time during the influencer
+                    discovery process.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -577,21 +578,21 @@
               <div class="flex items-center gap-2 mt-4">
                 <div class="bg-[#7F7F7F] p-1 rounded-full">
                   <img
-                    src="../../asset/icon/facebook-svgrepo-com.svg"
+                    src="asset/icon/facebook-svgrepo-com.svg"
                     alt=""
                     class="size-5"
                   />
                 </div>
                 <div class="bg-[#7F7F7F] p-1 rounded-full">
                   <img
-                    src="../../asset/icon/instagram-svgrepo-com.svg"
+                    src="asset/icon/instagram-svgrepo-com.svg"
                     alt=""
                     class="size-5"
                   />
                 </div>
                 <div class="bg-[#7F7F7F] p-1 rounded-full">
                   <img
-                    src="../../asset/icon/youtube-svgrepo-com (1).svg"
+                    src="asset/icon/youtube-svgrepo-com (1).svg"
                     alt=""
                     class="size-5"
                   />
@@ -685,7 +686,7 @@
                       class="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none"
                     >
                       <img
-                        src="../../asset/icon/mail-svgrepo-com.svg"
+                        src="asset/icon/mail-svgrepo-com.svg"
                         alt=""
                         class="w-6"
                       />
@@ -782,7 +783,7 @@
           </div>
           <nav class="space-y-4">
             <a
-              href="../../index.html"
+              href="index.html"
               class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
               >Home</a
             >
@@ -803,7 +804,7 @@
             >
             <a
               href="blogs.html"
-              class="block primary-text border-l-4 primary-border pl-4"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
               >Blog</a
             >
             <a
@@ -894,11 +895,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-    <script src="../../asset/js/loader.js"></script>
-    <script src="../../asset/js/aos.js"></script>
-    <script src="../../asset/js/doughnut-cahrt.js"></script>
-    <script src="../../asset/js/date-filter.js"></script>
-    <script src="../../asset/js/bar-chart.js"></script>
-    <script src="../../asset/js/swiper.js"></script>
+    <script src="asset/js/loader.js"></script>
+    <script src="asset/js/aos.js"></script>
+    <script src="asset/js/doughnut-cahrt.js"></script>
+    <script src="asset/js/date-filter.js"></script>
+    <script src="asset/js/bar-chart.js"></script>
+    <script src="asset/js/swiper.js"></script>
+    <script src="asset/js/filter-drawer.js"></script>
   </body>
 </html>
