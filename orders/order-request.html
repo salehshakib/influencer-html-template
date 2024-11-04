@@ -1080,7 +1080,7 @@
       <div class="p-4 ml-0 lg:ml-64">
         <div class="p-4 rounded-lg mt-14">
           <div class="text-3xl w-full text-center lg:text-start font-bold">
-            Deposit Now
+            Order Request
           </div>
 
           <section class="mt-10 relative">
@@ -1131,9 +1131,9 @@
                         />
                       </svg>
                       <a
-                        href="all-deposits.html"
+                        href="all-orders.html"
                         class="ms-1 text-sm font-medium text-gray-700 hover-text md:ms-2"
-                        >All Deposit</a
+                        >Order</a
                       >
                     </div>
                   </li>
@@ -1156,7 +1156,7 @@
                       </svg>
                       <span
                         class="ms-1 text-sm font-medium text-gray-500 md:ms-2"
-                        >Deposit Now</span
+                        >Order Request</span
                       >
                     </div>
                   </li>
@@ -1166,14 +1166,13 @@
                 class="flex justify-center lg:justify-end items-center gap-2 w-full"
               >
                 <a
-                  type="button"
                   class="secondary-bg font-medium rounded-lg w-full sm:w-auto px-5 py-2 text-center border hover-text text-xs md:text-sm"
-                  href="all-deposits.html"
+                  href="../services/details/1.html"
                 >
                   Go Back
                 </a>
                 <a
-                  href="deposit-confirm.html"
+                  href="../deposit/add-deposit.html"
                   class="hover-text primary-bg secondary-bg text-white px-5 py-2 rounded-md text-center text-xs md:text-sm w-full sm:w-auto"
                 >
                   Submit
@@ -1183,35 +1182,59 @@
 
             <div class="w-full lg:w-[70%] xl:w-[50%] mx-auto">
               <div class="p-5 flex flex-col items-center justify-center w-full">
-                <div class="w-full flex gap-2 flex-col mt-5 w-full">
-                  <div class="font-bold">Select Gateway</div>
-                  <div class="relative">
-                    <select
-                      name=""
-                      id="input-group-1"
-                      class="border border-gray-300 text-gray-900 rounded-lg block w-full pe-10 p-2.5"
-                      placeholder=""
-                      required
-                    >
-                      <option value="manual">Manual</option>
-                    </select>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
+                  <div class="w-full flex gap-2 flex-col mt-5">
+                    <div class="font-bold">Title</div>
+                    <div class="relative">
+                      <input
+                        type="text"
+                        id="input-group-1"
+                        class="border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+                        placeholder="Enter your amount"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full flex gap-2 flex-col mt-5">
+                    <div class="font-bold">Date</div>
+                    <div class="relative">
+                      <input
+                        type="date"
+                        id="input-group-1"
+                        class="border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+                        placeholder="Enter your amount"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full flex gap-2 flex-col mt-5">
+                    <div class="font-bold">Price</div>
+                    <div class="relative">
+                      <input
+                        type="email"
+                        id="input-group-1"
+                        class="border border-gray-300 text-gray-900 rounded-lg block w-full pe-10 p-2.5"
+                        placeholder="Enter your amount"
+                        required
+                      />
+                      <div
+                        class="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none"
+                      >
+                        BDT
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="w-full flex gap-2 flex-col mt-5">
-                  <div class="font-bold">Amount</div>
+                  <div class="font-bold">Description</div>
                   <div class="relative">
-                    <input
-                      type="email"
-                      id="input-group-1"
-                      class="border border-gray-300 text-gray-900 rounded-lg block w-full pe-10 p-2.5"
-                      placeholder="Enter your amount"
-                      required
-                    />
-                    <div
-                      class="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none"
-                    >
-                      BDT
-                    </div>
+                    <textarea
+                      name=""
+                      id=""
+                      rows="4"
+                      class="border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+                      placeholder="Enter additional description"
+                    ></textarea>
                   </div>
                 </div>
               </div>
