@@ -2243,8 +2243,8 @@
           id="accordion-flush"
           class="pb-20 pt-10 lg:pt-20 px-2"
           data-accordion="collapse"
-          data-active-classes="bg-white  text-gray-900 "
-          data-inactive-classes="text-gray-500 "
+          data-active-classes="bg-white dark:bg-white text-gray-900 dark:text-gray-900"
+          data-inactive-classes="text-gray-500 dark:text-gray-500"
         >
           <h2 id="accordion-flush-heading-1">
             <button
@@ -2831,16 +2831,6 @@
 
       <!-- Add this script before the closing body tag -->
     </div>
-
-    <script>
-      const buttons = document.querySelectorAll("aside button");
-      buttons.forEach((button) => {
-        button.onclick = () => {
-          const dropdownMenu = button.nextElementSibling;
-          dropdownMenu.classList.toggle("hidden");
-        };
-      });
-    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
