@@ -53,11 +53,61 @@
   </head>
   <body>
     <div id="loader">
-      <div class="spinner"></div>
+      <div class="spinner">
+        <svg
+          class="ip"
+          viewBox="0 0 256 128"
+          width="256px"
+          height="128px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5ebd3e" />
+              <stop offset="33%" stop-color="#ffb900" />
+              <stop offset="67%" stop-color="#f78200" />
+              <stop offset="100%" stop-color="#e23838" />
+            </linearGradient>
+            <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+              <stop offset="0%" stop-color="#e23838" />
+              <stop offset="33%" stop-color="#973999" />
+              <stop offset="67%" stop-color="#009cdf" />
+              <stop offset="100%" stop-color="#5ebd3e" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke-linecap="round" stroke-width="16">
+            <g class="ip__track" stroke="#ddd">
+              <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+              <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+            </g>
+            <g stroke-dasharray="180 656">
+              <path
+                class="ip__worm1"
+                stroke="url(#grad1)"
+                stroke-dashoffset="0"
+                d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"
+              />
+              <path
+                class="ip__worm2"
+                stroke="url(#grad2)"
+                stroke-dashoffset="358"
+                d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
     </div>
 
-    <div id="content relative view">
+    <div id="content" class="relative">
       <!-- Navigation -->
+
+      <button
+        id="scrollToTopBtn"
+        class="hidden fixed bottom-5 right-5 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-opacity duration-300 ease-in-out z-[999]"
+      >
+        ↑
+      </button>
 
       <div
         id="navbar-wrapper"
@@ -91,6 +141,11 @@
               >About Us</a
             >
             <a
+              href="blogs.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >Blog</a
+            >
+            <a
               href="contact-us.html"
               class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >Contact</a
@@ -117,23 +172,13 @@
         </nav>
       </div>
       <div
-        class="relative min-h-[60rem] bg-gradient-to-b from-[#fafafa] via-[#fef6fa] to-white pt-20"
+        class="relative min-h-[20rem] bg-gradient-to-b from-[#fff5f5] via-[#ffeaea] to-white pt-20"
       >
-        <!-- Background Pattern -->
+        <!-- Dot Pattern Background -->
         <div
-          class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"
+          class="absolute inset-0 bg-[radial-gradient(circle,#f8a5a5_1px,transparent_1px)] [background-size:10px_10px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_75%,transparent_100%)] pointer-events-none opacity-75"
         ></div>
 
-        <script>
-          window.addEventListener("scroll", function () {
-            const navbarWrapper = document.getElementById("navbar-wrapper");
-            if (window.scrollY > 50) {
-              navbarWrapper.classList.add("bg-white", "shadow-md");
-            } else {
-              navbarWrapper.classList.remove("bg-white", "shadow-md");
-            }
-          });
-        </script>
         <!-- Hero Content -->
         <div class="container mx-auto px-4 pt-56 pb-32 relative">
           <div class="max-w-4xl mx-auto text-center relative z-10">
@@ -334,7 +379,7 @@
       </div>
 
       <section
-        class="container mx-auto lg:mt-0 mt-24 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4 block"
+        class="container mx-auto mt-24 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4 block"
       >
         <div
           class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
@@ -764,7 +809,7 @@
         <div class="flex w-full items-center justify-center my-8">
           <a
             href="influencers.html"
-            class="px-6 py-3 text-lg border primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
+            class="px-6 py-3 text-sm lg:text-lg border primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
           >
             View more
           </a>
@@ -783,7 +828,7 @@
         "
       >
         <div
-          class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4 py-20"
+          class="container mx-auto mt-0 lg:mt-0 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4 py-20"
         >
           <div class="text-sm primary-text uppercase">Categories</div>
           <div
@@ -958,7 +1003,7 @@
       </section>
       <section>
         <div
-          class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
+          class="container mx-auto px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
         >
           <div class="text-sm primary-text">SERVICES</div>
           <div
@@ -1004,11 +1049,12 @@
                     class="h-8 w-8 rounded-full"
                     alt=""
                   />
-                  <span
+                  <a
+                    href="influencer/details/1.html"
                     class="cursor-pointer hover:underline transition duration-300"
                   >
                     Rakin Absar
-                  </span>
+                  </a>
                 </div>
                 <div class="text-xs px-2 py-1 rounded-full bg-black text-white">
                   Top Trending
@@ -1066,10 +1112,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1166,10 +1216,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1268,10 +1322,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1369,10 +1427,14 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <div class="cursor-pointer hover:underline">View Profile</div>
                 <a
-                  href="login.html"
+                  href="services/details/1.html"
                   class="border primary-text secondary-border px-6 py-1 rounded-md primary-hover duration-300"
+                  >View Service</a
+                >
+                <a
+                  href="signup.html"
+                  class="primary-bg-hover text-white px-6 py-1 rounded-md duration-300"
                   >Hire Now</a
                 >
               </div>
@@ -1382,8 +1444,8 @@
 
         <div class="flex w-full items-center justify-center mb-16 -mt-4">
           <a
-            href="influencers.html"
-            class="px-6 py-3 text-lg border primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
+            href="services.html"
+            class="px-6 py-3 text-sm lg:text-lg border primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
           >
             View more
           </a>
@@ -1574,24 +1636,24 @@
               <div class="grid grid-cols-6 gap-4">
                 <div class="col-span-3 space-y-4">
                   <img
-                    src="https://picsum.photos/500/600"
+                    src="https://scontent.fdac27-2.fna.fbcdn.net/v/t1.6435-9/107622734_2694337624219205_1350095532853185726_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=UP0WDaCwMvgQ7kNvgHiiVqq&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=A95jGiXvBsurnIpRBvDoaRI&oh=00_AYBCIxoD17r_L8sf6Zke1EqHo9CicnA6VH774EqO0NuqZQ&oe=674FB65A"
                     alt="Influencer content 1"
                     class="rounded-lg object-cover w-full h-[300px]"
                   />
                   <img
-                    src="https://picsum.photos/500/600"
+                    src="https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/454918228_1040893157394121_4325936206530794924_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=NrIxepq7eFYQ7kNvgFGNLkQ&_nc_zt=23&_nc_ht=scontent.fdac27-1.fna&_nc_gid=AMZkBtCE7SvBB0QCNkMpeAM&oh=00_AYBIcYyqjRFVazUo47ah-UYSR5280uptQBeoIfwktlmOFg&oe=672E4200"
                     alt="Influencer content 2"
                     class="rounded-lg object-cover w-full h-[300px]"
                   />
                 </div>
                 <div class="col-span-3 pt-8 space-y-4">
                   <img
-                    src="https://picsum.photos/500/600"
+                    src="https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/454918228_1040893157394121_4325936206530794924_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=NrIxepq7eFYQ7kNvgFGNLkQ&_nc_zt=23&_nc_ht=scontent.fdac27-1.fna&_nc_gid=AMZkBtCE7SvBB0QCNkMpeAM&oh=00_AYBIcYyqjRFVazUo47ah-UYSR5280uptQBeoIfwktlmOFg&oe=672E4200"
                     alt="Influencer content 3"
                     class="rounded-lg object-cover w-full h-[300px]"
                   />
                   <img
-                    src="https://picsum.photos/500/600"
+                    src="https://scontent.fdac27-2.fna.fbcdn.net/v/t1.6435-9/107622734_2694337624219205_1350095532853185726_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=UP0WDaCwMvgQ7kNvgHiiVqq&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=A95jGiXvBsurnIpRBvDoaRI&oh=00_AYBCIxoD17r_L8sf6Zke1EqHo9CicnA6VH774EqO0NuqZQ&oe=674FB65A"
                     alt="Influencer content 4"
                     class="rounded-lg object-cover w-full h-[300px]"
                   />
@@ -1669,20 +1731,12 @@
                     alt=""
                   />
                   <div class="font-semibold">High Quality</div>
-                  <p class="text-xs">
+                  <p class="text-sm lg:text-base text-gray-600">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Culpa cupiditate veniam dicta iusto, maiores dolores
                     officiis ut ab beatae ad animi quo itaque amet fuga velit
                     obcaecati pariatur incidunt earum?
                   </p>
-                  <div class="flex items-center gap-2 text-sm">
-                    <span class="cursor-pointer hover-text"> Read more </span>
-                    <img
-                      src="asset/icon/right-md-svgrepo-com.svg"
-                      alt=""
-                      class="size-3"
-                    />
-                  </div>
                 </div>
                 <div
                   class="rounded-lg shadow-xl w-full flex flex-col gap-4 p-4 lg:p-10"
@@ -1693,20 +1747,12 @@
                     alt=""
                   />
                   <div class="font-semibold">High Quality</div>
-                  <p class="text-xs">
+                  <p class="text-sm lg:text-base text-gray-600">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Culpa cupiditate veniam dicta iusto, maiores dolores
                     officiis ut ab beatae ad animi quo itaque amet fuga velit
                     obcaecati pariatur incidunt earum?
                   </p>
-                  <div class="flex items-center gap-2 text-sm">
-                    <span class="cursor-pointer hover-text"> Read more </span>
-                    <img
-                      src="asset/icon/right-md-svgrepo-com.svg"
-                      alt=""
-                      class="size-3"
-                    />
-                  </div>
                 </div>
                 <div
                   class="rounded-lg shadow-xl w-full flex flex-col gap-4 p-4 lg:p-10"
@@ -1717,20 +1763,12 @@
                     alt=""
                   />
                   <div class="font-semibold">High Quality</div>
-                  <p class="text-xs">
+                  <p class="text-sm lg:text-base text-gray-600">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Culpa cupiditate veniam dicta iusto, maiores dolores
                     officiis ut ab beatae ad animi quo itaque amet fuga velit
                     obcaecati pariatur incidunt earum?
                   </p>
-                  <div class="flex items-center gap-2 text-sm">
-                    <span class="cursor-pointer hover-text"> Read more </span>
-                    <img
-                      src="asset/icon/right-md-svgrepo-com.svg"
-                      alt=""
-                      class="size-3"
-                    />
-                  </div>
                 </div>
                 <div
                   class="rounded-lg shadow-xl w-full flex flex-col gap-4 p-4 lg:p-10"
@@ -1741,20 +1779,12 @@
                     alt=""
                   />
                   <div class="font-semibold">High Quality</div>
-                  <p class="text-xs">
+                  <p class="text-sm lg:text-base text-gray-600">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Culpa cupiditate veniam dicta iusto, maiores dolores
                     officiis ut ab beatae ad animi quo itaque amet fuga velit
                     obcaecati pariatur incidunt earum?
                   </p>
-                  <div class="flex items-center gap-2 text-sm">
-                    <span class="cursor-pointer hover-text"> Read more </span>
-                    <img
-                      src="asset/icon/right-md-svgrepo-com.svg"
-                      alt=""
-                      class="size-3"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -1765,7 +1795,7 @@
       <section class="relative">
         <div class="container mx-auto px-5 md:p-10 lg:p-20 py-10">
           <div
-            class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
+            class="container mx-auto px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
           >
             <div
               class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
@@ -1810,7 +1840,7 @@
       <section class="relative">
         <div class="container mx-auto px-5 md:p-10 lg:p-20 py-10">
           <div
-            class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
+            class="container mx-auto px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
           >
             <div
               class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
@@ -2005,13 +2035,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div> -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -2042,7 +2065,7 @@
         "
       >
         <div
-          class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
+          class="container mx-auto px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
         >
           <div class="text-sm primary-text uppercase">Blog</div>
           <div
@@ -2084,12 +2107,13 @@
               </div>
 
               <div class="flex items-center justify-between">
-                <button
+                <a
+                  href="blogs/details/1.html"
                   class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
                   type="button"
                 >
                   Read More
-                </button>
+                </a>
               </div>
             </div>
             <div
@@ -2195,18 +2219,29 @@
               </div>
             </div>
           </div>
+
+          <div
+            class="flex w-full items-center justify-center mb-16 mt-0 lg:mt-16"
+          >
+            <a
+              href="blogs.html"
+              class="px-6 py-3 text-sm lg:text-lg border primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
+            >
+              View more
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="container mx-auto">
+      <section class="container mx-auto px-5">
         <div
-          class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center mt-10 px-2"
+          class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center mt-20"
         >
           Frequently Asked Questions
         </div>
         <div
           id="accordion-flush"
-          class="py-20 px-2"
+          class="pb-20 pt-10 lg:pt-20 px-2"
           data-accordion="collapse"
           data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
           data-inactive-classes="text-gray-500 dark:text-gray-400"
@@ -2247,7 +2282,7 @@
           >
             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
               <p
-                class="mb-2 text-gray-500 dark:text-gray-400 text-sx lg:text-base text-xs lg:text-base"
+                class="mb-2 text-gray-500 dark:text-gray-400 lg:text-base text-xs"
               >
                 Influencer marketing is a digital marketing strategy that
                 involves collaborating with individuals, known as influencers,
@@ -2269,7 +2304,9 @@
               aria-expanded="false"
               aria-controls="accordion-flush-body-2"
             >
-              <span class="font-bold text-base lg:text-lg xl:text-2xl">
+              <span
+                class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+              >
                 How Does Influencer Marketing Work?</span
               >
               <svg
@@ -2297,7 +2334,7 @@
           >
             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
               <p
-                class="mb-2 text-gray-500 dark:text-gray-400 text-sx lg:text-base text-xs lg:text-base"
+                class="mb-2 text-gray-500 dark:text-gray-400 lg:text-base text-xs"
               >
                 Influencer marketing operates by identifying suitable
                 influencers for your brand, establishing a partnership, and
@@ -2320,7 +2357,9 @@
               aria-expanded="false"
               aria-controls="accordion-flush-body-3"
             >
-              <span class="font-bold text-2xl text-base lg:text-lg xl:text-2xl">
+              <span
+                class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+              >
                 Why is Influencer Marketing Important?</span
               >
               <svg
@@ -2348,7 +2387,7 @@
           >
             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
               <p
-                class="mb-2 text-gray-500 dark:text-gray-400 text-sx lg:text-base"
+                class="mb-2 text-gray-500 dark:text-gray-400 lg:text-base text-xs"
               >
                 Influencer marketing is important because it enables brands to
                 connect with their target audience in a more genuine and
@@ -2368,7 +2407,9 @@
               aria-expanded="false"
               aria-controls="accordion-flush-body-4"
             >
-              <span class="font-bold text-2xl text-base lg:text-lg xl:text-2xl">
+              <span
+                class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+              >
                 How Can I Find the Right Influencers for My Brand?</span
               >
               <svg
@@ -2396,7 +2437,7 @@
           >
             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
               <p
-                class="mb-2 text-gray-500 dark:text-gray-400 text-sx lg:text-base"
+                class="mb-2 text-gray-500 dark:text-gray-400 lg:text-base text-xs"
               >
                 Start by identifying your target audience and the platforms they
                 use. Then, use the Collabstr influencer marketing tool to search
@@ -2417,7 +2458,9 @@
               aria-expanded="false"
               aria-controls="accordion-flush-body-5"
             >
-              <span class="font-bold text-2xl text-base lg:text-lg xl:text-2xl">
+              <span
+                class="font-bold text-base lg:text-lg xl:text-2xl text-start"
+              >
                 How Much Does Influencer Marketing Cost?</span
               >
               <svg
@@ -2445,7 +2488,7 @@
           >
             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
               <p
-                class="mb-2 text-gray-500 dark:text-gray-400 text-sx lg:text-base"
+                class="mb-2 text-gray-500 dark:text-gray-400 lg:text-base text-xs"
               >
                 The cost of influencer marketing varies widely depending on
                 factors such as the influencer's reach, niche, and engagement
@@ -2468,7 +2511,7 @@
               aria-controls="accordion-flush-body-6"
             >
               <span
-                class="font-bold text-2xl text-base lg:text-lg xl:text-2xl text-start"
+                class="font-bold text-base lg:text-lg xl:text-2xl text-start"
               >
                 What Are the Common Mistakes to Avoid in Influencer
                 Marketing?</span
@@ -2498,7 +2541,7 @@
           >
             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
               <p
-                class="mb-2 text-gray-500 dark:text-gray-400 text-sx lg:text-base"
+                class="mb-2 text-gray-500 dark:text-gray-400 lg:text-base text-xs"
               >
                 Common mistakes in influencer marketing include failing to
                 define clear campaign objectives and expectations and neglecting
@@ -2754,6 +2797,11 @@
               >About Us</a
             >
             <a
+              href="blogs.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >Blog</a
+            >
+            <a
               href="contact-us.html"
               class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
               >Contact</a
@@ -2791,42 +2839,6 @@
       ></div>
 
       <!-- Add this script before the closing body tag -->
-      <script>
-        const mobileMenu = document.getElementById("mobile-menu");
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const closeMenuButton = document.getElementById("close-menu-button");
-        const overlay = document.getElementById("mobile-menu-overlay");
-
-        function openMenu() {
-          mobileMenu.classList.remove("translate-x-full");
-          mobileMenuButton.setAttribute("aria-expanded", "true");
-          overlay.classList.add("opacity-50");
-          overlay.classList.remove("pointer-events-none");
-          document.body.style.overflow = "hidden";
-        }
-
-        function closeMenu() {
-          mobileMenu.classList.add("translate-x-full");
-          mobileMenuButton.setAttribute("aria-expanded", "false");
-          overlay.classList.remove("opacity-50");
-          overlay.classList.add("pointer-events-none");
-          document.body.style.overflow = "";
-        }
-
-        mobileMenuButton.addEventListener("click", openMenu);
-        closeMenuButton.addEventListener("click", closeMenu);
-        overlay.addEventListener("click", closeMenu);
-
-        // Close menu on escape key press
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            !mobileMenu.classList.contains("translate-x-full")
-          ) {
-            closeMenu();
-          }
-        });
-      </script>
     </div>
 
     <script>
@@ -2843,9 +2855,10 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script src="asset/js/loader.js"></script>
     <script src="asset/js/aos.js"></script>
-    <script src="asset/js/doughnut-cahrt.js"></script>
-    <script src="asset/js/date-filter.js"></script>
-    <script src="asset/js/bar-chart.js"></script>
+
     <script src="asset/js/swiper.js"></script>
+    <script src="asset/js/scroll-to-top.js"></script>
+    <script src="asset/js/homepage-sidebar.js"></script>
+    <script src="asset/js/homepage-navbar.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="asset/css/select2.min.css" />
+    <link rel="stylesheet" href="../../asset/css/select2.min.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
       rel="stylesheet"
@@ -46,8 +46,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" href="asset/css/styles.css" />
-    <script src="asset/js/color.js"></script>
+    <link rel="stylesheet" href="../../asset/css/styles.css" />
+    <script src="../../asset/js/color.js"></script>
 
     <title>Home</title>
   </head>
@@ -110,13 +110,16 @@
           id="navbar"
           class="container mx-auto flex items-center justify-between p-4"
         >
-          <a href="index.html" class="text-xl font-extrabold primary-text">
+          <a
+            href="../../index.html"
+            class="text-xl font-extrabold primary-text"
+          >
             VitaInfluence
           </a>
 
           <div class="hidden lg:flex items-center space-x-8">
             <a
-              href="index.html"
+              href="../../index.html"
               class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >Home</a
             >
@@ -135,14 +138,12 @@
               class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >About Us</a
             >
-            <a
-              href="blogs.html"
-              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+            <a href="blogs.html" class="primary-text border-b-2 primary-border"
               >Blog</a
             >
             <a
               href="contact-us.html"
-              class="primary-text border-b-2 primary-border"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >Contact</a
             >
           </div>
@@ -166,35 +167,6 @@
           </div>
         </nav>
       </div>
-      <!-- <div
-        class="relative min-h-[20rem] bg-gradient-to-b from-[#fafafa] via-[#fef6fa] to-white pt-20"
-      >
-        <div
-          class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"
-        ></div>
-
-        <script>
-          window.addEventListener("scroll", function () {
-            const navbarWrapper = document.getElementById("navbar-wrapper");
-            if (window.scrollY > 50) {
-              navbarWrapper.classList.add("bg-white", "shadow-md");
-            } else {
-              navbarWrapper.classList.remove("bg-white", "shadow-md");
-            }
-          });
-        </script>
-
-        <div
-          class="text-center w-full absolute top-40 text-[4rem] uppercase font-extrabold z-20 text-black"
-        >
-          Contact Us
-          <div class="text-sm text-gray-500">
-            We're here to help. Reach out to us with any questions, feedback, or
-            collaboration ideas.
-          </div>
-        </div>
-      </div> -->
-
       <div
         class="relative min-h-[20rem] bg-gradient-to-b from-[#fff5f5] via-[#ffeaea] to-white pt-20"
       >
@@ -228,10 +200,10 @@
         <div
           class="text-center w-full absolute top-36 text-[4rem] uppercase font-extrabold z-20 text-[#d32f2f] drop-shadow-md transition-transform duration-300 transform hover:scale-105"
         >
-          Contact us
+          Blog Details
           <div class="text-lg text-[#e57373] mt-3 font-semibold tracking-wide">
-            We're here to help. Reach out to us with any questions, feedback, or
-            collaboration ideas.
+            Join our network of creators and influencers, and collaborate with
+            us to make an impact together.
           </div>
         </div>
       </div>
@@ -239,161 +211,352 @@
       <section
         class="container mx-auto lg:mt-0 mt-24 px-5 md:px-10 lg:p-24 flex flex-col items-center justify-center gap-4 block"
       >
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full">
+          <div class="col-span-1 lg:col-span-3 flex flex-col gap-4">
+            <img
+              src="https://picsum.photos/1000/500"
+              alt=""
+              class="w-full h-[25rem] object-cover rounded-lg mt-6"
+            />
+            <div
+              class="text-[2rem] font-semibold mt-4 flex items-center justify-between"
+            >
+              Blog Title: Adventure is must
+              <span class="text-sm text-gray-600">3 min read</span>
+            </div>
+            <div
+              class="flex items-center gap-2 font-bold text-gray-500 text-xl"
+            >
+              <img
+                src="https://picsum.photos/200"
+                class="size-10 rounded-full"
+                alt=""
+              />
+              <span>Rakib Ansar</span>
+            </div>
+
+            <div class="text-lg text-gray-600">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
+              ad non impedit natus quidem, porro temporibus! Dolor minus
+              corporis facere suscipit itaque at. Lorem, ipsum dolor sit amet
+              consectetur adipisicing elit. Fugit voluptatem, officia aliquid
+              eius ut laudantium minus assumenda dolorum, voluptate, quos
+              facere! Inventore, est aliquid ad eius sapiente tempore doloremque
+              rerum?
+            </div>
+            <div class="text-lg text-gray-600">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
+              ad non impedit natus quidem, porro temporibus! Dolor minus
+              corporis facere suscipit itaque at.
+            </div>
+
+            <div
+              class="p-10 border-l-2 border-black bg-gray-100 rounded-lg text-lg mt-4 italic flex items-center gap-4"
+            >
+              <img
+                src="../../asset/icon/quotation-marks-svgrepo-com.svg"
+                class="size-16"
+                alt=""
+              />
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
+              quisquam placeat ducimus provident aperiam temporibus dolor itaque
+              sint voluptatibus vero alias dolores neque, vel mollitia id optio
+              recusandae omnis aliquam.
+            </div>
+
+            <div class="text-lg text-gray-600 mt-4">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
+              ad non impedit natus quidem, porro temporibus! Dolor minus
+              corporis facere suscipit itaque at.
+            </div>
+
+            <div>
+              <img
+                src="https://picsum.photos/1000/500"
+                alt=""
+                class="w-full h-[25rem] object-cover rounded-lg mt-6"
+              />
+            </div>
+
+            <div class="text-lg text-gray-600 mt-4 flex gap-2 items-start">
+              <!-- Changed items-center to center the items -->
+              <span class="p-4 text-4xl font-bold bg-gray-600 text-white mt-2"
+                >L</span
+              >
+              <span class="text-black">
+                orem ipsum dolor sit amet consectetur adipisicing elit. Saepe ut
+                perferendis repudiandae omnis quos, dolore tenetur praesentium
+                quis veniam dignissimos accusamus vero at ab aliquid rerum.
+                Quaerat possimus maxime illum? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Minus vitae ex totam debitis
+                commodi impedit placeat, vero quibusdam. Laudantium laborum iste
+                hic dolores veniam quo, illo sequi sed sit repudiandae.
+              </span>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div>
+                <img
+                  src="https://picsum.photos/1000/500"
+                  alt=""
+                  class="w-full h-[15rem] object-cover rounded-lg"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://picsum.photos/1000/500"
+                  alt=""
+                  class="w-full h-[15rem] object-cover rounded-lg"
+                />
+              </div>
+            </div>
+
+            <div class="text-lg text-gray-600 mt-4">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates, dicta facilis fugit dolorem accusantium, minus culpa
+              ad non impedit natus quidem, porro temporibus! Dolor minus
+              corporis facere suscipit itaque at. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Possimus velit iste dolor
+              perspiciatis maxime, beatae ex placeat, dolore vero eius enim non
+              quaerat totam dolores harum quia accusamus. Inventore,
+              voluptatibus!
+            </div>
+          </div>
+          <div class="col-span-1 space-y-10">
+            <div class="grid grid-cols-1 border rounded-md shadow-lg">
+              <div class="pt-10 w-full text-center text-xl">About Me</div>
+              <div>
+                <img
+                  src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
+                  alt=""
+                  class="w-64 object-cover rounded-full p-10 mx-auto"
+                />
+              </div>
+              <div class="px-10 pb-10 flex flex-col gap-3">
+                <a
+                  href="../../index.html"
+                  class="text-lg font-semibold w-full text-center cursor-pointer hover:underline"
+                >
+                  Rakib Ansar
+                </a>
+
+                <div
+                  class="flex flex-wrap items-center justify-center gap-2 mb-2"
+                >
+                  <div
+                    class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                  >
+                    Content Creator
+                  </div>
+                  <div
+                    class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                  >
+                    Influencer
+                  </div>
+                  <div
+                    class="px-2 py-1 bg-gray-200 text-xs rounded-full font-semibold"
+                  >
+                    Entertainer
+                  </div>
+                </div>
+                <div class="text-center w-full text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+                  officiis aliquid, minima in doloremque sapiente aperiam? Animi
+                  ratione eaque ea dicta architecto, repudiandae maxime facere
+                  quis nihil iusto est laboriosam!
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="w-full flex flex-col items-center justify-center p-10 rounded-lg shadow-lg"
+            >
+              <div class="font-semibold mb-6">Related Tags</div>
+
+              <div class="flex items-center justify-center flex-wrap gap-2">
+                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
+                  >Tiktok</span
+                >
+                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
+                  >Facebook</span
+                >
+                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
+                  >Instagram</span
+                >
+                <span class="px-4 py-1 rounded-sm bg-black text-white text-sm"
+                  >Youtube</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <div
-          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 gap-y-16 w-full mb-20 mt-10"
+          class="container mx-auto mt-48 lg:mt-0 px-5 md:px-10 lg:p-20 flex flex-col items-center justify-center gap-4 block"
         >
-          <div class="flex flex-col gap-4">
-            <div
-              class="flex items-center justify-center xl:justify-start gap-2"
-            >
-              <img
-                src="asset/icon/location-pin-alt-1-svgrepo-com.svg"
-                alt=""
-                class="size-6"
-              />
-              <span class="text-xl">Office Location</span>
-            </div>
-
-            <hr class="w-full border-black" />
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              401 Broadway, 24th Floor
-            </div>
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              Orchard View, London
-            </div>
+          <div
+            class="text-[2rem] lg:text-[3rem] uppercase font-extrabold text-center"
+          >
+            Explore More Blogs
           </div>
-          <div class="flex flex-col gap-4">
-            <div
-              class="flex items-center justify-center xl:justify-start gap-2"
-            >
-              <img
-                src="asset/icon/mail-svgrepo-com copy.svg"
-                alt=""
-                class="size-6"
-              />
-              <span class="text-xl">Send a message</span>
-            </div>
-
-            <hr class="w-full border-black" />
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              info@yourdomain.com
-            </div>
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              sales@yourdomain.com
-            </div>
+          <div class="-mt-4 xl:-mt-6 text-center">
+            Checkout our most recent blogs
           </div>
-          <div class="flex flex-col gap-4">
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-16 w-full mt-16"
+          >
             <div
-              class="flex items-center justify-center xl:justify-start gap-2"
+              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
             >
               <img
-                src="asset/icon/call-in-svgrepo-com.svg"
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
                 alt=""
-                class="size-6"
+                class="h-[15rem] rounded-lg"
               />
-              <span class="text-xl">Call us directly</span>
-            </div>
+              <div class="text-2xl font-bold">
+                Highway Sound Barries and Potential Materials
+              </div>
 
-            <hr class="w-full border-black" />
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              Phone: 1-800-222-000
+              <div
+                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
+              >
+                <div class="font-semibold">John Doe</div>
+                <div>10mins ago</div>
+              </div>
+              <div class="text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
+                deleniti quasi aspernatur magni perferendis non sint autem error
+                in. A velit quos eius!
+              </div>
+
+              <div class="flex items-center justify-between">
+                <button
+                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
+                  type="button"
+                >
+                  Read More
+                </button>
+              </div>
             </div>
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              Fax: 1-800-222-002
-            </div>
-          </div>
-          <div class="flex flex-col gap-4">
             <div
-              class="flex items-center justify-center xl:justify-start gap-2"
+              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
             >
               <img
-                src="asset/icon/team-3-svgrepo-com.svg"
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
                 alt=""
-                class="size-6"
+                class="h-[15rem] rounded-lg"
               />
-              <span class="text-xl">Join our team</span>
-            </div>
+              <div class="text-2xl font-bold">
+                Highway Sound Barries and Potential Materials
+              </div>
 
-            <hr class="w-full border-black" />
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              hire@yourdomain.com
+              <div
+                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
+              >
+                <div class="font-semibold">John Doe</div>
+                <div>10mins ago</div>
+              </div>
+              <div class="text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
+                deleniti quasi aspernatur magni perferendis non sint autem error
+                in. A velit quos eius!
+              </div>
+
+              <div class="flex items-center justify-between">
+                <button
+                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
+                  type="button"
+                >
+                  Read More
+                </button>
+              </div>
             </div>
-            <div class="text-xl text-gray-500 text-center w-full xl:text-start">
-              hr@yourdomain.com
+            <div
+              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
+            >
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
+                alt=""
+                class="h-[15rem] rounded-lg"
+              />
+              <div class="text-2xl font-bold">
+                Highway Sound Barries and Potential Materials
+              </div>
+
+              <div
+                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
+              >
+                <div class="font-semibold">John Doe</div>
+                <div>10mins ago</div>
+              </div>
+              <div class="text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
+                deleniti quasi aspernatur magni perferendis non sint autem error
+                in. A velit quos eius!
+              </div>
+
+              <div class="flex items-center justify-between">
+                <button
+                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
+                  type="button"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+            <div
+              class="rounded-lg overflow-hidden cursor-pointer duration-300 hover:shadow-lg flex flex-col p-5 gap-4 h-[34.5rem]"
+            >
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQFvs_dNR3vs9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603344761378?e=1735776000&v=beta&t=q7-VdNOBjlXNoQL1Dp3CCqjtiN6p2nskMF80d8jMHfg"
+                alt=""
+                class="h-[15rem] rounded-lg"
+              />
+              <div class="text-2xl font-bold">
+                Highway Sound Barries and Potential Materials
+              </div>
+
+              <div
+                class="text-xs text-gray-400 flex items-center justify-between -mt-3"
+              >
+                <div class="font-semibold">John Doe</div>
+                <div>10mins ago</div>
+              </div>
+              <div class="text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+                magnam, minima distinctio cupiditate eveniet, dignissimos fugit
+                deleniti quasi aspernatur magni perferendis non sint autem error
+                in. A velit quos eius!
+              </div>
+
+              <div class="flex items-center justify-between">
+                <button
+                  class="border border-black px-3 py-2 rounded-md text-sm hover:text-white hover:bg-black hover:shadow-md"
+                  type="button"
+                >
+                  Read More
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.2521843216814!2d90.43924782017679!3d23.70268675605991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4a175d275fafac69%3A0xd871af27aa650ae7!2sVitasoft%20Solutions!5e0!3m2!1sen!2sbd!4v1723446649554!5m2!1sen!2sbd"
-          height="350"
-          class="my-20 w-full focus:outline-none"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
-
-      <section class="container mx-auto px-5 pb-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div
-            class="p-5 lg:p-10 flex flex-col gap-2 rounded-lg shadow-lg relative"
+        <div class="flex w-full items-center justify-center mb-16">
+          <a
+            href="influencers.html"
+            class="px-6 py-3 text-lg primary-bg-hover font-semibold text-white shadow-lg rounded-md cursor-pointer"
           >
-            <img
-              src="asset//icon/corner.svg"
-              class="absolute top-0 left-0"
-              alt=""
-            />
-
-            <img
-              src="asset//icon/corner.svg"
-              class="absolute bottom-0 right-0 rotate-180"
-              alt=""
-            />
-            <div class="text-2xl font-bold mb-6">Send Your Message to Us</div>
-
-            <div class="relative mb-6 w-full lg:w-[80%]">
-              <input
-                type="text"
-                id="input-group-1"
-                class="bg-transparent border-0 border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:ring-0 focus:border-black w-full p-2"
-                placeholder="User Name"
-                required
-              />
-            </div>
-            <div class="relative mb-6 w-full lg:w-[80%]">
-              <input
-                type="text"
-                id="input-group-1"
-                class="bg-transparent border-0 border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:ring-0 focus:border-black w-full p-2"
-                placeholder="Email"
-                required
-              />
-            </div>
-            <div class="relative mb-6 w-full lg:w-[80%]">
-              <input
-                type="text"
-                id="input-group-1"
-                class="bg-transparent border-0 border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:ring-0 focus:border-black w-full p-2"
-                placeholder="Subject"
-                required
-              />
-            </div>
-            <div class="relative mb-6 w-full lg:w-[80%]">
-              <textarea
-                type="text"
-                id="input-group-1"
-                class="bg-transparent border-0 border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:ring-0 focus:border-black w-full p-2"
-                placeholder="Message"
-                required
-                rows="4"
-              ></textarea>
-            </div>
-          </div>
-          <iframe
-            src="https://lottie.host/embed/99d17a34-7572-4050-8971-1a294d65e5d3/q3MYXwYgKs.json"
-            height="550"
-            class="w-full"
-          ></iframe>
+            View more
+          </a>
         </div>
       </section>
 
@@ -414,21 +577,21 @@
               <div class="flex items-center gap-2 mt-4">
                 <div class="bg-[#7F7F7F] p-1 rounded-full">
                   <img
-                    src="asset/icon/facebook-svgrepo-com.svg"
+                    src="../../asset/icon/facebook-svgrepo-com.svg"
                     alt=""
                     class="size-5"
                   />
                 </div>
                 <div class="bg-[#7F7F7F] p-1 rounded-full">
                   <img
-                    src="asset/icon/instagram-svgrepo-com.svg"
+                    src="../../asset/icon/instagram-svgrepo-com.svg"
                     alt=""
                     class="size-5"
                   />
                 </div>
                 <div class="bg-[#7F7F7F] p-1 rounded-full">
                   <img
-                    src="asset/icon/youtube-svgrepo-com (1).svg"
+                    src="../../asset/icon/youtube-svgrepo-com (1).svg"
                     alt=""
                     class="size-5"
                   />
@@ -522,7 +685,7 @@
                       class="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none"
                     >
                       <img
-                        src="asset/icon/mail-svgrepo-com.svg"
+                        src="../../asset/icon/mail-svgrepo-com.svg"
                         alt=""
                         class="w-6"
                       />
@@ -616,7 +779,7 @@
           </div>
           <nav class="space-y-4">
             <a
-              href="index.html"
+              href="../../index.html"
               class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
               >Home</a
             >
@@ -627,7 +790,7 @@
             >
             <a
               href="services.html"
-              class="block primary-text border-l-4 primary-border pl-4"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
               >Service</a
             >
             <a
@@ -637,7 +800,7 @@
             >
             <a
               href="blogs.html"
-              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              class="block primary-text border-l-4 primary-border pl-4"
               >Blog</a
             >
             <a
@@ -728,11 +891,11 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-    <script src="asset/js/loader.js"></script>
-    <script src="asset/js/aos.js"></script>
-    <script src="asset/js/doughnut-cahrt.js"></script>
-    <script src="asset/js/date-filter.js"></script>
-    <script src="asset/js/bar-chart.js"></script>
-    <script src="asset/js/swiper.js"></script>
+    <script src="../../asset/js/loader.js"></script>
+    <script src="../../asset/js/aos.js"></script>
+    <script src="../../asset/js/doughnut-cahrt.js"></script>
+    <script src="../../asset/js/date-filter.js"></script>
+    <script src="../../asset/js/bar-chart.js"></script>
+    <script src="../../asset/js/swiper.js"></script>
   </body>
 </html>

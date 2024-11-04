@@ -53,10 +53,53 @@
   </head>
   <body>
     <div id="loader">
-      <div class="spinner"></div>
+      <div class="spinner">
+        <svg
+          class="ip"
+          viewBox="0 0 256 128"
+          width="256px"
+          height="128px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5ebd3e" />
+              <stop offset="33%" stop-color="#ffb900" />
+              <stop offset="67%" stop-color="#f78200" />
+              <stop offset="100%" stop-color="#e23838" />
+            </linearGradient>
+            <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+              <stop offset="0%" stop-color="#e23838" />
+              <stop offset="33%" stop-color="#973999" />
+              <stop offset="67%" stop-color="#009cdf" />
+              <stop offset="100%" stop-color="#5ebd3e" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke-linecap="round" stroke-width="16">
+            <g class="ip__track" stroke="#ddd">
+              <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+              <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+            </g>
+            <g stroke-dasharray="180 656">
+              <path
+                class="ip__worm1"
+                stroke="url(#grad1)"
+                stroke-dashoffset="0"
+                d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"
+              />
+              <path
+                class="ip__worm2"
+                stroke="url(#grad2)"
+                stroke-dashoffset="358"
+                d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
     </div>
 
-    <div id="content relative view">
+    <div id="content" class="relative">
       <!-- Navigation -->
 
       <div
@@ -93,6 +136,11 @@
               >About Us</a
             >
             <a
+              href="blogs.html"
+              class="text-gray-600 hover-text hover:border-b-2 hover-border"
+              >Blog</a
+            >
+            <a
               href="contact-us.html"
               class="text-gray-600 hover-text hover:border-b-2 hover-border"
               >Contact</a
@@ -118,7 +166,7 @@
           </div>
         </nav>
       </div>
-      <div
+      <!-- <div
         class="relative min-h-[20rem] bg-gradient-to-b from-[#fafafa] via-[#fef6fa] to-white pt-20"
       >
         <div
@@ -141,6 +189,46 @@
         >
           Services
           <div class="text-sm text-gray-500">
+            Explore our range of services designed to bring your vision to life
+            with expertise and innovation.
+          </div>
+        </div>
+      </div> -->
+      <div
+        class="relative min-h-[20rem] bg-gradient-to-b from-[#fff5f5] via-[#ffeaea] to-white pt-20"
+      >
+        <!-- Dot Pattern Background -->
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle,#f8a5a5_1px,transparent_1px)] [background-size:10px_10px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_75%,transparent_100%)] pointer-events-none opacity-75"
+        ></div>
+
+        <script>
+          window.addEventListener("scroll", function () {
+            const navbarWrapper = document.getElementById("navbar-wrapper");
+            if (window.scrollY > 50) {
+              navbarWrapper.classList.add(
+                "bg-white",
+                "shadow-lg",
+                "transition-all",
+                "duration-300"
+              );
+            } else {
+              navbarWrapper.classList.remove(
+                "bg-white",
+                "shadow-lg",
+                "transition-all",
+                "duration-300"
+              );
+            }
+          });
+        </script>
+
+        <!-- Heading Section -->
+        <div
+          class="text-center w-full absolute top-36 text-[4rem] uppercase font-extrabold z-20 text-[#d32f2f] drop-shadow-md transition-transform duration-300 transform hover:scale-105"
+        >
+          Services
+          <div class="text-lg text-[#e57373] mt-3 font-semibold tracking-wide">
             Explore our range of services designed to bring your vision to life
             with expertise and innovation.
           </div>
@@ -1404,7 +1492,7 @@
                     Entertainer
                   </div>
                 </div>
-                <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+                <div class="text-sm text-white/80 mt-2">Worked With:</div>
                 <div class="flex flex-wrap items-center gap-2">
                   <img
                     src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
@@ -1509,7 +1597,7 @@
                     Entertainer
                   </div>
                 </div>
-                <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+                <div class="text-sm text-white/80 mt-2">Worked With:</div>
                 <div class="flex flex-wrap items-center gap-2">
                   <img
                     src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
@@ -1612,7 +1700,7 @@
                     Entertainer
                   </div>
                 </div>
-                <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+                <div class="text-sm text-white/80 mt-2">Worked With:</div>
                 <div class="flex flex-wrap items-center gap-2">
                   <img
                     src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
@@ -1717,7 +1805,7 @@
                     Entertainer
                   </div>
                 </div>
-                <div class="text-sm text-gray-500 mt-2">Worked With:</div>
+                <div class="text-sm text-white/80 mt-2">Worked With:</div>
                 <div class="flex flex-wrap items-center gap-2">
                   <img
                     src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/328243346_157652200496626_4329212548287030652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TtdI9Z4qCHMQ7kNvgHeEugM&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=Ays04RdbLfOG-qfMUb9lFfj&oh=00_AYDvHOEnVw_j6seKC3bECOSwrMNsJs6QylqgfPpS7B1rtw&oe=6728E2E6"
@@ -2006,6 +2094,11 @@
               href="about-us.html"
               class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
               >About Us</a
+            >
+            <a
+              href="blogs.html"
+              class="block text-gray-600 hover-text hover:border-l-4 hover-border pl-4 transition-colors"
+              >Blog</a
             >
             <a
               href="contact-us.html"

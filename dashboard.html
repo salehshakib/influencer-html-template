@@ -36,7 +36,50 @@
   </head>
   <body>
     <div id="loader">
-      <div class="spinner"></div>
+      <div class="spinner">
+        <svg
+          class="ip"
+          viewBox="0 0 256 128"
+          width="256px"
+          height="128px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5ebd3e" />
+              <stop offset="33%" stop-color="#ffb900" />
+              <stop offset="67%" stop-color="#f78200" />
+              <stop offset="100%" stop-color="#e23838" />
+            </linearGradient>
+            <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+              <stop offset="0%" stop-color="#e23838" />
+              <stop offset="33%" stop-color="#973999" />
+              <stop offset="67%" stop-color="#009cdf" />
+              <stop offset="100%" stop-color="#5ebd3e" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke-linecap="round" stroke-width="16">
+            <g class="ip__track" stroke="#ddd">
+              <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+              <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+            </g>
+            <g stroke-dasharray="180 656">
+              <path
+                class="ip__worm1"
+                stroke="url(#grad1)"
+                stroke-dashoffset="0"
+                d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"
+              />
+              <path
+                class="ip__worm2"
+                stroke="url(#grad2)"
+                stroke-dashoffset="358"
+                d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
     </div>
 
     <div id="content">
@@ -989,7 +1032,12 @@
                   <div class="text-3xl font-semibold">$1,182.90</div>
                 </div>
               </div>
-              <div class="p-3 rounded-full sec-bg">
+              <img
+                src="asset/icon/dollar-bill-part-2-svgrepo-com.svg"
+                class="size-12 p-1"
+                alt=""
+              />
+              <!-- <div class="p-3 rounded-full sec-bg">
                 <svg
                   id="Money_24"
                   width="24"
@@ -1027,7 +1075,7 @@
                     />
                   </g>
                 </svg>
-              </div>
+              </div> -->
             </a>
             <a
               class="flex items-center justify-between h-28 p-4 rounded-lg bg-white shadow-md cursor-pointe w-full"
@@ -1039,7 +1087,12 @@
                   <div class="text-3xl font-semibold">78</div>
                 </div>
               </div>
-              <div class="p-3 rounded-full sec-bg">
+              <img
+                src="asset/icon/delivery-man-svgrepo-com.svg"
+                class="size-12 p-1"
+                alt=""
+              />
+              <!-- <div class="p-3 rounded-full sec-bg">
                 <svg
                   id="Delivery_24"
                   width="24"
@@ -1077,7 +1130,7 @@
                     />
                   </g>
                 </svg>
-              </div>
+              </div> -->
             </a>
             <a
               class="flex items-center justify-between h-28 p-4 rounded-lg bg-white shadow-md cursor-pointe w-full"
@@ -1089,7 +1142,12 @@
                   <div class="text-3xl font-semibold">10</div>
                 </div>
               </div>
-              <div class="p-3 rounded-full sec-bg">
+              <img
+                src="asset/icon/completed-checkmark-done-complete-svgrepo-com.svg"
+                class="size-12 p-1"
+                alt=""
+              />
+              <!-- <div class="p-3 rounded-full sec-bg">
                 <svg
                   id="Purchase_Order_24"
                   width="24"
@@ -1127,7 +1185,7 @@
                     />
                   </g>
                 </svg>
-              </div>
+              </div> -->
             </a>
             <a
               class="flex items-center justify-between h-28 p-4 rounded-lg bg-white shadow-md cursor-pointe w-full"
@@ -1139,7 +1197,12 @@
                   <div class="text-3xl font-semibold">15</div>
                 </div>
               </div>
-              <div class="p-3 rounded-full sec-bg">
+              <img
+                src="asset/icon/user-person-profile-check-svgrepo-com.svg"
+                class="size-12 p-1"
+                alt=""
+              />
+              <!-- <div class="p-3 rounded-full sec-bg">
                 <svg
                   id="Checked_User_Male_24"
                   width="24"
@@ -1177,7 +1240,7 @@
                     />
                   </g>
                 </svg>
-              </div>
+              </div> -->
             </a>
           </div>
 
@@ -1190,22 +1253,11 @@
                   href="deposit/all-deposit.html"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#D4F4E2]">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="#28C76F"
-                        class="size-6"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
-                        />
-                      </svg>
-                    </div>
+                    <img
+                      src="asset/icon/dollar-bill-part-2-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>$23,233.00 USD</div>
@@ -1236,7 +1288,7 @@
                   class="flex items-center justify-between h-28 border-b p-4 cursor-pointer hover:bg-gray-50"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#F9E6D3]">
+                    <!-- <div class="p-4 rounded-md bg-[#F9E6D3]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -1251,7 +1303,13 @@
                           d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                         />
                       </svg>
-                    </div>
+                    </div> -->
+
+                    <img
+                      src="asset/icon/time-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>2</div>
@@ -1282,7 +1340,7 @@
                   class="flex items-center justify-between h-28 border-r-0 md:border-r border-b md:border-b-0 p-4 cursor-pointer hover:bg-gray-50"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#FBD3D3]">
+                    <!-- <div class="p-4 rounded-md bg-[#FBD3D3]">
                       <svg
                         id="Road_Sign_Banned_Alternate_24"
                         width="24"
@@ -1319,7 +1377,12 @@
                           />
                         </g>
                       </svg>
-                    </div>
+                    </div> -->
+                    <img
+                      src="asset/icon/cancel-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>0</div>
@@ -1350,7 +1413,7 @@
                   class="flex items-center justify-between h-28 p-4 cursor-pointer hover:bg-gray-50"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#DAD6FF]">
+                    <!-- <div class="p-4 rounded-md bg-[#DAD6FF]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -1365,7 +1428,13 @@
                           d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                         />
                       </svg>
-                    </div>
+                    </div> -->
+
+                    <img
+                      src="asset/icon/percent-sign-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>$23,233.00 USD</div>
@@ -1401,7 +1470,7 @@
                   href="withdraw/all-wtihdrawals.html"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#D4F4E2]">
+                    <!-- <div class="p-4 rounded-md bg-[#D4F4E2]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -1416,7 +1485,12 @@
                           d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
                         />
                       </svg>
-                    </div>
+                    </div> -->
+                    <img
+                      src="asset/icon/dollar-bill-part-2-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>$23,233.00 USD</div>
@@ -1447,7 +1521,7 @@
                   class="flex items-center justify-between h-28 border-b p-4 cursor-pointer hover:bg-gray-50"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#F9E6D3]">
+                    <!-- <div class="p-4 rounded-md bg-[#F9E6D3]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -1462,7 +1536,12 @@
                           d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                         />
                       </svg>
-                    </div>
+                    </div> -->
+                    <img
+                      src="asset/icon/time-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>2</div>
@@ -1493,7 +1572,7 @@
                   class="flex items-center justify-between h-28 border-r-0 md:border-r border-b md:border-b-0 p-4 cursor-pointer hover:bg-gray-50"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#FBD3D3]">
+                    <!-- <div class="p-4 rounded-md bg-[#FBD3D3]">
                       <svg
                         id="Road_Sign_Banned_Alternate_24"
                         width="24"
@@ -1530,7 +1609,12 @@
                           />
                         </g>
                       </svg>
-                    </div>
+                    </div> -->
+                    <img
+                      src="asset/icon/cancel-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>0</div>
@@ -1561,7 +1645,7 @@
                   class="flex items-center justify-between h-28 p-4 cursor-pointer hover:bg-gray-50"
                 >
                   <div class="flex items-center gap-4">
-                    <div class="p-4 rounded-md bg-[#DAD6FF]">
+                    <!-- <div class="p-4 rounded-md bg-[#DAD6FF]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -1576,7 +1660,12 @@
                           d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                         />
                       </svg>
-                    </div>
+                    </div> -->
+                    <img
+                      src="asset/icon/percent-sign-svgrepo-com.svg"
+                      class="size-12 p-1"
+                      alt=""
+                    />
 
                     <div class="flex flex-col gap-1 font-medium">
                       <div>$23,233.00 USD</div>

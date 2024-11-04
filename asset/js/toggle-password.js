@@ -45,3 +45,24 @@ togglePasswordButtonConfirm.addEventListener("click", function () {
     toggleIconConfirm.alt = "Show Password";
   }
 });
+
+const togglePasswordButtonNew = document.getElementById("toggle-new-password");
+const passwordInputNew = document.getElementById("newPassword");
+const toggleIconNew = document.getElementById("toggle-new-icon");
+
+togglePasswordButtonNew.addEventListener("click", function () {
+  // Toggle the type attribute
+  const isPasswordHidden = passwordInputNew.getAttribute("type") === "password";
+  passwordInputNew.setAttribute("type", isPasswordHidden ? "text" : "password");
+
+  // Toggle the eye icon based on the visibility
+  if (isPasswordHidden) {
+    toggleIconNew.src =
+      "https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/eye-slash-svgrepo-com.svg"; // Path to your 'hide' icon
+    toggleIconNew.alt = "Hide Password";
+  } else {
+    toggleIconNew.src =
+      "https://cdn.jsdelivr.net/gh/vitasoftsolutions/assets-admin@latest/blade-admin-template/asset/icon/eye-svgrepo-com.svg"; // Path to your 'show' icon
+    toggleIconNew.alt = "Show Password";
+  }
+});

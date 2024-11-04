@@ -72,7 +72,7 @@ body {
   animation: float-2 10s ease-in-out infinite;
 }
 
-#loader {
+/* #loader {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -80,28 +80,113 @@ body {
   z-index: 9999;
 }
 
-/* Inner Spinner Element */
 .spinner {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
   width: 120px;
   height: 120px;
-  animation: spin 2s linear infinite; /* This will handle the rotation */
+  animation: spin 2s linear infinite; 
 }
 
-/* Keyframes for spinning animation */
 @keyframes spin {
   0% {
-    transform: rotate(0deg); /* Start with no rotation */
+    transform: rotate(0deg); 
   }
   100% {
-    transform: rotate(360deg); /* Full rotation */
+    transform: rotate(360deg); 
+  }
+} */
+/* #loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.spinner {
+  border: 16px solid var(--var-secondary-color);
+  border-radius: 50%;
+  border-top: 16px solid var(--var-primary-color);
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+#loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.ip {
+  width: 16em;
+  height: 8em;
+}
+.ip__track {
+  stroke: hsl(var(--hue), 90%, 90%);
+  transition: stroke var(--trans-dur);
+}
+.ip__worm1,
+.ip__worm2 {
+  animation: worm1 2s linear infinite;
+}
+.ip__worm2 {
+  animation-name: worm2;
+}
+
+/* Animation */
+@keyframes worm1 {
+  from {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    animation-timing-function: steps(1);
+    stroke-dashoffset: -358;
+  }
+  50.01% {
+    animation-timing-function: linear;
+    stroke-dashoffset: 358;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes worm2 {
+  from {
+    stroke-dashoffset: 358;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -358;
   }
 }
 
 #content {
-  opacity: 0; /* Only the content is hidden, not the loader */
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
