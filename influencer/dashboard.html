@@ -30,7 +30,7 @@
       href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
     />
     <link rel="stylesheet" href="asset/css/styles.css" />
-    <script src="asset/js/color.js"></script>
+    <script src="../asset/js/color.js"></script>
 
     <title>Dashboard</title>
   </head>
@@ -411,6 +411,105 @@
               </a>
             </li>
 
+            <!-- Services -->
+            <li>
+              <button
+                id="sidebar-dropdown-button"
+                class="flex items-center justify-between w-full p-2 text-sm text-gray-900 transition duration-75 rounded-lg group secondary-bg lg:text-base"
+              >
+                <div class="flex items-center justify-center gap-2">
+                  <svg
+                    id="User_Account_24"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <rect
+                      width="24"
+                      height="24"
+                      stroke="none"
+                      fill="#000000"
+                      opacity="0"
+                    />
+
+                    <g transform="matrix(0.91 0 0 0.91 12 12)">
+                      <path
+                        class="primary-fill"
+                        style="
+                          stroke: none;
+                          stroke-width: 1;
+                          stroke-dasharray: none;
+                          stroke-linecap: butt;
+                          stroke-dashoffset: 0;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 4;
+                          fill-rule: nonzero;
+                          opacity: 1;
+                        "
+                        transform=" translate(-12, -12)"
+                        d="M 8 5 C 6.343145750507619 5 5 6.343145750507619 5 8 C 5 9.65685424949238 6.343145750507619 11 8 11 C 9.65685424949238 11 11 9.65685424949238 11 8 C 11 6.343145750507619 9.65685424949238 5 8 5 z M 16 5 C 14.34314575050762 5 13 6.343145750507619 13 8 C 13 9.65685424949238 14.34314575050762 11 16 11 C 17.65685424949238 11 19 9.65685424949238 19 8 C 19 6.343145750507619 17.65685424949238 5 16 5 z M 8 13 C 5 13 1 14.464 1 16.5 L 1 18 C 1 18.552 1.448 19 2 19 L 14 19 C 14.552 19 15 18.552 15 18 L 15 16.5 C 15 14.464 11 13 8 13 z M 16 13 C 15.683 13 15.353484 13.019781 15.021484 13.050781 C 16.203484 13.915781 17 15.059 17 16.5 L 17 19 L 22 19 C 22.552 19 23 18.552 23 18 L 23 16.5 C 23 14.464 19 13 16 13 z"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                  </svg>
+                  <span class="text-sm xl:text-base hover-text">Services</span>
+                </div>
+                <svg
+                  id="Chevron_Down_16"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    width="16"
+                    height="16"
+                    stroke="none"
+                    fill="#000000"
+                    opacity="0"
+                  />
+
+                  <g transform="matrix(0.27 0 0 0.27 8 8)">
+                    <path
+                      class="primary-fill"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-dashoffset: 0;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 4;
+                        fill-rule: nonzero;
+                        opacity: 1;
+                      "
+                      transform=" translate(-25, -25.5)"
+                      d="M 9.984375 11 C 9.722656 11.003906 9.476563 11.109375 9.292969 11.292969 L 3.292969 17.292969 C 2.902344 17.683594 2.902344 18.316406 3.292969 18.707031 L 24.292969 39.707031 C 24.683594 40.097656 25.316406 40.097656 25.707031 39.707031 L 46.707031 18.707031 C 47.097656 18.316406 47.097656 17.683594 46.707031 17.292969 L 40.707031 11.292969 C 40.316406 10.902344 39.683594 10.902344 39.292969 11.292969 L 25 25.585938 L 10.707031 11.292969 C 10.515625 11.101563 10.253906 10.996094 9.984375 11 Z"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+              <ul class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="../influencer/services/all-service.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group secondary-bg text-sm xl:text-base hover-text"
+                    >All Services</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="../influencer/services/create-service.html"
+                    class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
+                    >Add Service</a
+                  >
+                </li>
+              </ul>
+            </li>
             <!-- Hiring -->
             <li>
               <button
@@ -681,7 +780,7 @@
               >
                 <div class="flex items-center justify-center gap-2">
                   <svg
-                    id="Deposit_24"
+                    id="Cash_Withdrawal_24"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -696,7 +795,7 @@
                       opacity="0"
                     />
 
-                    <g transform="matrix(1 0 0 1 12 12)">
+                    <g transform="matrix(0.77 0 0 0.77 12 12)">
                       <path
                         class="primary-fill"
                         style="
@@ -711,13 +810,13 @@
                           fill-rule: nonzero;
                           opacity: 1;
                         "
-                        transform=" translate(-12, -11.5)"
-                        d="M 12 2 C 9.239 2 7 4.239 7 7 C 7 9.761 9.239 12 12 12 C 14.761 12 17 9.761 17 7 C 17 4.239 14.761 2 12 2 z M 12.677734 4.3046875 L 12.953125 4.3046875 L 12.951172 9.6855469 L 11.482422 9.6855469 L 11.482422 5.9316406 L 10.179688 6.4355469 L 10.179688 5.3242188 L 12.677734 4.3046875 z M 2 8 L 2 19 C 2 20.103 2.897 21 4 21 L 20 21 C 21.103 21 22 20.103 22 19 L 22 8 L 20 8 L 20 19 L 4 19 L 4 8 L 2 8 z M 8 14 L 12 18 L 16 14 L 8 14 z"
+                        transform=" translate(-15.94, -16.49)"
+                        d="M 4.9414062 5 C 3.8364063 5 2.9414062 5.895 2.9414062 7 C 2.9414063 8.105 3.8364063 9 4.9414062 9 L 7.9902344 9 L 7.9394531 27.980469 L 8.9414062 27.980469 L 23.998047 27.980469 L 24.048828 9 L 26.941406 9 C 28.046406 9 28.941406 8.105 28.941406 7 C 28.941406 5.895 28.046406 5 26.941406 5 L 24.060547 5 L 23.056641 5 L 8.0019531 5 L 8.0019531 5.015625 L 4.9414062 5 z M 9.9980469 7 L 22.056641 7 L 22.007812 24.076172 C 21.848602 24.018569 21.679007 23.980469 21.5 23.980469 C 20.672 23.980469 20 24.651469 20 25.480469 C 20 25.65659 20.035954 25.823429 20.091797 25.980469 L 11.849609 25.980469 C 11.905489 25.823383 11.941406 25.656652 11.941406 25.480469 C 11.941406 24.652469 11.269406 23.980469 10.441406 23.980469 C 10.268038 23.980469 10.104172 24.016187 9.9492188 24.070312 L 9.9980469 7 z M 16 8 C 15.448 8 15 8.448 15 9 C 15 9.552 15.448 10 16 10 C 16.552 10 17 9.552 17 9 C 17 8.448 16.552 8 16 8 z M 15.941406 11.923828 C 14.672073 11.923828 13.59333 12.435287 12.900391 13.214844 C 12.207451 13.994401 11.884766 14.993747 11.884766 15.980469 C 11.884766 16.967191 12.207451 17.96849 12.900391 18.748047 C 13.59333 19.527604 14.672073 20.039062 15.941406 20.039062 C 17.210739 20.039062 18.289483 19.527604 18.982422 18.748047 C 19.675361 17.96849 20 16.967191 20 15.980469 C 20 14.993747 19.675361 13.994401 18.982422 13.214844 C 18.289483 12.435287 17.210739 11.923828 15.941406 11.923828 z M 15.941406 13.923828 C 16.710739 13.923828 17.161888 14.175776 17.488281 14.542969 C 17.814675 14.910162 18 15.438191 18 15.980469 C 18 16.522747 17.814675 17.052729 17.488281 17.419922 C 17.161888 17.787115 16.710739 18.039062 15.941406 18.039062 C 15.172073 18.039062 14.722878 17.787115 14.396484 17.419922 C 14.070091 17.052729 13.884766 16.522747 13.884766 15.980469 C 13.884766 15.438191 14.070091 14.910162 14.396484 14.542969 C 14.722878 14.175776 15.172073 13.923828 15.941406 13.923828 z M 16 22 C 15.448 22 15 22.448 15 23 C 15 23.552 15.448 24 16 24 C 16.552 24 17 23.552 17 23 C 17 22.448 16.552 22 16 22 z"
                         stroke-linecap="round"
                       />
                     </g>
                   </svg>
-                  <span class="text-sm xl:text-base hover-text">Deposit</span>
+                  <span class="text-sm xl:text-base hover-text">Withdraw</span>
                 </div>
                 <svg
                   id="Chevron_Down_16"
@@ -761,14 +860,14 @@
                   <a
                     href="deposit/add-deposit.html"
                     class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
-                    >Deposit Now</a
+                    >Withdraw Now</a
                   >
                 </li>
                 <li>
                   <a
                     href="deposit/all-deposits.html"
                     class="flex items-center w-full p-2 pl-14 text-gray-900 transition duration-75 rounded-lg group text-sm xl:text-base hover-text secondary-bg"
-                    >All Deposit</a
+                    >All Withdraw</a
                   >
                 </li>
               </ul>
@@ -922,52 +1021,6 @@
                 </li>
               </ul>
             </li>
-
-            <li class="">
-              <a
-                href="wishlist.html"
-                class="flex items-center gap-2 p-2 text-gray-900 rounded-lg secondary-bg"
-              >
-                <svg
-                  id="Love_24"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <rect
-                    width="24"
-                    height="24"
-                    stroke="none"
-                    fill="#000000"
-                    opacity="0"
-                  />
-
-                  <g transform="matrix(1 0 0 1 12 12)">
-                    <path
-                      class="primary-fill"
-                      style="
-                        stroke: none;
-                        stroke-width: 1;
-                        stroke-dasharray: none;
-                        stroke-linecap: butt;
-                        stroke-dashoffset: 0;
-                        stroke-linejoin: miter;
-                        stroke-miterlimit: 4;
-                        fill: rgb(0, 0, 0);
-                        fill-rule: nonzero;
-                        opacity: 1;
-                      "
-                      transform=" translate(-12, -11.88)"
-                      d="M 16.5 3 C 13.605 3 12 5.09 12 5.09 C 12 5.09 10.395 3 7.5 3 C 4.462 3 2 5.462 2 8.5 C 2 13.184999999999999 9.256 18.959 11.406 20.567 C 11.76 20.832 12.239 20.832 12.593 20.567 C 14.744 18.959 22 13.185 22 8.5 C 22 5.462 19.538 3 16.5 3 z"
-                      stroke-linecap="round"
-                    />
-                  </g>
-                </svg>
-                <span class="text-sm xl:text-base hover-text">Wishlists</span>
-              </a>
-            </li>
           </ul>
 
           <div
@@ -1033,7 +1086,7 @@
                 </div>
               </div>
               <img
-                src="asset/icon/dollar-bill-part-2-svgrepo-com.svg"
+                src="../asset/icon/dollar-bill-part-2-svgrepo-com.svg"
                 class="size-12 p-1"
                 alt=""
               />
@@ -1088,7 +1141,7 @@
                 </div>
               </div>
               <img
-                src="asset/icon/delivery-man-svgrepo-com.svg"
+                src="../asset/icon/delivery-man-svgrepo-com.svg"
                 class="size-12 p-1"
                 alt=""
               />
@@ -1143,7 +1196,7 @@
                 </div>
               </div>
               <img
-                src="asset/icon/completed-checkmark-done-complete-svgrepo-com.svg"
+                src="../asset/icon/completed-checkmark-done-complete-svgrepo-com.svg"
                 class="size-12 p-1"
                 alt=""
               />
@@ -1198,7 +1251,7 @@
                 </div>
               </div>
               <img
-                src="asset/icon/user-person-profile-check-svgrepo-com.svg"
+                src="../asset/icon/user-person-profile-check-svgrepo-com.svg"
                 class="size-12 p-1"
                 alt=""
               />
@@ -1246,7 +1299,7 @@
 
           <div class="grid grid-cols-1 gap-4 mt-8">
             <div class="p-4 bg-white rounded-md shadow-sm">
-              <span class="text-lg font-semibold">Deposits</span>
+              <span class="text-lg font-semibold">Withdrawals</span>
               <div class="grid grid-cols-1 md:grid-cols-2 mt-5">
                 <a
                   class="flex items-center justify-between h-28 border-r-0 md:border-r border-b p-4 cursor-pointer hover:bg-gray-50"
@@ -1254,7 +1307,7 @@
                 >
                   <div class="flex items-center gap-4">
                     <img
-                      src="asset/icon/dollar-bill-part-2-svgrepo-com.svg"
+                      src="../asset/icon/dollar-bill-part-2-svgrepo-com.svg"
                       class="size-12 p-1"
                       alt=""
                     />
@@ -1262,7 +1315,7 @@
                     <div class="flex flex-col gap-1 font-medium">
                       <div>$23,233.00 USD</div>
                       <div class="font-normal text-gray-500">
-                        Total Deposited
+                        Total Withdrawals
                       </div>
                     </div>
                   </div>
@@ -1306,7 +1359,7 @@
                     </div> -->
 
                     <img
-                      src="asset/icon/time-svgrepo-com.svg"
+                      src="../asset/icon/time-svgrepo-com.svg"
                       class="size-12 p-1"
                       alt=""
                     />
@@ -1314,7 +1367,7 @@
                     <div class="flex flex-col gap-1 font-medium">
                       <div>2</div>
                       <div class="font-normal text-gray-500">
-                        Pending Deposited
+                        Pending Withdrawals
                       </div>
                     </div>
                   </div>
@@ -1379,7 +1432,7 @@
                       </svg>
                     </div> -->
                     <img
-                      src="asset/icon/cancel-svgrepo-com.svg"
+                      src="../asset/icon/cancel-svgrepo-com.svg"
                       class="size-12 p-1"
                       alt=""
                     />
@@ -1387,7 +1440,7 @@
                     <div class="flex flex-col gap-1 font-medium">
                       <div>0</div>
                       <div class="font-normal text-gray-500">
-                        Rejected Deposited
+                        Rejected Withdrawals
                       </div>
                     </div>
                   </div>
@@ -1431,7 +1484,7 @@
                     </div> -->
 
                     <img
-                      src="asset/icon/percent-sign-svgrepo-com.svg"
+                      src="../asset/icon/percent-sign-svgrepo-com.svg"
                       class="size-12 p-1"
                       alt=""
                     />
@@ -1439,7 +1492,7 @@
                     <div class="flex flex-col gap-1 font-medium">
                       <div>$23,233.00 USD</div>
                       <div class="font-normal text-gray-500">
-                        Deposite Charge
+                        Withdrawal Charge
                       </div>
                     </div>
                   </div>
@@ -1470,7 +1523,7 @@
                 class="flex items-center flex-col justify-center gap-2 xl:gap-0 xl:justify-between xl:flex-row"
               >
                 <span class="text-lg font-semibold"
-                  >Monthly Deposit History</span
+                  >Monthly Withdraw History</span
                 >
 
                 <div
@@ -1516,9 +1569,9 @@
       });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-    <script src="asset/js/loader.js"></script>
-    <script src="asset/js/doughnut-cahrt.js"></script>
-    <script src="asset/js/date-filter.js"></script>
-    <script src="asset/js/bar-chart.js"></script>
+    <script src="../asset/js/loader.js"></script>
+    <script src="../asset/js/doughnut-cahrt.js"></script>
+    <script src="../asset/js/date-filter.js"></script>
+    <script src="../asset/js/bar-chart.js"></script>
   </body>
 </html>
