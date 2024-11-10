@@ -1,13 +1,14 @@
-@font-face {
+/* @font-face {
   font-family: "MyCustomFont";
-  src: url("../fonts/Swiss\ 721\ Condensed\ BT\ Regular.ttf") format("truetype"); /* Adjust the path as needed */
+  src: url("../fonts/Swiss\ 721\ Condensed\ BT\ Regular.ttf") format("truetype"); 
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   font-family: "MyCustomFont", sans-serif;
-}
+} */
+
 @keyframes float-1 {
   0%,
   100% {
